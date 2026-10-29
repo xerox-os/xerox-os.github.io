@@ -13,7 +13,7 @@ user_title: Microsoft Gold Partner, Keyboard Player, Animator.
 email: jonathanmoore@computer.org
 github_username: jonathanromaovmoore
 github:
-  repository: xerox-os/xerox-os.github.io
+repository: xerox-os/xerox-os.github.io
 remote_theme: jonromanovmoore/particle
 remote_theme: xerox-os/documentation-theme-jekyll
 
