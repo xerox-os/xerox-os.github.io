@@ -11,9 +11,7 @@ user_title: Ableton Organizer, Artist, Engineer.
 email: jonathanmoore@computer.org
 github_username:  jonathanromaovmoore
 github:
-  repository_fetch_depth: 0
-# Google-analytics
+  repository: xerox-os/xerox-os.github.io
 google-analytics:
   id: ""
-
 exclude: ['package.json', 'src' , 'node_modules']
