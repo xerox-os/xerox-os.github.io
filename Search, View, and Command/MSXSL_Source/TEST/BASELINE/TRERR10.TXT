@@ -1,5 +1,0 @@
-
-Error occurred while compiling stylesheet '<from stdin>'.
-
-Code:   0x80004005
-Required attribute 'select' is missing.
