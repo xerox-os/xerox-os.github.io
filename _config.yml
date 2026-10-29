@@ -1,5 +1,5 @@
 # Site settings
-title: Windows Build Instructions By Jonathan Moore
+title: Windows Build Instructions By Jonathan R. Moore
 description: A blog about the documenting of jdm7dv. Social Media archives and in the works.
 # baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://xerox-os.github.io"
@@ -15,7 +15,5 @@ github:
 google-analytics:
   id: ""
 exclude: ['package.json', 'src' , 'node_modules']
-plugins:
-  - jekyll-paginate
-paginate: 0 # Must be an integer greater than 0
-paginate_path: "/" # Or whichever directory your pagination template lives in
+
+  
