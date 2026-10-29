@@ -10,7 +10,8 @@ user_description: Microsoft Gold Partner and Microsoft for Starups'
 user_title: Ableton Organizer, Artist, Engineer.
 email: jonathanmoore@computer.org
 github_username:  jonathanromaovmoore
-
+github:
+  repository_fetch_depth: 0
 # Google-analytics
 google-analytics:
   id: ""
