@@ -2,8 +2,10 @@
 title: Windows Build Instructions By Jonathan R. Moore
 description: A blog about the documenting of jdm7dv. Social Media archives and in the works.
 # baseurl: "/" # the subpath of your site, e.g. /blog
+documentation:
+    output: true
+    permalink: /documentation
 url: "http://xerox-os.github.io"
-
 # User settings
 username: Jonathan Romanov Moore
 user_description: Microsoft Gold Partner and Microsoft for Starups' 
@@ -16,5 +18,6 @@ remote_theme: jonromanovmoore/particle
 google-analytics:
   id: ""
 exclude: ['package.json', 'src' , 'node_modules']
+
 
   
