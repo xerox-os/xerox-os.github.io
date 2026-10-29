@@ -1,4 +1,4 @@
-repository: xerox-os/documentation-theme-jekyll
+
 
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
@@ -101,8 +101,8 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 # url: http://idratherbewriting.com
 # baseurl: /documentation-theme-jekyll
 
-
-
-
+github:
+	repository: xerox-os/documentation-theme-jekyll
+	remote_theme: xerox-os/documentation-theme-jekyll
 
 # Copyright 2021 Google LLC
