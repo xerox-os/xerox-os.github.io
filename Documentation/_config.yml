@@ -21,12 +21,6 @@ github_editme_path: xerox-os/documentation-theme-jekyll/blob/gh-pages/
 google_analytics: UA-66296557-1
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
-host: 127.0.0.1
-# the preview server used. Leave as is.
-
-port: 4000
-# the port where the preview is rendered. You can leave this as is unless you have other Jekyll builds using this same port that might cause conflicts. in that case, use another port such as 4006.
-
 exclude:
   - .idea/
   - .gitignore
@@ -114,7 +108,7 @@ description: "Intended as a documentation theme based on Jekyll for technical wr
 # baseurl: /documentation-theme-jekyll
 
 
-github: [metadata]
+
 
 
 # Copyright 2021 Google LLC
