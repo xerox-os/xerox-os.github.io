@@ -20,6 +20,7 @@ github_username: jonathanromaovmoore
 
 github:
 repository: xerox-os/xerox-os.github.io
+remote_theme: jonromanovmoore/particle 
 
 google-analytics:
   id: ""
