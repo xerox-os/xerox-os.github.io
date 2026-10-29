@@ -12,7 +12,7 @@ site_title: Jekyll theme for documentation
 company_name: Copyright 2021 Google LLC
 # this appears in the footer
 
-google_analytics: UA-66296557-1
+google_analytics: 
 # if you have google-analytics ID, put it in. if not, edit this value to blank.
 
 exclude:
