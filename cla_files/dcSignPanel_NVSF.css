@@ -1,0 +1,5070 @@
+/*!
+ * ADOBE CONFIDENTIAL
+ * ___________________
+ * 
+ * Copyright 2017 Adobe Systems Incorporated
+ * All Rights Reserved.
+ * 
+ * NOTICE:  All information contained herein is, and remains
+ * the property of Adobe Systems Incorporated and its suppliers,
+ * if any.  The intellectual and technical concepts contained
+ * herein are proprietary to Adobe Systems Incorporated and its
+ * suppliers and are protected by all applicable intellectual property
+ * laws, including trade secret and copyright laws.
+ * Dissemination of this information or reproduction of this material
+ * is strictly forbidden unless prior written permission is obtained
+ * from Adobe Systems Incorporated.
+ */
+/*!
+ * */ /**
+ *   _________________________________
+ * < DO NOT UPDATE THIS FILE DIRECTLY. >
+ *   ---------------------------------
+ *          \   ^__^
+ *           \  (oo)\_______
+ *              (__)\       )\/\
+ *                  ||----w |
+ *                  ||     ||
+ * 
+ * 
+ * INSTEAD USE https://git.corp.adobe.com/dcm-core/dc-sign-panel-js
+ * 
+ * DCSignaturePanel Javascript Library v4.0.5
+ * 
+ */
+/*
+ * ************************************************************************
+ *  ADOBE CONFIDENTIAL
+ *  ___________________
+ *
+ *   Copyright 2017 Adobe Systems Incorporated
+ *   All Rights Reserved.
+ *
+ *  NOTICE:  All information contained herein is, and remains
+ *  the property of Adobe Systems Incorporated and its suppliers,
+ *  if any.  The intellectual and technical concepts contained
+ *  herein are proprietary to Adobe Systems Incorporated and its
+ *  suppliers and are protected by all applicable intellectual property
+ *  laws, including trade secret and copyright laws.
+ *  Dissemination of this information or reproduction of this material
+ *  is strictly forbidden unless prior written permission is obtained
+ *  from Adobe Systems Incorporated.
+ * ************************************************************************
+ */
+.disabled-opacity {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+.no-box-shadow {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+/* ---- Japanese (ja-JP) ---- */
+:lang(ja-JP) .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire,
+:lang(ja-JP) .sign-panel .signature-name::placeholder {
+  font-style: normal;
+}
+/* ---- Korean (ko-KR) ---- */
+:lang(ko-KR) .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire,
+:lang(ko-KR) .sign-panel .signature-name::placeholder {
+  font-style: normal;
+}
+/* ---- Chinese Simplified (zh-CN) ---- */
+:lang(zh-CN) .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire,
+:lang(zh-CN) .sign-panel .signature-name::placeholder {
+  font-style: normal;
+}
+/* ---- Chinese Traditional (zh-TW) ---- */
+:lang(zh-TW) .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire,
+:lang(zh-TW) .sign-panel .signature-name::placeholder {
+  font-style: normal;
+}
+.noTransition {
+  -moz-transition: none !important;
+  -webkit-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+.hidden-accessible {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  width: 1px !important;
+  height: 1px !important;
+  margin: 0 -1px -1px 0 !important;
+}
+/************ START bootstrap responsive - supported viewport breakpoints -------------*****/
+/*** Anything below 400px - very small */
+@media (max-width: 400px) {
+  .sign-panel {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+  }
+  .sign-panel .alert {
+    margin: 0 25px 25px 25px;
+  }
+  .sign-panel.signature,
+  .sign-panel.stamp {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials .signature-pad-marketing-sticky {
+    display: none;
+  }
+  .sign-panel.initials .signature-pad-wrapper {
+    outline: solid 1px #c2c2c2;
+  }
+  .sign-panel.initials .signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel.events-disabled-ondrag {
+    pointer-events: none;
+  }
+  .sign-panel:not(.mobile) .signature-pad-wrapper {
+    margin: auto;
+    overflow: hidden;
+  }
+  .sign-panel input.signature-name {
+    width: 240px;
+  }
+  .sign-panel input.phone-number {
+    width: 200px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .sign-panel .sign-panel-options {
+    text-align: center;
+    padding: 10px 25px 0 25px;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-options .option {
+    text-align: center;
+  }
+  .sign-panel .placeholder {
+    text-align: center;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+    background-color: transparent;
+    opacity: 0.66;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .sign-panel .signature-pad-wrapper.focused,
+  .sign-panel .signature-pad-wrapper.dragged {
+    outline-color: #2175c8;
+  }
+  .sign-panel .signature-pad-wrapper .defaultTxt {
+    font-size: 25px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name {
+    height: 100%;
+    width: 100%;
+    font-size: 26px !important;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 25px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 25px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 25px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 25px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .select-image-btn {
+    font-size: 25px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 200px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas .mobile-canvas-inner {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert {
+    text-align: left;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting {
+    display: flex;
+    color: #fff;
+    background-color: #2175c8;
+    border: none;
+    border-radius: 4px;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting .close {
+    color: #fff;
+    opacity: 1;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete.gif) transparent no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert.png) transparent no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 24px;
+    margin-right: 15px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-content {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link {
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:hover,
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:focus {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire {
+    display: inline-block;
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 51px !important;
+  }
+  html.reduced-font-lang .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky {
+    background: transparent no-repeat scroll 25px 0;
+    background-size: contain;
+    width: 100%;
+    height: 64%;
+    position: absolute;
+    pointer-events: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded.png);
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky.adobeBranded {
+    background-image: url(../../../packages/sign-panel/dist/images/AdobeSignBranded.svg);
+  }
+  .sign-panel {
+    display: block;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .sign-panel #lastHiddenElement,
+  .sign-panel #firstHiddenElement {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .sign-panel .input-group .form-control:first-child,
+  .sign-panel .form-control:not(:first-child):not(:last-child),
+  .sign-panel .phone-number-wrapper .form-control {
+    border-radius: 4px;
+  }
+  .sign-panel .form-control.phone-number {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  .sign-panel .input-group {
+    width: auto;
+    padding-top: 5px;
+  }
+  .sign-panel .input-group-text {
+    padding: 0;
+  }
+  .sign-panel .signature-name::placeholder {
+    font-style: italic;
+  }
+  .sign-panel .modal-content {
+    padding: 0;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 25px 0 0 0;
+    min-height: 220px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad {
+    top: 64%;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad:focus {
+    outline: 1px dotted black;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad.disabled {
+    cursor: default;
+    text-decoration: none;
+    color: #ccc;
+  }
+  .sign-panel .tooltip {
+    margin-top: 0 !important;
+  }
+  .sign-panel .sign-panel-header {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 71px;
+  }
+  .sign-panel .sign-panel-header .popover,
+  .sign-panel .sign-panel-header .popover-header,
+  .sign-panel .sign-panel-header .popover-body {
+    color: #fff;
+    background-color: #2175c8;
+    border-radius: 5px;
+  }
+  .sign-panel .sign-panel-header .popover .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-header .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-body .bottom > .arrow {
+    border-bottom-color: transparent;
+  }
+  .sign-panel .sign-panel-header .popover .popover-title,
+  .sign-panel .sign-panel-header .popover-header .popover-title,
+  .sign-panel .sign-panel-header .popover-body .popover-title {
+    display: none;
+  }
+  .sign-panel .sign-panel-header .popover .arrow:after,
+  .sign-panel .sign-panel-header .popover-header .arrow:after,
+  .sign-panel .sign-panel-header .popover-body .arrow:after {
+    border-bottom-color: #2175c8;
+  }
+  .sign-panel .signature-panel-inner .left {
+    margin-left: -10%;
+  }
+  .sign-panel .web-id-text {
+    padding: 0 5px 0 5px;
+  }
+  .sign-panel .select-image-btn {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    font-weight: 400;
+    color: #2175c8;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: transparent;
+    border: none;
+  }
+  .sign-panel .select-image-btn:focus {
+    outline: 1px dotted black;
+    outline-offset: -10px;
+  }
+  .sign-panel .single-title {
+    margin: 0 0 0 20px;
+    line-height: 60px;
+    color: #333;
+  }
+  .sign-panel .icons {
+    display: block;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../packages/sign-panel/dist/images/icons.png);
+  }
+  .sign-panel .icons.type-signature {
+    background-position: -13px -13px;
+  }
+  .sign-panel .icons.type-signature.selected {
+    background-position: -13px -63px;
+  }
+  .sign-panel .icons.draw-signature {
+    background-position: -63px -13px;
+  }
+  .sign-panel .icons.draw-signature.selected {
+    background-position: -63px -63px;
+  }
+  .sign-panel .icons.image-signature {
+    background-position: -113px -13px;
+  }
+  .sign-panel .icons.image-signature.selected {
+    background-position: -113px -63px;
+  }
+  .sign-panel .icons.stamp-signature {
+    background-position: -214px -12px;
+  }
+  .sign-panel .icons.stamp-signature.selected {
+    background-position: -214px -62px;
+  }
+  .sign-panel .icons.image-rotate-tool {
+    background-position: -262px -12px;
+  }
+  .sign-panel .icons.image-rotate-tool:hover,
+  .sign-panel .icons.image-rotate-tool:focus {
+    background-position: -262px -62px;
+  }
+  .sign-panel .mobile-signature .icons {
+    background-position: -163px -13px;
+  }
+  .sign-panel .mobile-signature .icons.selected {
+    background-position: -163px -63px;
+  }
+  .sign-panel ul.sign-panel-options {
+    margin: auto !important;
+    list-style-type: none;
+    height: 60px;
+    width: 100%;
+  }
+  .sign-panel ul.sign-panel-options li.option {
+    display: inline-block !important;
+    margin: 0 10px 0 5px;
+    cursor: pointer;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected {
+    border-bottom: 3px solid #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected .title {
+    color: #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option .title {
+    font-size: 12px;
+    color: #575757;
+    margin: 6px 0 6px !important;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option {
+    padding-top: 8px;
+  }
+  .sign-panel ul.sign-panel-options.single-option a.icons {
+    display: none;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option.left .single-title {
+    line-height: 1em;
+    font-weight: 100;
+    padding-left: 0;
+    margin: 0 0 6px;
+  }
+  .sign-panel .save-checkbox-row {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  .sign-panel .save-checkbox-row .save-checkbox.form-control {
+    padding: 0;
+  }
+  .sign-panel .close.clear-name {
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    line-height: 32px;
+    width: 22px;
+    right: 5px;
+    z-index: 3;
+  }
+  .sign-panel .close.clear-name:focus {
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:focus,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:focus,
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:hover,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:hover {
+    background-color: transparent;
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown {
+    margin: 0 7px 15px 7px;
+  }
+  .sign-panel button.send-text {
+    margin: 0 7px;
+    display: inline-block;
+    width: auto;
+    border-radius: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad {
+    -ms-touch-action: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.arialunicode_nonlatin {
+    font-size: 28pt;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    /* base64 encoding of images/esignJS/pen_cursor.png */
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABh0RVh0Q3JlYXRpb24gVGltZQAwMy4wNS4yMDEzUUQ6KQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAK7SURBVFiF7dZvSBNhHAfw73PdJkEdMkHD7qFiBLKNcETRi0BNo15E9CJ2MOiF0IuoVyL0JlRYZCqDregPMWFvomEoBEEwEFRwe9cL680F4pvbDrQRul5p2bcXbUtxYtBtvvEHxz3P737c73Pw3HMHki9IviPpR52DJBQAwuVyXZyfn39F8ny9ESD5EgD/DPmB5Lk69oYC4Fc5oev65srKyjBJo14IpXSe83g8CAaD17xe74nl5eUwyev1AKjlQTgcRkNDA3p6ek5LKTcsy7pN0gPgjRBio+aArq4uDAwMYHp6GgD8UkrkcrlQc3PzcQCPag4AAMMwMDExAcMwAMDf0tLyM5/PnyQ5AmBYCFF0XEDyOYDZqakpmqZJn89H27Zp2zbj8TgbGxs/5/P5BMkkyaMO964sQgCApmkIBALIZrMAgFAohMnJyYDf77+wtLT0BcA9JwEAtgMAoL+/H4lEojL3+XyIxWIBr9d7FYCsOUBKiXQ6jdbW1kpO0zS0tbV9BfCj5oDdQlXVVQDfnAZU3oJi8e8Ct217R6GU8hiABacBCoD1zs7O2d7e3rXx8fG96tdrAYjPzMy4k8lkfGhoqNjX11e9UFEUAJdIvid5xmkISN7KZDJRRVE+GYZR2Qts26ZpmgwGg9lQKDSn63qcZIrkYQd6bpuoJK9kMpmoEGItEonQNE1GIhFKKYnSJxvAqmVZMZKXHQVsSQ6mUqm0pmnUNG1r48rR0dHxjGTccQDJQ5ZlPVFVNVetcelYbWpqGiP51AnAtn1ACLGp67pwuVxWlfqF7u7uh4uLi8OFQmEDwNv/BeymujE6OjqG0tO63e7X0Wj0LskHJAdJBkmqe93nH3tVTR4hOdLe3n7fNM07JB+TvFn6OXE0SELscuEUgLMACgA+CiG+O928DNjX2LEI9yMOAAeAA8Bvl2RrTNW+ltQAAAAASUVORK5CYII=') 0 0, default;
+    margin: 0;
+    display: block;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas:not(.empty) .placeholder {
+    display: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .placeholder {
+    font-family: "adobe-hand-b", sans-serif;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas {
+    touch-action: pinch-zoom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas:focus {
+    outline: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    width: 100%;
+    display: flex;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    border: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image {
+    width: 100%;
+    display: table;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas img.signature {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad {
+    position: absolute;
+    padding: 2% 5%;
+    margin: 2px 0;
+    font-size: 13px;
+    right: 0;
+    text-decoration: none;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad:focus,
+  .sign-panel .signature-pad-wrapper .clear-pad:hover {
+    outline-offset: -5px;
+    background-color: transparent;
+  }
+  .sign-panel .signature-pad-wrapper .spinner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-info {
+    top: 64%;
+    position: absolute;
+    height: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #2175c8;
+    background-color: transparent;
+    font-size: 12px;
+    width: 100%;
+    color: #4b4b4b;
+  }
+  .sign-panel .phone-number-wrapper {
+    margin: auto;
+    padding-top: 15px;
+    margin: 0;
+  }
+  .sign-panel .phone-number-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    margin: auto;
+  }
+  .sign-panel input.signature-name::-ms-clear,
+  .sign-panel input.phone-number::-ms-clear,
+  .sign-panel input.signature-type-name::-ms-clear {
+    display: none;
+  }
+  .sign-panel input.signature-name,
+  .sign-panel input.phone-number {
+    padding-right: 24px !important;
+  }
+  .sign-panel:not(.image) .signature-panel-tools,
+  .sign-panel.empty .signature-panel-tools {
+    display: none;
+  }
+  .sign-panel .sign-panel-footer {
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 25px 12px 25px;
+    display: block;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools {
+    padding: 7px 0 0 10px;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools .image-rotate-tool {
+    margin: 3px 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons {
+    flex: 0 0 auto;
+    padding: 5px 0 0 15px;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons .cancel,
+  .sign-panel .sign-panel-footer .footer-buttons .apply {
+    min-width: 100px;
+    min-height: 34px;
+    margin-left: 6px;
+  }
+  [lang=fi-FI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=hu-HU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=is-IS] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ja-JP] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=vi-VN] .sign-panel.initials .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel.initials .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name.ie-placeholder {
+    font-size: 15.3px !important;
+  }
+}
+@media (max-width: 400px) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (max-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 400px) and (min-resolution: 192dpi) {
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete2x.gif) transparent no-repeat;
+    background-size: contain;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert2x.png) transparent no-repeat;
+    background-size: contain;
+  }
+}
+@media (max-width: 400px) and (max-width: 480px) {
+  .sign-panel .sign-panel-body .save-checkbox-row {
+    top: 5px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .image-canvas .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel .sign-panel-body .clear-name {
+    top: 14px;
+  }
+  .sign-panel .sign-panel-body .footer-buttons {
+    padding-bottom: 10px;
+  }
+}
+@media (max-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 400px) and (min-resolution: 192dpi) {
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded-2x.png);
+  }
+}
+@media (max-width: 400px) and (max-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    float: left;
+    padding: 14px 0 15px 0 !important;
+    margin: 0 5px !important;
+  }
+  .sign-panel.saveAllowed .sign-panel-options .option .title {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 -1px -1px 0 !important;
+  }
+}
+@media (max-width: 400px) and (max-width: 768px) {
+  .sign-panel .single-title {
+    font-size: 20px;
+  }
+}
+@media (max-width: 400px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 400px) and (min-resolution: 192dpi) {
+  .sign-panel .icons {
+    background-image: url(../../../packages/sign-panel/dist/images/icons-2x.png);
+    background-size: auto 100px;
+  }
+}
+@media (max-width: 400px) and (max-width: 1200px) {
+  [lang=da-DK] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=fi-FI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=nl-NL] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=tr-TR] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=id-ID] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt {
+    font-size: 15.3px !important;
+  }
+}
+/*** Extra, Extra small devices */
+/* NOTE: 400px is threshold of bootstrap responsive lowest breakpoint on desktop */
+@media (min-width: 400px) and (max-width: 480px) {
+  .sign-panel {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+  }
+  .sign-panel .alert {
+    margin: 0 25px 25px 25px;
+  }
+  .sign-panel.signature,
+  .sign-panel.stamp {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials .signature-pad-marketing-sticky {
+    display: none;
+  }
+  .sign-panel.initials .signature-pad-wrapper {
+    outline: solid 1px #c2c2c2;
+  }
+  .sign-panel.initials .signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel.events-disabled-ondrag {
+    pointer-events: none;
+  }
+  .sign-panel:not(.mobile) .signature-pad-wrapper {
+    margin: auto;
+    overflow: hidden;
+  }
+  .sign-panel input.signature-name {
+    width: 240px;
+  }
+  .sign-panel input.phone-number {
+    width: 200px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .sign-panel .sign-panel-options {
+    text-align: center;
+    padding: 10px 25px 0 25px;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-options .option {
+    text-align: center;
+  }
+  .sign-panel .placeholder {
+    text-align: center;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+    background-color: transparent;
+    opacity: 0.66;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .sign-panel .signature-pad-wrapper.focused,
+  .sign-panel .signature-pad-wrapper.dragged {
+    outline-color: #2175c8;
+  }
+  .sign-panel .signature-pad-wrapper .defaultTxt {
+    font-size: 27px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name {
+    height: 100%;
+    width: 100%;
+    font-size: 37px !important;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .select-image-btn {
+    font-size: 27px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 200px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas .mobile-canvas-inner {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert {
+    text-align: left;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting {
+    display: flex;
+    color: #fff;
+    background-color: #2175c8;
+    border: none;
+    border-radius: 4px;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting .close {
+    color: #fff;
+    opacity: 1;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete.gif) transparent no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert.png) transparent no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 24px;
+    margin-right: 15px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-content {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link {
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:hover,
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:focus {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire {
+    display: inline-block;
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 51px !important;
+  }
+  html.reduced-font-lang .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky {
+    background: transparent no-repeat scroll 25px 0;
+    background-size: contain;
+    width: 100%;
+    height: 64%;
+    position: absolute;
+    pointer-events: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded.png);
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky.adobeBranded {
+    background-image: url(../../../packages/sign-panel/dist/images/AdobeSignBranded.svg);
+  }
+  .sign-panel {
+    display: block;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .sign-panel #lastHiddenElement,
+  .sign-panel #firstHiddenElement {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .sign-panel .input-group .form-control:first-child,
+  .sign-panel .form-control:not(:first-child):not(:last-child),
+  .sign-panel .phone-number-wrapper .form-control {
+    border-radius: 4px;
+  }
+  .sign-panel .form-control.phone-number {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  .sign-panel .input-group {
+    width: auto;
+    padding-top: 5px;
+  }
+  .sign-panel .input-group-text {
+    padding: 0;
+  }
+  .sign-panel .signature-name::placeholder {
+    font-style: italic;
+  }
+  .sign-panel .modal-content {
+    padding: 0;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 25px 0 0 0;
+    min-height: 220px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad {
+    top: 64%;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad:focus {
+    outline: 1px dotted black;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad.disabled {
+    cursor: default;
+    text-decoration: none;
+    color: #ccc;
+  }
+  .sign-panel .tooltip {
+    margin-top: 0 !important;
+  }
+  .sign-panel .sign-panel-header {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 71px;
+  }
+  .sign-panel .sign-panel-header .popover,
+  .sign-panel .sign-panel-header .popover-header,
+  .sign-panel .sign-panel-header .popover-body {
+    color: #fff;
+    background-color: #2175c8;
+    border-radius: 5px;
+  }
+  .sign-panel .sign-panel-header .popover .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-header .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-body .bottom > .arrow {
+    border-bottom-color: transparent;
+  }
+  .sign-panel .sign-panel-header .popover .popover-title,
+  .sign-panel .sign-panel-header .popover-header .popover-title,
+  .sign-panel .sign-panel-header .popover-body .popover-title {
+    display: none;
+  }
+  .sign-panel .sign-panel-header .popover .arrow:after,
+  .sign-panel .sign-panel-header .popover-header .arrow:after,
+  .sign-panel .sign-panel-header .popover-body .arrow:after {
+    border-bottom-color: #2175c8;
+  }
+  .sign-panel .signature-panel-inner .left {
+    margin-left: -10%;
+  }
+  .sign-panel .web-id-text {
+    padding: 0 5px 0 5px;
+  }
+  .sign-panel .select-image-btn {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    font-weight: 400;
+    color: #2175c8;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: transparent;
+    border: none;
+  }
+  .sign-panel .select-image-btn:focus {
+    outline: 1px dotted black;
+    outline-offset: -10px;
+  }
+  .sign-panel .single-title {
+    margin: 0 0 0 20px;
+    line-height: 60px;
+    color: #333;
+  }
+  .sign-panel .icons {
+    display: block;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../packages/sign-panel/dist/images/icons.png);
+  }
+  .sign-panel .icons.type-signature {
+    background-position: -13px -13px;
+  }
+  .sign-panel .icons.type-signature.selected {
+    background-position: -13px -63px;
+  }
+  .sign-panel .icons.draw-signature {
+    background-position: -63px -13px;
+  }
+  .sign-panel .icons.draw-signature.selected {
+    background-position: -63px -63px;
+  }
+  .sign-panel .icons.image-signature {
+    background-position: -113px -13px;
+  }
+  .sign-panel .icons.image-signature.selected {
+    background-position: -113px -63px;
+  }
+  .sign-panel .icons.stamp-signature {
+    background-position: -214px -12px;
+  }
+  .sign-panel .icons.stamp-signature.selected {
+    background-position: -214px -62px;
+  }
+  .sign-panel .icons.image-rotate-tool {
+    background-position: -262px -12px;
+  }
+  .sign-panel .icons.image-rotate-tool:hover,
+  .sign-panel .icons.image-rotate-tool:focus {
+    background-position: -262px -62px;
+  }
+  .sign-panel .mobile-signature .icons {
+    background-position: -163px -13px;
+  }
+  .sign-panel .mobile-signature .icons.selected {
+    background-position: -163px -63px;
+  }
+  .sign-panel ul.sign-panel-options {
+    margin: auto !important;
+    list-style-type: none;
+    height: 60px;
+    width: 100%;
+  }
+  .sign-panel ul.sign-panel-options li.option {
+    display: inline-block !important;
+    margin: 0 10px 0 5px;
+    cursor: pointer;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected {
+    border-bottom: 3px solid #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected .title {
+    color: #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option .title {
+    font-size: 12px;
+    color: #575757;
+    margin: 6px 0 6px !important;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option {
+    padding-top: 8px;
+  }
+  .sign-panel ul.sign-panel-options.single-option a.icons {
+    display: none;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option.left .single-title {
+    line-height: 1em;
+    font-weight: 100;
+    padding-left: 0;
+    margin: 0 0 6px;
+  }
+  .sign-panel .save-checkbox-row {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  .sign-panel .save-checkbox-row .save-checkbox.form-control {
+    padding: 0;
+  }
+  .sign-panel .close.clear-name {
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    line-height: 32px;
+    width: 22px;
+    right: 5px;
+    z-index: 3;
+  }
+  .sign-panel .close.clear-name:focus {
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:focus,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:focus,
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:hover,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:hover {
+    background-color: transparent;
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown {
+    margin: 0 7px 15px 7px;
+  }
+  .sign-panel button.send-text {
+    margin: 0 7px;
+    display: inline-block;
+    width: auto;
+    border-radius: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad {
+    -ms-touch-action: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.arialunicode_nonlatin {
+    font-size: 28pt;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    /* base64 encoding of images/esignJS/pen_cursor.png */
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABh0RVh0Q3JlYXRpb24gVGltZQAwMy4wNS4yMDEzUUQ6KQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAK7SURBVFiF7dZvSBNhHAfw73PdJkEdMkHD7qFiBLKNcETRi0BNo15E9CJ2MOiF0IuoVyL0JlRYZCqDregPMWFvomEoBEEwEFRwe9cL680F4pvbDrQRul5p2bcXbUtxYtBtvvEHxz3P737c73Pw3HMHki9IviPpR52DJBQAwuVyXZyfn39F8ny9ESD5EgD/DPmB5Lk69oYC4Fc5oev65srKyjBJo14IpXSe83g8CAaD17xe74nl5eUwyev1AKjlQTgcRkNDA3p6ek5LKTcsy7pN0gPgjRBio+aArq4uDAwMYHp6GgD8UkrkcrlQc3PzcQCPag4AAMMwMDExAcMwAMDf0tLyM5/PnyQ5AmBYCFF0XEDyOYDZqakpmqZJn89H27Zp2zbj8TgbGxs/5/P5BMkkyaMO964sQgCApmkIBALIZrMAgFAohMnJyYDf77+wtLT0BcA9JwEAtgMAoL+/H4lEojL3+XyIxWIBr9d7FYCsOUBKiXQ6jdbW1kpO0zS0tbV9BfCj5oDdQlXVVQDfnAZU3oJi8e8Ct217R6GU8hiABacBCoD1zs7O2d7e3rXx8fG96tdrAYjPzMy4k8lkfGhoqNjX11e9UFEUAJdIvid5xmkISN7KZDJRRVE+GYZR2Qts26ZpmgwGg9lQKDSn63qcZIrkYQd6bpuoJK9kMpmoEGItEonQNE1GIhFKKYnSJxvAqmVZMZKXHQVsSQ6mUqm0pmnUNG1r48rR0dHxjGTccQDJQ5ZlPVFVNVetcelYbWpqGiP51AnAtn1ACLGp67pwuVxWlfqF7u7uh4uLi8OFQmEDwNv/BeymujE6OjqG0tO63e7X0Wj0LskHJAdJBkmqe93nH3tVTR4hOdLe3n7fNM07JB+TvFn6OXE0SELscuEUgLMACgA+CiG+O928DNjX2LEI9yMOAAeAA8Bvl2RrTNW+ltQAAAAASUVORK5CYII=') 0 0, default;
+    margin: 0;
+    display: block;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas:not(.empty) .placeholder {
+    display: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .placeholder {
+    font-family: "adobe-hand-b", sans-serif;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas {
+    touch-action: pinch-zoom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas:focus {
+    outline: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    width: 100%;
+    display: flex;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    border: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image {
+    width: 100%;
+    display: table;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas img.signature {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad {
+    position: absolute;
+    padding: 2% 5%;
+    margin: 2px 0;
+    font-size: 13px;
+    right: 0;
+    text-decoration: none;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad:focus,
+  .sign-panel .signature-pad-wrapper .clear-pad:hover {
+    outline-offset: -5px;
+    background-color: transparent;
+  }
+  .sign-panel .signature-pad-wrapper .spinner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-info {
+    top: 64%;
+    position: absolute;
+    height: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #2175c8;
+    background-color: transparent;
+    font-size: 12px;
+    width: 100%;
+    color: #4b4b4b;
+  }
+  .sign-panel .phone-number-wrapper {
+    margin: auto;
+    padding-top: 15px;
+    margin: 0;
+  }
+  .sign-panel .phone-number-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    margin: auto;
+  }
+  .sign-panel input.signature-name::-ms-clear,
+  .sign-panel input.phone-number::-ms-clear,
+  .sign-panel input.signature-type-name::-ms-clear {
+    display: none;
+  }
+  .sign-panel input.signature-name,
+  .sign-panel input.phone-number {
+    padding-right: 24px !important;
+  }
+  .sign-panel:not(.image) .signature-panel-tools,
+  .sign-panel.empty .signature-panel-tools {
+    display: none;
+  }
+  .sign-panel .sign-panel-footer {
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 25px 12px 25px;
+    display: block;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools {
+    padding: 7px 0 0 10px;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools .image-rotate-tool {
+    margin: 3px 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons {
+    flex: 0 0 auto;
+    padding: 5px 0 0 15px;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons .cancel,
+  .sign-panel .sign-panel-footer .footer-buttons .apply {
+    min-width: 100px;
+    min-height: 34px;
+    margin-left: 6px;
+  }
+  [lang=fi-FI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=hu-HU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=is-IS] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ja-JP] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=vi-VN] .sign-panel.initials .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel.initials .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name.ie-placeholder {
+    font-size: 15.3px !important;
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (max-width: 480px) and (min-resolution: 192dpi) {
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete2x.gif) transparent no-repeat;
+    background-size: contain;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert2x.png) transparent no-repeat;
+    background-size: contain;
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (max-width: 480px) {
+  .sign-panel .sign-panel-body .save-checkbox-row {
+    top: 5px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .image-canvas .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel .sign-panel-body .clear-name {
+    top: 14px;
+  }
+  .sign-panel .sign-panel-body .footer-buttons {
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (max-width: 480px) and (min-resolution: 192dpi) {
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded-2x.png);
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (max-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    float: left;
+    padding: 14px 0 15px 0 !important;
+    margin: 0 5px !important;
+  }
+  .sign-panel.saveAllowed .sign-panel-options .option .title {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 -1px -1px 0 !important;
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (max-width: 768px) {
+  .sign-panel .single-title {
+    font-size: 20px;
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 400px) and (max-width: 480px) and (min-resolution: 192dpi) {
+  .sign-panel .icons {
+    background-image: url(../../../packages/sign-panel/dist/images/icons-2x.png);
+    background-size: auto 100px;
+  }
+}
+@media (min-width: 400px) and (max-width: 480px) and (max-width: 1200px) {
+  [lang=da-DK] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=fi-FI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=nl-NL] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=tr-TR] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=id-ID] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt {
+    font-size: 15.3px !important;
+  }
+}
+/*** Extra small screen devices */
+@media (min-width: 480px) and (max-width: 768px) {
+  .sign-panel {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+  }
+  .sign-panel .alert {
+    margin: 0 25px 25px 25px;
+  }
+  .sign-panel.signature,
+  .sign-panel.stamp {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials .signature-pad-marketing-sticky {
+    display: none;
+  }
+  .sign-panel.initials .signature-pad-wrapper {
+    outline: solid 1px #c2c2c2;
+  }
+  .sign-panel.initials .signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel.events-disabled-ondrag {
+    pointer-events: none;
+  }
+  .sign-panel:not(.mobile) .signature-pad-wrapper {
+    margin: auto;
+    overflow: hidden;
+  }
+  .sign-panel input.signature-name {
+    width: 240px;
+  }
+  .sign-panel input.phone-number {
+    width: 200px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .sign-panel .sign-panel-options {
+    text-align: center;
+    padding: 10px 25px 0 25px;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-options .option {
+    text-align: center;
+  }
+  .sign-panel .placeholder {
+    text-align: center;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+    background-color: transparent;
+    opacity: 0.66;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .sign-panel .signature-pad-wrapper.focused,
+  .sign-panel .signature-pad-wrapper.dragged {
+    outline-color: #2175c8;
+  }
+  .sign-panel .signature-pad-wrapper .defaultTxt {
+    font-size: 27px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name {
+    height: 100%;
+    width: 100%;
+    font-size: 44px !important;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 27px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .select-image-btn {
+    font-size: 27px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 200px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas .mobile-canvas-inner {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert {
+    text-align: left;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting {
+    display: flex;
+    color: #fff;
+    background-color: #2175c8;
+    border: none;
+    border-radius: 4px;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting .close {
+    color: #fff;
+    opacity: 1;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete.gif) transparent no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert.png) transparent no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 24px;
+    margin-right: 15px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-content {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link {
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:hover,
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:focus {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire {
+    display: inline-block;
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 51px !important;
+  }
+  html.reduced-font-lang .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky {
+    background: transparent no-repeat scroll 25px 0;
+    background-size: contain;
+    width: 100%;
+    height: 64%;
+    position: absolute;
+    pointer-events: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded.png);
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky.adobeBranded {
+    background-image: url(../../../packages/sign-panel/dist/images/AdobeSignBranded.svg);
+  }
+  .sign-panel {
+    display: block;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .sign-panel #lastHiddenElement,
+  .sign-panel #firstHiddenElement {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .sign-panel .input-group .form-control:first-child,
+  .sign-panel .form-control:not(:first-child):not(:last-child),
+  .sign-panel .phone-number-wrapper .form-control {
+    border-radius: 4px;
+  }
+  .sign-panel .form-control.phone-number {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  .sign-panel .input-group {
+    width: auto;
+    padding-top: 5px;
+  }
+  .sign-panel .input-group-text {
+    padding: 0;
+  }
+  .sign-panel .signature-name::placeholder {
+    font-style: italic;
+  }
+  .sign-panel .modal-content {
+    padding: 0;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 25px 0 0 0;
+    min-height: 220px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad {
+    top: 64%;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad:focus {
+    outline: 1px dotted black;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad.disabled {
+    cursor: default;
+    text-decoration: none;
+    color: #ccc;
+  }
+  .sign-panel .tooltip {
+    margin-top: 0 !important;
+  }
+  .sign-panel .sign-panel-header {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 71px;
+  }
+  .sign-panel .sign-panel-header .popover,
+  .sign-panel .sign-panel-header .popover-header,
+  .sign-panel .sign-panel-header .popover-body {
+    color: #fff;
+    background-color: #2175c8;
+    border-radius: 5px;
+  }
+  .sign-panel .sign-panel-header .popover .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-header .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-body .bottom > .arrow {
+    border-bottom-color: transparent;
+  }
+  .sign-panel .sign-panel-header .popover .popover-title,
+  .sign-panel .sign-panel-header .popover-header .popover-title,
+  .sign-panel .sign-panel-header .popover-body .popover-title {
+    display: none;
+  }
+  .sign-panel .sign-panel-header .popover .arrow:after,
+  .sign-panel .sign-panel-header .popover-header .arrow:after,
+  .sign-panel .sign-panel-header .popover-body .arrow:after {
+    border-bottom-color: #2175c8;
+  }
+  .sign-panel .signature-panel-inner .left {
+    margin-left: -10%;
+  }
+  .sign-panel .web-id-text {
+    padding: 0 5px 0 5px;
+  }
+  .sign-panel .select-image-btn {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    font-weight: 400;
+    color: #2175c8;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: transparent;
+    border: none;
+  }
+  .sign-panel .select-image-btn:focus {
+    outline: 1px dotted black;
+    outline-offset: -10px;
+  }
+  .sign-panel .single-title {
+    margin: 0 0 0 20px;
+    line-height: 60px;
+    color: #333;
+  }
+  .sign-panel .icons {
+    display: block;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../packages/sign-panel/dist/images/icons.png);
+  }
+  .sign-panel .icons.type-signature {
+    background-position: -13px -13px;
+  }
+  .sign-panel .icons.type-signature.selected {
+    background-position: -13px -63px;
+  }
+  .sign-panel .icons.draw-signature {
+    background-position: -63px -13px;
+  }
+  .sign-panel .icons.draw-signature.selected {
+    background-position: -63px -63px;
+  }
+  .sign-panel .icons.image-signature {
+    background-position: -113px -13px;
+  }
+  .sign-panel .icons.image-signature.selected {
+    background-position: -113px -63px;
+  }
+  .sign-panel .icons.stamp-signature {
+    background-position: -214px -12px;
+  }
+  .sign-panel .icons.stamp-signature.selected {
+    background-position: -214px -62px;
+  }
+  .sign-panel .icons.image-rotate-tool {
+    background-position: -262px -12px;
+  }
+  .sign-panel .icons.image-rotate-tool:hover,
+  .sign-panel .icons.image-rotate-tool:focus {
+    background-position: -262px -62px;
+  }
+  .sign-panel .mobile-signature .icons {
+    background-position: -163px -13px;
+  }
+  .sign-panel .mobile-signature .icons.selected {
+    background-position: -163px -63px;
+  }
+  .sign-panel ul.sign-panel-options {
+    margin: auto !important;
+    list-style-type: none;
+    height: 60px;
+    width: 100%;
+  }
+  .sign-panel ul.sign-panel-options li.option {
+    display: inline-block !important;
+    margin: 0 10px 0 5px;
+    cursor: pointer;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected {
+    border-bottom: 3px solid #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected .title {
+    color: #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option .title {
+    font-size: 12px;
+    color: #575757;
+    margin: 6px 0 6px !important;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option {
+    padding-top: 8px;
+  }
+  .sign-panel ul.sign-panel-options.single-option a.icons {
+    display: none;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option.left .single-title {
+    line-height: 1em;
+    font-weight: 100;
+    padding-left: 0;
+    margin: 0 0 6px;
+  }
+  .sign-panel .save-checkbox-row {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  .sign-panel .save-checkbox-row .save-checkbox.form-control {
+    padding: 0;
+  }
+  .sign-panel .close.clear-name {
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    line-height: 32px;
+    width: 22px;
+    right: 5px;
+    z-index: 3;
+  }
+  .sign-panel .close.clear-name:focus {
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:focus,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:focus,
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:hover,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:hover {
+    background-color: transparent;
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown {
+    margin: 0 7px 15px 7px;
+  }
+  .sign-panel button.send-text {
+    margin: 0 7px;
+    display: inline-block;
+    width: auto;
+    border-radius: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad {
+    -ms-touch-action: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.arialunicode_nonlatin {
+    font-size: 28pt;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    /* base64 encoding of images/esignJS/pen_cursor.png */
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABh0RVh0Q3JlYXRpb24gVGltZQAwMy4wNS4yMDEzUUQ6KQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAK7SURBVFiF7dZvSBNhHAfw73PdJkEdMkHD7qFiBLKNcETRi0BNo15E9CJ2MOiF0IuoVyL0JlRYZCqDregPMWFvomEoBEEwEFRwe9cL680F4pvbDrQRul5p2bcXbUtxYtBtvvEHxz3P737c73Pw3HMHki9IviPpR52DJBQAwuVyXZyfn39F8ny9ESD5EgD/DPmB5Lk69oYC4Fc5oev65srKyjBJo14IpXSe83g8CAaD17xe74nl5eUwyev1AKjlQTgcRkNDA3p6ek5LKTcsy7pN0gPgjRBio+aArq4uDAwMYHp6GgD8UkrkcrlQc3PzcQCPag4AAMMwMDExAcMwAMDf0tLyM5/PnyQ5AmBYCFF0XEDyOYDZqakpmqZJn89H27Zp2zbj8TgbGxs/5/P5BMkkyaMO964sQgCApmkIBALIZrMAgFAohMnJyYDf77+wtLT0BcA9JwEAtgMAoL+/H4lEojL3+XyIxWIBr9d7FYCsOUBKiXQ6jdbW1kpO0zS0tbV9BfCj5oDdQlXVVQDfnAZU3oJi8e8Ct217R6GU8hiABacBCoD1zs7O2d7e3rXx8fG96tdrAYjPzMy4k8lkfGhoqNjX11e9UFEUAJdIvid5xmkISN7KZDJRRVE+GYZR2Qts26ZpmgwGg9lQKDSn63qcZIrkYQd6bpuoJK9kMpmoEGItEonQNE1GIhFKKYnSJxvAqmVZMZKXHQVsSQ6mUqm0pmnUNG1r48rR0dHxjGTccQDJQ5ZlPVFVNVetcelYbWpqGiP51AnAtn1ACLGp67pwuVxWlfqF7u7uh4uLi8OFQmEDwNv/BeymujE6OjqG0tO63e7X0Wj0LskHJAdJBkmqe93nH3tVTR4hOdLe3n7fNM07JB+TvFn6OXE0SELscuEUgLMACgA+CiG+O928DNjX2LEI9yMOAAeAA8Bvl2RrTNW+ltQAAAAASUVORK5CYII=') 0 0, default;
+    margin: 0;
+    display: block;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas:not(.empty) .placeholder {
+    display: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .placeholder {
+    font-family: "adobe-hand-b", sans-serif;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas {
+    touch-action: pinch-zoom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas:focus {
+    outline: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    width: 100%;
+    display: flex;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    border: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image {
+    width: 100%;
+    display: table;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas img.signature {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad {
+    position: absolute;
+    padding: 2% 5%;
+    margin: 2px 0;
+    font-size: 13px;
+    right: 0;
+    text-decoration: none;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad:focus,
+  .sign-panel .signature-pad-wrapper .clear-pad:hover {
+    outline-offset: -5px;
+    background-color: transparent;
+  }
+  .sign-panel .signature-pad-wrapper .spinner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-info {
+    top: 64%;
+    position: absolute;
+    height: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #2175c8;
+    background-color: transparent;
+    font-size: 12px;
+    width: 100%;
+    color: #4b4b4b;
+  }
+  .sign-panel .phone-number-wrapper {
+    margin: auto;
+    padding-top: 15px;
+    margin: 0;
+  }
+  .sign-panel .phone-number-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    margin: auto;
+  }
+  .sign-panel input.signature-name::-ms-clear,
+  .sign-panel input.phone-number::-ms-clear,
+  .sign-panel input.signature-type-name::-ms-clear {
+    display: none;
+  }
+  .sign-panel input.signature-name,
+  .sign-panel input.phone-number {
+    padding-right: 24px !important;
+  }
+  .sign-panel:not(.image) .signature-panel-tools,
+  .sign-panel.empty .signature-panel-tools {
+    display: none;
+  }
+  .sign-panel .sign-panel-footer {
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 25px 12px 25px;
+    display: block;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools {
+    padding: 7px 0 0 10px;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools .image-rotate-tool {
+    margin: 3px 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons {
+    flex: 0 0 auto;
+    padding: 5px 0 0 15px;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons .cancel,
+  .sign-panel .sign-panel-footer .footer-buttons .apply {
+    min-width: 100px;
+    min-height: 34px;
+    margin-left: 6px;
+  }
+  [lang=fi-FI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=hu-HU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=is-IS] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ja-JP] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=vi-VN] .sign-panel.initials .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel.initials .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name.ie-placeholder {
+    font-size: 15.3px !important;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 480px) and (max-width: 768px) and (min-resolution: 192dpi) {
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete2x.gif) transparent no-repeat;
+    background-size: contain;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert2x.png) transparent no-repeat;
+    background-size: contain;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (max-width: 480px) {
+  .sign-panel .sign-panel-body .save-checkbox-row {
+    top: 5px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .image-canvas .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel .sign-panel-body .clear-name {
+    top: 14px;
+  }
+  .sign-panel .sign-panel-body .footer-buttons {
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 480px) and (max-width: 768px) and (min-resolution: 192dpi) {
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded-2x.png);
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (max-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    float: left;
+    padding: 14px 0 15px 0 !important;
+    margin: 0 5px !important;
+  }
+  .sign-panel.saveAllowed .sign-panel-options .option .title {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 -1px -1px 0 !important;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (max-width: 768px) {
+  .sign-panel .single-title {
+    font-size: 20px;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 480px) and (max-width: 768px) and (min-resolution: 192dpi) {
+  .sign-panel .icons {
+    background-image: url(../../../packages/sign-panel/dist/images/icons-2x.png);
+    background-size: auto 100px;
+  }
+}
+@media (min-width: 480px) and (max-width: 768px) and (max-width: 1200px) {
+  [lang=da-DK] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=fi-FI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=nl-NL] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=tr-TR] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=id-ID] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt {
+    font-size: 15.3px !important;
+  }
+}
+/*** Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 992px) {
+  .sign-panel {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+  }
+  .sign-panel .alert {
+    margin: 0 25px 25px 25px;
+  }
+  .sign-panel.signature,
+  .sign-panel.stamp {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials .signature-pad-marketing-sticky {
+    display: none;
+  }
+  .sign-panel.initials .signature-pad-wrapper {
+    outline: solid 1px #c2c2c2;
+  }
+  .sign-panel.initials .signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel.events-disabled-ondrag {
+    pointer-events: none;
+  }
+  .sign-panel:not(.mobile) .signature-pad-wrapper {
+    margin: auto;
+    overflow: hidden;
+  }
+  .sign-panel input.signature-name {
+    width: 240px;
+  }
+  .sign-panel input.phone-number {
+    width: 200px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .sign-panel .sign-panel-options {
+    text-align: center;
+    padding: 10px 25px 0 25px;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-options .option {
+    text-align: center;
+  }
+  .sign-panel .placeholder {
+    text-align: center;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+    background-color: transparent;
+    opacity: 0.66;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .sign-panel .signature-pad-wrapper.focused,
+  .sign-panel .signature-pad-wrapper.dragged {
+    outline-color: #2175c8;
+  }
+  .sign-panel .signature-pad-wrapper .defaultTxt {
+    font-size: 28px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name {
+    height: 100%;
+    width: 100%;
+    font-size: 44px !important;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .select-image-btn {
+    font-size: 28px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 200px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas .mobile-canvas-inner {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert {
+    text-align: left;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting {
+    display: flex;
+    color: #fff;
+    background-color: #2175c8;
+    border: none;
+    border-radius: 4px;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting .close {
+    color: #fff;
+    opacity: 1;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete.gif) transparent no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert.png) transparent no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 24px;
+    margin-right: 15px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-content {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link {
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:hover,
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:focus {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire {
+    display: inline-block;
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 51px !important;
+  }
+  html.reduced-font-lang .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky {
+    background: transparent no-repeat scroll 25px 0;
+    background-size: contain;
+    width: 100%;
+    height: 64%;
+    position: absolute;
+    pointer-events: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded.png);
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky.adobeBranded {
+    background-image: url(../../../packages/sign-panel/dist/images/AdobeSignBranded.svg);
+  }
+  .sign-panel {
+    display: block;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .sign-panel #lastHiddenElement,
+  .sign-panel #firstHiddenElement {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .sign-panel .input-group .form-control:first-child,
+  .sign-panel .form-control:not(:first-child):not(:last-child),
+  .sign-panel .phone-number-wrapper .form-control {
+    border-radius: 4px;
+  }
+  .sign-panel .form-control.phone-number {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  .sign-panel .input-group {
+    width: auto;
+    padding-top: 5px;
+  }
+  .sign-panel .input-group-text {
+    padding: 0;
+  }
+  .sign-panel .signature-name::placeholder {
+    font-style: italic;
+  }
+  .sign-panel .modal-content {
+    padding: 0;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 25px 0 0 0;
+    min-height: 220px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad {
+    top: 64%;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad:focus {
+    outline: 1px dotted black;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad.disabled {
+    cursor: default;
+    text-decoration: none;
+    color: #ccc;
+  }
+  .sign-panel .tooltip {
+    margin-top: 0 !important;
+  }
+  .sign-panel .sign-panel-header {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 71px;
+  }
+  .sign-panel .sign-panel-header .popover,
+  .sign-panel .sign-panel-header .popover-header,
+  .sign-panel .sign-panel-header .popover-body {
+    color: #fff;
+    background-color: #2175c8;
+    border-radius: 5px;
+  }
+  .sign-panel .sign-panel-header .popover .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-header .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-body .bottom > .arrow {
+    border-bottom-color: transparent;
+  }
+  .sign-panel .sign-panel-header .popover .popover-title,
+  .sign-panel .sign-panel-header .popover-header .popover-title,
+  .sign-panel .sign-panel-header .popover-body .popover-title {
+    display: none;
+  }
+  .sign-panel .sign-panel-header .popover .arrow:after,
+  .sign-panel .sign-panel-header .popover-header .arrow:after,
+  .sign-panel .sign-panel-header .popover-body .arrow:after {
+    border-bottom-color: #2175c8;
+  }
+  .sign-panel .signature-panel-inner .left {
+    margin-left: -10%;
+  }
+  .sign-panel .web-id-text {
+    padding: 0 5px 0 5px;
+  }
+  .sign-panel .select-image-btn {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    font-weight: 400;
+    color: #2175c8;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: transparent;
+    border: none;
+  }
+  .sign-panel .select-image-btn:focus {
+    outline: 1px dotted black;
+    outline-offset: -10px;
+  }
+  .sign-panel .single-title {
+    margin: 0 0 0 20px;
+    line-height: 60px;
+    color: #333;
+  }
+  .sign-panel .icons {
+    display: block;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../packages/sign-panel/dist/images/icons.png);
+  }
+  .sign-panel .icons.type-signature {
+    background-position: -13px -13px;
+  }
+  .sign-panel .icons.type-signature.selected {
+    background-position: -13px -63px;
+  }
+  .sign-panel .icons.draw-signature {
+    background-position: -63px -13px;
+  }
+  .sign-panel .icons.draw-signature.selected {
+    background-position: -63px -63px;
+  }
+  .sign-panel .icons.image-signature {
+    background-position: -113px -13px;
+  }
+  .sign-panel .icons.image-signature.selected {
+    background-position: -113px -63px;
+  }
+  .sign-panel .icons.stamp-signature {
+    background-position: -214px -12px;
+  }
+  .sign-panel .icons.stamp-signature.selected {
+    background-position: -214px -62px;
+  }
+  .sign-panel .icons.image-rotate-tool {
+    background-position: -262px -12px;
+  }
+  .sign-panel .icons.image-rotate-tool:hover,
+  .sign-panel .icons.image-rotate-tool:focus {
+    background-position: -262px -62px;
+  }
+  .sign-panel .mobile-signature .icons {
+    background-position: -163px -13px;
+  }
+  .sign-panel .mobile-signature .icons.selected {
+    background-position: -163px -63px;
+  }
+  .sign-panel ul.sign-panel-options {
+    margin: auto !important;
+    list-style-type: none;
+    height: 60px;
+    width: 100%;
+  }
+  .sign-panel ul.sign-panel-options li.option {
+    display: inline-block !important;
+    margin: 0 10px 0 5px;
+    cursor: pointer;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected {
+    border-bottom: 3px solid #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected .title {
+    color: #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option .title {
+    font-size: 12px;
+    color: #575757;
+    margin: 6px 0 6px !important;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option {
+    padding-top: 8px;
+  }
+  .sign-panel ul.sign-panel-options.single-option a.icons {
+    display: none;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option.left .single-title {
+    line-height: 1em;
+    font-weight: 100;
+    padding-left: 0;
+    margin: 0 0 6px;
+  }
+  .sign-panel .save-checkbox-row {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  .sign-panel .save-checkbox-row .save-checkbox.form-control {
+    padding: 0;
+  }
+  .sign-panel .close.clear-name {
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    line-height: 32px;
+    width: 22px;
+    right: 5px;
+    z-index: 3;
+  }
+  .sign-panel .close.clear-name:focus {
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:focus,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:focus,
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:hover,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:hover {
+    background-color: transparent;
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown {
+    margin: 0 7px 15px 7px;
+  }
+  .sign-panel button.send-text {
+    margin: 0 7px;
+    display: inline-block;
+    width: auto;
+    border-radius: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad {
+    -ms-touch-action: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.arialunicode_nonlatin {
+    font-size: 28pt;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    /* base64 encoding of images/esignJS/pen_cursor.png */
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABh0RVh0Q3JlYXRpb24gVGltZQAwMy4wNS4yMDEzUUQ6KQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAK7SURBVFiF7dZvSBNhHAfw73PdJkEdMkHD7qFiBLKNcETRi0BNo15E9CJ2MOiF0IuoVyL0JlRYZCqDregPMWFvomEoBEEwEFRwe9cL680F4pvbDrQRul5p2bcXbUtxYtBtvvEHxz3P737c73Pw3HMHki9IviPpR52DJBQAwuVyXZyfn39F8ny9ESD5EgD/DPmB5Lk69oYC4Fc5oev65srKyjBJo14IpXSe83g8CAaD17xe74nl5eUwyev1AKjlQTgcRkNDA3p6ek5LKTcsy7pN0gPgjRBio+aArq4uDAwMYHp6GgD8UkrkcrlQc3PzcQCPag4AAMMwMDExAcMwAMDf0tLyM5/PnyQ5AmBYCFF0XEDyOYDZqakpmqZJn89H27Zp2zbj8TgbGxs/5/P5BMkkyaMO964sQgCApmkIBALIZrMAgFAohMnJyYDf77+wtLT0BcA9JwEAtgMAoL+/H4lEojL3+XyIxWIBr9d7FYCsOUBKiXQ6jdbW1kpO0zS0tbV9BfCj5oDdQlXVVQDfnAZU3oJi8e8Ct217R6GU8hiABacBCoD1zs7O2d7e3rXx8fG96tdrAYjPzMy4k8lkfGhoqNjX11e9UFEUAJdIvid5xmkISN7KZDJRRVE+GYZR2Qts26ZpmgwGg9lQKDSn63qcZIrkYQd6bpuoJK9kMpmoEGItEonQNE1GIhFKKYnSJxvAqmVZMZKXHQVsSQ6mUqm0pmnUNG1r48rR0dHxjGTccQDJQ5ZlPVFVNVetcelYbWpqGiP51AnAtn1ACLGp67pwuVxWlfqF7u7uh4uLi8OFQmEDwNv/BeymujE6OjqG0tO63e7X0Wj0LskHJAdJBkmqe93nH3tVTR4hOdLe3n7fNM07JB+TvFn6OXE0SELscuEUgLMACgA+CiG+O928DNjX2LEI9yMOAAeAA8Bvl2RrTNW+ltQAAAAASUVORK5CYII=') 0 0, default;
+    margin: 0;
+    display: block;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas:not(.empty) .placeholder {
+    display: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .placeholder {
+    font-family: "adobe-hand-b", sans-serif;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas {
+    touch-action: pinch-zoom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas:focus {
+    outline: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    width: 100%;
+    display: flex;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    border: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image {
+    width: 100%;
+    display: table;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas img.signature {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad {
+    position: absolute;
+    padding: 2% 5%;
+    margin: 2px 0;
+    font-size: 13px;
+    right: 0;
+    text-decoration: none;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad:focus,
+  .sign-panel .signature-pad-wrapper .clear-pad:hover {
+    outline-offset: -5px;
+    background-color: transparent;
+  }
+  .sign-panel .signature-pad-wrapper .spinner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-info {
+    top: 64%;
+    position: absolute;
+    height: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #2175c8;
+    background-color: transparent;
+    font-size: 12px;
+    width: 100%;
+    color: #4b4b4b;
+  }
+  .sign-panel .phone-number-wrapper {
+    margin: auto;
+    padding-top: 15px;
+    margin: 0;
+  }
+  .sign-panel .phone-number-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    margin: auto;
+  }
+  .sign-panel input.signature-name::-ms-clear,
+  .sign-panel input.phone-number::-ms-clear,
+  .sign-panel input.signature-type-name::-ms-clear {
+    display: none;
+  }
+  .sign-panel input.signature-name,
+  .sign-panel input.phone-number {
+    padding-right: 24px !important;
+  }
+  .sign-panel:not(.image) .signature-panel-tools,
+  .sign-panel.empty .signature-panel-tools {
+    display: none;
+  }
+  .sign-panel .sign-panel-footer {
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 25px 12px 25px;
+    display: block;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools {
+    padding: 7px 0 0 10px;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools .image-rotate-tool {
+    margin: 3px 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons {
+    flex: 0 0 auto;
+    padding: 5px 0 0 15px;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons .cancel,
+  .sign-panel .sign-panel-footer .footer-buttons .apply {
+    min-width: 100px;
+    min-height: 34px;
+    margin-left: 6px;
+  }
+  [lang=fi-FI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=hu-HU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=is-IS] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ja-JP] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=vi-VN] .sign-panel.initials .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel.initials .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name.ie-placeholder {
+    font-size: 15.3px !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (max-width: 992px) and (min-resolution: 192dpi) {
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete2x.gif) transparent no-repeat;
+    background-size: contain;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert2x.png) transparent no-repeat;
+    background-size: contain;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (max-width: 480px) {
+  .sign-panel .sign-panel-body .save-checkbox-row {
+    top: 5px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .image-canvas .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel .sign-panel-body .clear-name {
+    top: 14px;
+  }
+  .sign-panel .sign-panel-body .footer-buttons {
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (max-width: 992px) and (min-resolution: 192dpi) {
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded-2x.png);
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (max-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    float: left;
+    padding: 14px 0 15px 0 !important;
+    margin: 0 5px !important;
+  }
+  .sign-panel.saveAllowed .sign-panel-options .option .title {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 -1px -1px 0 !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (max-width: 768px) {
+  .sign-panel .single-title {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (max-width: 992px) and (min-resolution: 192dpi) {
+  .sign-panel .icons {
+    background-image: url(../../../packages/sign-panel/dist/images/icons-2x.png);
+    background-size: auto 100px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) and (max-width: 1200px) {
+  [lang=da-DK] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=fi-FI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=nl-NL] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=tr-TR] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=id-ID] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt {
+    font-size: 15.3px !important;
+  }
+}
+/*** Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .sign-panel {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+  }
+  .sign-panel .alert {
+    margin: 0 25px 25px 25px;
+  }
+  .sign-panel.signature,
+  .sign-panel.stamp {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials .signature-pad-marketing-sticky {
+    display: none;
+  }
+  .sign-panel.initials .signature-pad-wrapper {
+    outline: solid 1px #c2c2c2;
+  }
+  .sign-panel.initials .signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel.events-disabled-ondrag {
+    pointer-events: none;
+  }
+  .sign-panel:not(.mobile) .signature-pad-wrapper {
+    margin: auto;
+    overflow: hidden;
+  }
+  .sign-panel input.signature-name {
+    width: 240px;
+  }
+  .sign-panel input.phone-number {
+    width: 200px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .sign-panel .sign-panel-options {
+    text-align: center;
+    padding: 10px 25px 0 25px;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-options .option {
+    text-align: center;
+  }
+  .sign-panel .placeholder {
+    text-align: center;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+    background-color: transparent;
+    opacity: 0.66;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .sign-panel .signature-pad-wrapper.focused,
+  .sign-panel .signature-pad-wrapper.dragged {
+    outline-color: #2175c8;
+  }
+  .sign-panel .signature-pad-wrapper .defaultTxt {
+    font-size: 28px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name {
+    height: 100%;
+    width: 100%;
+    font-size: 44px !important;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 28px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .select-image-btn {
+    font-size: 28px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 200px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas .mobile-canvas-inner {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert {
+    text-align: left;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting {
+    display: flex;
+    color: #fff;
+    background-color: #2175c8;
+    border: none;
+    border-radius: 4px;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting .close {
+    color: #fff;
+    opacity: 1;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete.gif) transparent no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert.png) transparent no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 24px;
+    margin-right: 15px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-content {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link {
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:hover,
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:focus {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire {
+    display: inline-block;
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 51px !important;
+  }
+  html.reduced-font-lang .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky {
+    background: transparent no-repeat scroll 25px 0;
+    background-size: contain;
+    width: 100%;
+    height: 64%;
+    position: absolute;
+    pointer-events: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded.png);
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky.adobeBranded {
+    background-image: url(../../../packages/sign-panel/dist/images/AdobeSignBranded.svg);
+  }
+  .sign-panel {
+    display: block;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .sign-panel #lastHiddenElement,
+  .sign-panel #firstHiddenElement {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .sign-panel .input-group .form-control:first-child,
+  .sign-panel .form-control:not(:first-child):not(:last-child),
+  .sign-panel .phone-number-wrapper .form-control {
+    border-radius: 4px;
+  }
+  .sign-panel .form-control.phone-number {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  .sign-panel .input-group {
+    width: auto;
+    padding-top: 5px;
+  }
+  .sign-panel .input-group-text {
+    padding: 0;
+  }
+  .sign-panel .signature-name::placeholder {
+    font-style: italic;
+  }
+  .sign-panel .modal-content {
+    padding: 0;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 25px 0 0 0;
+    min-height: 220px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad {
+    top: 64%;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad:focus {
+    outline: 1px dotted black;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad.disabled {
+    cursor: default;
+    text-decoration: none;
+    color: #ccc;
+  }
+  .sign-panel .tooltip {
+    margin-top: 0 !important;
+  }
+  .sign-panel .sign-panel-header {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 71px;
+  }
+  .sign-panel .sign-panel-header .popover,
+  .sign-panel .sign-panel-header .popover-header,
+  .sign-panel .sign-panel-header .popover-body {
+    color: #fff;
+    background-color: #2175c8;
+    border-radius: 5px;
+  }
+  .sign-panel .sign-panel-header .popover .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-header .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-body .bottom > .arrow {
+    border-bottom-color: transparent;
+  }
+  .sign-panel .sign-panel-header .popover .popover-title,
+  .sign-panel .sign-panel-header .popover-header .popover-title,
+  .sign-panel .sign-panel-header .popover-body .popover-title {
+    display: none;
+  }
+  .sign-panel .sign-panel-header .popover .arrow:after,
+  .sign-panel .sign-panel-header .popover-header .arrow:after,
+  .sign-panel .sign-panel-header .popover-body .arrow:after {
+    border-bottom-color: #2175c8;
+  }
+  .sign-panel .signature-panel-inner .left {
+    margin-left: -10%;
+  }
+  .sign-panel .web-id-text {
+    padding: 0 5px 0 5px;
+  }
+  .sign-panel .select-image-btn {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    font-weight: 400;
+    color: #2175c8;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: transparent;
+    border: none;
+  }
+  .sign-panel .select-image-btn:focus {
+    outline: 1px dotted black;
+    outline-offset: -10px;
+  }
+  .sign-panel .single-title {
+    margin: 0 0 0 20px;
+    line-height: 60px;
+    color: #333;
+  }
+  .sign-panel .icons {
+    display: block;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../packages/sign-panel/dist/images/icons.png);
+  }
+  .sign-panel .icons.type-signature {
+    background-position: -13px -13px;
+  }
+  .sign-panel .icons.type-signature.selected {
+    background-position: -13px -63px;
+  }
+  .sign-panel .icons.draw-signature {
+    background-position: -63px -13px;
+  }
+  .sign-panel .icons.draw-signature.selected {
+    background-position: -63px -63px;
+  }
+  .sign-panel .icons.image-signature {
+    background-position: -113px -13px;
+  }
+  .sign-panel .icons.image-signature.selected {
+    background-position: -113px -63px;
+  }
+  .sign-panel .icons.stamp-signature {
+    background-position: -214px -12px;
+  }
+  .sign-panel .icons.stamp-signature.selected {
+    background-position: -214px -62px;
+  }
+  .sign-panel .icons.image-rotate-tool {
+    background-position: -262px -12px;
+  }
+  .sign-panel .icons.image-rotate-tool:hover,
+  .sign-panel .icons.image-rotate-tool:focus {
+    background-position: -262px -62px;
+  }
+  .sign-panel .mobile-signature .icons {
+    background-position: -163px -13px;
+  }
+  .sign-panel .mobile-signature .icons.selected {
+    background-position: -163px -63px;
+  }
+  .sign-panel ul.sign-panel-options {
+    margin: auto !important;
+    list-style-type: none;
+    height: 60px;
+    width: 100%;
+  }
+  .sign-panel ul.sign-panel-options li.option {
+    display: inline-block !important;
+    margin: 0 10px 0 5px;
+    cursor: pointer;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected {
+    border-bottom: 3px solid #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected .title {
+    color: #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option .title {
+    font-size: 12px;
+    color: #575757;
+    margin: 6px 0 6px !important;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option {
+    padding-top: 8px;
+  }
+  .sign-panel ul.sign-panel-options.single-option a.icons {
+    display: none;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option.left .single-title {
+    line-height: 1em;
+    font-weight: 100;
+    padding-left: 0;
+    margin: 0 0 6px;
+  }
+  .sign-panel .save-checkbox-row {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  .sign-panel .save-checkbox-row .save-checkbox.form-control {
+    padding: 0;
+  }
+  .sign-panel .close.clear-name {
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    line-height: 32px;
+    width: 22px;
+    right: 5px;
+    z-index: 3;
+  }
+  .sign-panel .close.clear-name:focus {
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:focus,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:focus,
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:hover,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:hover {
+    background-color: transparent;
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown {
+    margin: 0 7px 15px 7px;
+  }
+  .sign-panel button.send-text {
+    margin: 0 7px;
+    display: inline-block;
+    width: auto;
+    border-radius: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad {
+    -ms-touch-action: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.arialunicode_nonlatin {
+    font-size: 28pt;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    /* base64 encoding of images/esignJS/pen_cursor.png */
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABh0RVh0Q3JlYXRpb24gVGltZQAwMy4wNS4yMDEzUUQ6KQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAK7SURBVFiF7dZvSBNhHAfw73PdJkEdMkHD7qFiBLKNcETRi0BNo15E9CJ2MOiF0IuoVyL0JlRYZCqDregPMWFvomEoBEEwEFRwe9cL680F4pvbDrQRul5p2bcXbUtxYtBtvvEHxz3P737c73Pw3HMHki9IviPpR52DJBQAwuVyXZyfn39F8ny9ESD5EgD/DPmB5Lk69oYC4Fc5oev65srKyjBJo14IpXSe83g8CAaD17xe74nl5eUwyev1AKjlQTgcRkNDA3p6ek5LKTcsy7pN0gPgjRBio+aArq4uDAwMYHp6GgD8UkrkcrlQc3PzcQCPag4AAMMwMDExAcMwAMDf0tLyM5/PnyQ5AmBYCFF0XEDyOYDZqakpmqZJn89H27Zp2zbj8TgbGxs/5/P5BMkkyaMO964sQgCApmkIBALIZrMAgFAohMnJyYDf77+wtLT0BcA9JwEAtgMAoL+/H4lEojL3+XyIxWIBr9d7FYCsOUBKiXQ6jdbW1kpO0zS0tbV9BfCj5oDdQlXVVQDfnAZU3oJi8e8Ct217R6GU8hiABacBCoD1zs7O2d7e3rXx8fG96tdrAYjPzMy4k8lkfGhoqNjX11e9UFEUAJdIvid5xmkISN7KZDJRRVE+GYZR2Qts26ZpmgwGg9lQKDSn63qcZIrkYQd6bpuoJK9kMpmoEGItEonQNE1GIhFKKYnSJxvAqmVZMZKXHQVsSQ6mUqm0pmnUNG1r48rR0dHxjGTccQDJQ5ZlPVFVNVetcelYbWpqGiP51AnAtn1ACLGp67pwuVxWlfqF7u7uh4uLi8OFQmEDwNv/BeymujE6OjqG0tO63e7X0Wj0LskHJAdJBkmqe93nH3tVTR4hOdLe3n7fNM07JB+TvFn6OXE0SELscuEUgLMACgA+CiG+O928DNjX2LEI9yMOAAeAA8Bvl2RrTNW+ltQAAAAASUVORK5CYII=') 0 0, default;
+    margin: 0;
+    display: block;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas:not(.empty) .placeholder {
+    display: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .placeholder {
+    font-family: "adobe-hand-b", sans-serif;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas {
+    touch-action: pinch-zoom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas:focus {
+    outline: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    width: 100%;
+    display: flex;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    border: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image {
+    width: 100%;
+    display: table;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas img.signature {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad {
+    position: absolute;
+    padding: 2% 5%;
+    margin: 2px 0;
+    font-size: 13px;
+    right: 0;
+    text-decoration: none;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad:focus,
+  .sign-panel .signature-pad-wrapper .clear-pad:hover {
+    outline-offset: -5px;
+    background-color: transparent;
+  }
+  .sign-panel .signature-pad-wrapper .spinner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-info {
+    top: 64%;
+    position: absolute;
+    height: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #2175c8;
+    background-color: transparent;
+    font-size: 12px;
+    width: 100%;
+    color: #4b4b4b;
+  }
+  .sign-panel .phone-number-wrapper {
+    margin: auto;
+    padding-top: 15px;
+    margin: 0;
+  }
+  .sign-panel .phone-number-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    margin: auto;
+  }
+  .sign-panel input.signature-name::-ms-clear,
+  .sign-panel input.phone-number::-ms-clear,
+  .sign-panel input.signature-type-name::-ms-clear {
+    display: none;
+  }
+  .sign-panel input.signature-name,
+  .sign-panel input.phone-number {
+    padding-right: 24px !important;
+  }
+  .sign-panel:not(.image) .signature-panel-tools,
+  .sign-panel.empty .signature-panel-tools {
+    display: none;
+  }
+  .sign-panel .sign-panel-footer {
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 25px 12px 25px;
+    display: block;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools {
+    padding: 7px 0 0 10px;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools .image-rotate-tool {
+    margin: 3px 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons {
+    flex: 0 0 auto;
+    padding: 5px 0 0 15px;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons .cancel,
+  .sign-panel .sign-panel-footer .footer-buttons .apply {
+    min-width: 100px;
+    min-height: 34px;
+    margin-left: 6px;
+  }
+  [lang=fi-FI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=hu-HU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=is-IS] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ja-JP] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=vi-VN] .sign-panel.initials .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  .sign-panel.initials .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name.ie-placeholder {
+    font-size: 15.3px !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 992px) and (max-width: 1200px) and (min-resolution: 192dpi) {
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete2x.gif) transparent no-repeat;
+    background-size: contain;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert2x.png) transparent no-repeat;
+    background-size: contain;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (max-width: 480px) {
+  .sign-panel .sign-panel-body .save-checkbox-row {
+    top: 5px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .image-canvas .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel .sign-panel-body .clear-name {
+    top: 14px;
+  }
+  .sign-panel .sign-panel-body .footer-buttons {
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 992px) and (max-width: 1200px) and (min-resolution: 192dpi) {
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded-2x.png);
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (max-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    float: left;
+    padding: 14px 0 15px 0 !important;
+    margin: 0 5px !important;
+  }
+  .sign-panel.saveAllowed .sign-panel-options .option .title {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 -1px -1px 0 !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (max-width: 768px) {
+  .sign-panel .single-title {
+    font-size: 20px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 992px) and (max-width: 1200px) and (min-resolution: 192dpi) {
+  .sign-panel .icons {
+    background-image: url(../../../packages/sign-panel/dist/images/icons-2x.png);
+    background-size: auto 100px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) and (max-width: 1200px) {
+  [lang=da-DK] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=fi-FI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=nl-NL] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=tr-TR] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .default-draw-txt {
+    font-size: 30.6px !important;
+  }
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=id-ID] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt {
+    font-size: 15.3px !important;
+  }
+}
+/*** Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .sign-panel {
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+  }
+  .sign-panel .alert {
+    margin: 0 25px 25px 25px;
+  }
+  .sign-panel.signature,
+  .sign-panel.stamp {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials {
+    max-width: 700px;
+    min-width: 320px;
+  }
+  .sign-panel.initials .signature-pad-marketing-sticky {
+    display: none;
+  }
+  .sign-panel.initials .signature-pad-wrapper {
+    outline: solid 1px #c2c2c2;
+  }
+  .sign-panel.initials .signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px !important;
+  }
+  .sign-panel.initials .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel.events-disabled-ondrag {
+    pointer-events: none;
+  }
+  .sign-panel:not(.mobile) .signature-pad-wrapper {
+    margin: auto;
+    overflow: hidden;
+  }
+  .sign-panel input.signature-name {
+    width: 240px;
+  }
+  .sign-panel input.phone-number {
+    width: 200px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .sign-panel .sign-panel-options {
+    text-align: center;
+    padding: 10px 25px 0 25px;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-options .option {
+    text-align: center;
+  }
+  .sign-panel .placeholder {
+    text-align: center;
+    font-weight: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #000;
+    background-color: transparent;
+    opacity: 0.66;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  .sign-panel .signature-pad-wrapper.focused,
+  .sign-panel .signature-pad-wrapper.dragged {
+    outline-color: #2175c8;
+  }
+  .sign-panel .signature-pad-wrapper .defaultTxt {
+    font-size: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name {
+    height: 100%;
+    width: 100%;
+    font-size: 60px !important;
+    color: #000;
+    background-color: transparent;
+    text-align: center;
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 36px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 36px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 36px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 36px;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.2;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    height: 200px;
+    line-height: 200px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .select-image-btn {
+    font-size: 36px;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas {
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: 200px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .mobile-canvas .mobile-canvas-inner {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert {
+    text-align: left;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting {
+    display: flex;
+    color: #fff;
+    background-color: #2175c8;
+    border: none;
+    border-radius: 4px;
+  }
+  .sign-panel .sign-panel-body .alert.mobile-alert-waiting .close {
+    color: #fff;
+    opacity: 1;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete.gif) transparent no-repeat;
+    background-size: contain;
+    height: 60px;
+    width: 60px;
+    margin-left: -10px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert.png) transparent no-repeat;
+    background-size: contain;
+    height: 36px;
+    width: 24px;
+    margin-right: 15px;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-content {
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link {
+    margin: 0;
+    font-weight: bold;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+    vertical-align: baseline;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:hover,
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-cancel-link:focus {
+    text-decoration: underline;
+    background-color: transparent;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-expire {
+    display: inline-block;
+    font-style: italic;
+    margin-top: 10px;
+    margin-left: 15px;
+  }
+  .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 60px !important;
+  }
+  html.reduced-font-lang .sign-panel .signature-pad-wrapper .default-draw-txt {
+    font-size: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky {
+    background: transparent no-repeat scroll 25px 0;
+    background-size: contain;
+    width: 100%;
+    height: 64%;
+    position: absolute;
+    pointer-events: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded.png);
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky.adobeBranded {
+    background-image: url(../../../packages/sign-panel/dist/images/AdobeSignBranded.svg);
+  }
+  .mobile-portrait {
+    display: none;
+  }
+  .sign-panel {
+    display: block;
+    font-family: adobe, "adobe-clean-n4", "adobe-clean", Helvetica, Arial, sans-serif;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+  }
+  .sign-panel #lastHiddenElement,
+  .sign-panel #firstHiddenElement {
+    opacity: 0;
+    height: 0;
+    width: 0;
+  }
+  .sign-panel .input-group .form-control:first-child,
+  .sign-panel .form-control:not(:first-child):not(:last-child),
+  .sign-panel .phone-number-wrapper .form-control {
+    border-radius: 4px;
+  }
+  .sign-panel .form-control.phone-number {
+    height: calc(1.5em + 0.75rem + 2px);
+  }
+  .sign-panel .input-group {
+    width: auto;
+    padding-top: 5px;
+  }
+  .sign-panel .input-group-text {
+    padding: 0;
+  }
+  .sign-panel .signature-name::placeholder {
+    font-style: italic;
+  }
+  .sign-panel .modal-content {
+    padding: 0;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 25px 0 0 0;
+    min-height: 220px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad {
+    top: 64%;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad:focus {
+    outline: 1px dotted black;
+    border-radius: 4px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .clear-pad.disabled {
+    cursor: default;
+    text-decoration: none;
+    color: #ccc;
+  }
+  .sign-panel .tooltip {
+    margin-top: 0 !important;
+  }
+  .sign-panel .sign-panel-header {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 71px;
+  }
+  .sign-panel .sign-panel-header .popover,
+  .sign-panel .sign-panel-header .popover-header,
+  .sign-panel .sign-panel-header .popover-body {
+    color: #fff;
+    background-color: #2175c8;
+    border-radius: 5px;
+  }
+  .sign-panel .sign-panel-header .popover .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-header .bottom > .arrow,
+  .sign-panel .sign-panel-header .popover-body .bottom > .arrow {
+    border-bottom-color: transparent;
+  }
+  .sign-panel .sign-panel-header .popover .popover-title,
+  .sign-panel .sign-panel-header .popover-header .popover-title,
+  .sign-panel .sign-panel-header .popover-body .popover-title {
+    display: none;
+  }
+  .sign-panel .sign-panel-header .popover .arrow:after,
+  .sign-panel .sign-panel-header .popover-header .arrow:after,
+  .sign-panel .sign-panel-header .popover-body .arrow:after {
+    border-bottom-color: #2175c8;
+  }
+  .sign-panel .signature-panel-inner .left {
+    margin-left: -10%;
+  }
+  .sign-panel .web-id-text {
+    padding: 0 5px 0 5px;
+  }
+  .sign-panel .select-image-btn {
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    position: absolute;
+    font-weight: 400;
+    color: #2175c8;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-color: transparent;
+    border: none;
+  }
+  .sign-panel .select-image-btn:focus {
+    outline: 1px dotted black;
+    outline-offset: -10px;
+  }
+  .sign-panel .single-title {
+    margin: 0 0 0 20px;
+    line-height: 60px;
+    color: #333;
+  }
+  .sign-panel .icons {
+    display: block;
+    margin: auto;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../packages/sign-panel/dist/images/icons.png);
+  }
+  .sign-panel .icons.type-signature {
+    background-position: -13px -13px;
+  }
+  .sign-panel .icons.type-signature.selected {
+    background-position: -13px -63px;
+  }
+  .sign-panel .icons.draw-signature {
+    background-position: -63px -13px;
+  }
+  .sign-panel .icons.draw-signature.selected {
+    background-position: -63px -63px;
+  }
+  .sign-panel .icons.image-signature {
+    background-position: -113px -13px;
+  }
+  .sign-panel .icons.image-signature.selected {
+    background-position: -113px -63px;
+  }
+  .sign-panel .icons.stamp-signature {
+    background-position: -214px -12px;
+  }
+  .sign-panel .icons.stamp-signature.selected {
+    background-position: -214px -62px;
+  }
+  .sign-panel .icons.image-rotate-tool {
+    background-position: -262px -12px;
+  }
+  .sign-panel .icons.image-rotate-tool:hover,
+  .sign-panel .icons.image-rotate-tool:focus {
+    background-position: -262px -62px;
+  }
+  .sign-panel .mobile-signature .icons {
+    background-position: -163px -13px;
+  }
+  .sign-panel .mobile-signature .icons.selected {
+    background-position: -163px -63px;
+  }
+  .sign-panel ul.sign-panel-options {
+    margin: auto !important;
+    list-style-type: none;
+    height: 60px;
+    width: 100%;
+  }
+  .sign-panel ul.sign-panel-options li.option {
+    display: inline-block !important;
+    margin: 0 10px 0 5px;
+    cursor: pointer;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected {
+    border-bottom: 3px solid #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option.selected .title {
+    color: #2175c8;
+  }
+  .sign-panel ul.sign-panel-options li.option .title {
+    font-size: 12px;
+    color: #575757;
+    margin: 6px 0 6px !important;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option {
+    padding-top: 8px;
+  }
+  .sign-panel ul.sign-panel-options.single-option a.icons {
+    display: none;
+  }
+  .sign-panel ul.sign-panel-options.single-option li.option.left .single-title {
+    line-height: 1em;
+    font-weight: 100;
+    padding-left: 0;
+    margin: 0 0 6px;
+  }
+  .sign-panel .save-checkbox-row {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+  .sign-panel .save-checkbox-row .save-checkbox.form-control {
+    padding: 0;
+  }
+  .sign-panel .close.clear-name {
+    position: absolute;
+    background-color: transparent;
+    border: 0;
+    line-height: 32px;
+    width: 22px;
+    right: 5px;
+    z-index: 3;
+  }
+  .sign-panel .close.clear-name:focus {
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:focus,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:focus,
+  .sign-panel .intl-tel-input.allow-dropdown .selected-flag:hover,
+  .sign-panel .intl-tel-input.separate-dial-code .selected-flag:hover {
+    background-color: transparent;
+    outline: dotted 1px black;
+  }
+  .sign-panel .intl-tel-input.allow-dropdown {
+    margin: 0 7px 15px 7px;
+  }
+  .sign-panel button.send-text {
+    margin: 0 7px;
+    display: inline-block;
+    width: auto;
+    border-radius: 36px !important;
+  }
+  .sign-panel .signature-pad-wrapper {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad {
+    -ms-touch-action: none;
+    width: 100%;
+    text-align: left;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas {
+    cursor: default;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.defaultTxt {
+    color: #ccc;
+    font-weight: 300;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .type-canvas.arialunicode_nonlatin {
+    font-size: 28pt;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas {
+    /* base64 encoding of images/esignJS/pen_cursor.png */
+    cursor: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABh0RVh0Q3JlYXRpb24gVGltZQAwMy4wNS4yMDEzUUQ6KQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAK7SURBVFiF7dZvSBNhHAfw73PdJkEdMkHD7qFiBLKNcETRi0BNo15E9CJ2MOiF0IuoVyL0JlRYZCqDregPMWFvomEoBEEwEFRwe9cL680F4pvbDrQRul5p2bcXbUtxYtBtvvEHxz3P737c73Pw3HMHki9IviPpR52DJBQAwuVyXZyfn39F8ny9ESD5EgD/DPmB5Lk69oYC4Fc5oev65srKyjBJo14IpXSe83g8CAaD17xe74nl5eUwyev1AKjlQTgcRkNDA3p6ek5LKTcsy7pN0gPgjRBio+aArq4uDAwMYHp6GgD8UkrkcrlQc3PzcQCPag4AAMMwMDExAcMwAMDf0tLyM5/PnyQ5AmBYCFF0XEDyOYDZqakpmqZJn89H27Zp2zbj8TgbGxs/5/P5BMkkyaMO964sQgCApmkIBALIZrMAgFAohMnJyYDf77+wtLT0BcA9JwEAtgMAoL+/H4lEojL3+XyIxWIBr9d7FYCsOUBKiXQ6jdbW1kpO0zS0tbV9BfCj5oDdQlXVVQDfnAZU3oJi8e8Ct217R6GU8hiABacBCoD1zs7O2d7e3rXx8fG96tdrAYjPzMy4k8lkfGhoqNjX11e9UFEUAJdIvid5xmkISN7KZDJRRVE+GYZR2Qts26ZpmgwGg9lQKDSn63qcZIrkYQd6bpuoJK9kMpmoEGItEonQNE1GIhFKKYnSJxvAqmVZMZKXHQVsSQ6mUqm0pmnUNG1r48rR0dHxjGTccQDJQ5ZlPVFVNVetcelYbWpqGiP51AnAtn1ACLGp67pwuVxWlfqF7u7uh4uLi8OFQmEDwNv/BeymujE6OjqG0tO63e7X0Wj0LskHJAdJBkmqe93nH3tVTR4hOdLe3n7fNM07JB+TvFn6OXE0SELscuEUgLMACgA+CiG+O928DNjX2LEI9yMOAAeAA8Bvl2RrTNW+ltQAAAAASUVORK5CYII=') 0 0, default;
+    margin: 0;
+    display: block;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas:not(.empty) .placeholder {
+    display: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .placeholder {
+    font-family: "adobe-hand-b", sans-serif;
+    white-space: pre-wrap;
+    /* CSS3 */
+    white-space: -moz-pre-wrap;
+    /* Firefox */
+    white-space: -o-pre-wrap;
+    /* Opera 7 */
+    word-wrap: break-word;
+    /* IE */
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas {
+    touch-action: pinch-zoom;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .draw-canvas .cnvsCanvas:focus {
+    outline: 0;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas {
+    width: 100%;
+    display: flex;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas input {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    border: none;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image {
+    width: 100%;
+    display: table;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas .uploaded-object-container.image div {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .sign-panel .signature-pad-wrapper .signature-pad .image-canvas img.signature {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad {
+    position: absolute;
+    padding: 2% 5%;
+    margin: 2px 0;
+    font-size: 13px;
+    right: 0;
+    text-decoration: none;
+  }
+  .sign-panel .signature-pad-wrapper .clear-pad:focus,
+  .sign-panel .signature-pad-wrapper .clear-pad:hover {
+    outline-offset: -5px;
+    background-color: transparent;
+  }
+  .sign-panel .signature-pad-wrapper .spinner-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .sign-panel .signature-pad-wrapper .signature-info {
+    top: 64%;
+    position: absolute;
+    height: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #2175c8;
+    background-color: transparent;
+    font-size: 12px;
+    width: 100%;
+    color: #4b4b4b;
+  }
+  .sign-panel .phone-number-wrapper {
+    margin: auto;
+    padding-top: 15px;
+    margin: 0;
+  }
+  .sign-panel .phone-number-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-top: 15px;
+    margin: auto;
+  }
+  .sign-panel input.signature-name::-ms-clear,
+  .sign-panel input.phone-number::-ms-clear,
+  .sign-panel input.signature-type-name::-ms-clear {
+    display: none;
+  }
+  .sign-panel input.signature-name,
+  .sign-panel input.phone-number {
+    padding-right: 24px !important;
+  }
+  .sign-panel:not(.image) .signature-panel-tools,
+  .sign-panel.empty .signature-panel-tools {
+    display: none;
+  }
+  .sign-panel .sign-panel-footer {
+    flex-wrap: nowrap;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 25px 12px 25px;
+    display: block;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools {
+    padding: 7px 0 0 10px;
+  }
+  .sign-panel .sign-panel-footer .signature-panel-tools .image-rotate-tool {
+    margin: 3px 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons {
+    flex: 0 0 auto;
+    padding: 5px 0 0 15px;
+  }
+  .sign-panel .sign-panel-footer .footer-buttons .cancel,
+  .sign-panel .sign-panel-footer .footer-buttons .apply {
+    min-width: 100px;
+    min-height: 34px;
+    margin-left: 6px;
+  }
+  [lang=fi-FI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=hu-HU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=is-IS] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ja-JP] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.initials .signature-pad-wrapper .default-draw-txt,
+  [lang=vi-VN] .sign-panel.initials .signature-pad-wrapper .default-draw-txt {
+    font-size: 36px !important;
+  }
+  .sign-panel.initials .signature-pad-wrapper .signature-pad .type-canvas input.signature-type-name.ie-placeholder {
+    font-size: 18px !important;
+  }
+}
+@media (min-width: 1200px) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+}
+@media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi) {
+  .sign-panel .sign-panel-body .alert .mobile-alert-waiting-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-complete2x.gif) transparent no-repeat;
+    background-size: contain;
+  }
+  .sign-panel .sign-panel-body .alert .mobile-alert-error-icon {
+    background: url(../../../packages/sign-panel/dist/images/mobile-alert2x.png) transparent no-repeat;
+    background-size: contain;
+  }
+}
+@media (min-width: 1200px) and (max-width: 480px) {
+  .sign-panel .sign-panel-body .save-checkbox-row {
+    top: 5px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name::-moz-placeholder {
+    /* Firefox 19+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-ms-input-placeholder {
+    /* IE 10+ */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .type-canvas input.signature-type-name:-moz-placeholder {
+    /* Firefox 18- */
+    font-size: 18px;
+  }
+  .sign-panel .sign-panel-body .signature-pad-wrapper .image-canvas .select-image-btn {
+    font-size: 18px !important;
+  }
+  .sign-panel .sign-panel-body .clear-name {
+    top: 14px;
+  }
+  .sign-panel .sign-panel-body .footer-buttons {
+    padding-bottom: 10px;
+  }
+}
+@media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi) {
+  .sign-panel .signature-pad-wrapper .signature-pad-marketing-sticky:not(.adobeBranded) {
+    background-image: url(../../../packages/sign-panel/dist/images/adobesign-debranded-2x.png);
+  }
+}
+@media (min-width: 1200px) and (max-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    float: left;
+    padding: 14px 0 15px 0 !important;
+    margin: 0 5px !important;
+  }
+  .sign-panel.saveAllowed .sign-panel-options .option .title {
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 -1px -1px 0 !important;
+  }
+}
+@media (min-width: 1200px) and (max-width: 768px) {
+  .sign-panel .single-title {
+    font-size: 20px;
+  }
+}
+@media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1200px) and (min-resolution: 192dpi) {
+  .sign-panel .icons {
+    background-image: url(../../../packages/sign-panel/dist/images/icons-2x.png);
+    background-size: auto 100px;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1200px) {
+  [lang=da-DK] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=fi-FI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=nl-NL] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=ru-RU] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=sl-SI] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=tr-TR] .sign-panel.signature .signature-pad-wrapper .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .default-draw-txt {
+    font-size: 36px !important;
+  }
+  [lang=de-DE] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=id-ID] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=ms-MY] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt,
+  [lang=uk-UA] .sign-panel.signature .signature-pad-wrapper .ie-placeholder .default-draw-txt {
+    font-size: 18px !important;
+  }
+}
+/************* IPHONE  DEVICES ************/
+@media only screen and (max-device-width: 640px) and (orientation: portrait) {
+  .sign-panel {
+    max-width: none;
+  }
+  .sign-panel.saveAllowed .save-checkbox-row {
+    top: 10px;
+  }
+  .sign-panel .sign-panel-options .option {
+    padding: 3px 0 3px 0 !important;
+  }
+  .sign-panel .sign-panel-options {
+    padding: 0 25px;
+  }
+  .sign-panel .sign-panel-header {
+    height: auto;
+  }
+  .sign-panel input:not(.signature-type-name) {
+    font-size: 16px;
+  }
+  .sign-panel .signature-name-wrapper {
+    width: 100%;
+    margin: auto auto auto 0;
+    padding-top: 15px;
+  }
+  .sign-panel .signature-name-wrapper input {
+    width: 100%;
+  }
+  .sign-panel .signature-panel-tools {
+    padding-left: 0 !important;
+  }
+  .sign-panel.stamp .modal-content {
+    padding: 60px 0 70px 0;
+  }
+  .sign-panel.stamp .modal-content .modal-header {
+    margin-top: -60px;
+  }
+  .sign-panel.stamp .modal-content .modal-footer {
+    margin-bottom: -60px;
+  }
+  .sign-panel.stamp .modal-content .image-canvas {
+    min-height: 180px;
+    height: 100% !important;
+  }
+  .sign-panel:not(.initials):not(.stamp) .mobile-portrait {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #262626;
+    color: #fff;
+    text-align: center;
+    padding: 10px 25px;
+  }
+  .sign-panel:not(.initials):not(.stamp) .mobile-portrait .mobile-rotate-device-text {
+    margin: auto;
+    width: 80%;
+  }
+  .sign-panel:not(.initials):not(.stamp) .mobile-portrait .mobile-rotate-device-icon {
+    background: url(../../../packages/sign-panel/dist/images/rotate.gif) transparent no-repeat;
+    background-size: contain;
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    padding-top: 20px;
+    -webkit-transition: all .8s ease;
+    -moz-transition: all .8s ease;
+    -ms-transition: all .8s ease;
+    -o-transition: all .8s ease;
+    transition: all .8s ease;
+  }
+  .sign-panel:not(.initials):not(.stamp) .mobile-portrait .mobile-rotate-device-link {
+    margin-top: 15px;
+    font-weight: 400;
+    color: #fff;
+  }
+  .sign-panel:not(.initials):not(.stamp) .mobile-portrait .mobile-rotate-device-close {
+    color: #fff;
+    opacity: 1;
+    font-size: 40px;
+    font-weight: 100;
+    position: absolute;
+    top: 0;
+    right: 10px;
+  }
+  .sign-panel:not(.initials):not(.stamp) .mobile-portrait .mobile-rotate-device-close span {
+    pointer-events: none;
+  }
+}
+@media only screen and (max-device-width: 640px) and (orientation: portrait) and (max-device-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    padding: 17px 0 18px 0 !important;
+  }
+}
+@media only screen and (max-device-width: 640px) and (orientation: portrait) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+  .sign-panel .alert {
+    margin: 0;
+    position: absolute;
+    z-index: 1001;
+    border-radius: 0 !important;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 0;
+    min-height: 0 !important;
+  }
+  .sign-panel .modal-content {
+    height: 100%;
+    border: none;
+  }
+  .sign-panel .modal-footer {
+    background-color: #f0f0f0;
+    padding: 10px 25px;
+  }
+  .sign-panel.initials .sign-panel-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+@media only screen and (max-device-width: 640px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-device-width: 640px) and (orientation: portrait) and (min-resolution: 192dpi) {
+  .sign-panel:not(.initials):not(.stamp) .mobile-portrait .mobile-rotate-device-icon {
+    background: url(../../../packages/sign-panel/dist/images/rotate2x.gif) transparent no-repeat;
+    background-size: contain;
+  }
+}
+/*iPhone 4, 4S, iPod Touch 4Gen*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 960px) and (orientation: landscape) {
+  .sign-panel {
+    max-width: none;
+  }
+  .sign-panel.saveAllowed .save-checkbox-row {
+    top: 10px;
+  }
+  .sign-panel .sign-panel-options .option {
+    padding: 3px 0 3px 0 !important;
+  }
+  .sign-panel .sign-panel-options {
+    padding: 0 25px;
+  }
+  .sign-panel .sign-panel-header {
+    height: auto;
+  }
+  .sign-panel input:not(.signature-type-name) {
+    font-size: 16px;
+  }
+  .sign-panel .mobile-portrait {
+    display: none;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 960px) and (orientation: landscape) and (max-device-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    padding: 17px 0 18px 0 !important;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 960px) and (orientation: landscape) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+  .sign-panel .alert {
+    margin: 0;
+    position: absolute;
+    z-index: 1001;
+    border-radius: 0 !important;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 0;
+    min-height: 0 !important;
+  }
+  .sign-panel .modal-content {
+    height: 100%;
+    border: none;
+  }
+  .sign-panel .modal-footer {
+    background-color: #f0f0f0;
+    padding: 10px 25px;
+  }
+  .sign-panel.initials .sign-panel-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 960px) and (orientation: landscape) and (max-device-width: 768px) {
+  .sign-panel .modal-content {
+    padding: 60px 0 70px 0;
+  }
+  .sign-panel .modal-content .modal-header {
+    margin-top: -60px;
+  }
+  .sign-panel .modal-content .modal-footer {
+    margin-bottom: -60px;
+  }
+  .sign-panel .modal-content .draw-canvas,
+  .sign-panel .modal-content .type-canvas,
+  .sign-panel .modal-content .image-canvas {
+    min-height: 180px;
+    height: 100% !important;
+  }
+  .sign-panel.initials .modal-content {
+    padding: 75px 0;
+  }
+  .sign-panel.initials .modal-header {
+    margin-top: -75px;
+  }
+  .sign-panel.initials .alert {
+    top: -15px;
+  }
+}
+/*iPhone 5, iPod Touch 5Gen*/
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 1136px) and (orientation: landscape) {
+  .sign-panel {
+    max-width: none;
+  }
+  .sign-panel.saveAllowed .save-checkbox-row {
+    top: 10px;
+  }
+  .sign-panel .sign-panel-options .option {
+    padding: 3px 0 3px 0 !important;
+  }
+  .sign-panel .sign-panel-options {
+    padding: 0 25px;
+  }
+  .sign-panel .sign-panel-header {
+    height: auto;
+  }
+  .sign-panel input:not(.signature-type-name) {
+    font-size: 16px;
+  }
+  .sign-panel .mobile-portrait {
+    display: none;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 1136px) and (orientation: landscape) and (max-device-width: 640px) {
+  .sign-panel.saveAllowed .sign-panel-options .option {
+    padding: 17px 0 18px 0 !important;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 1136px) and (orientation: landscape) and (max-device-width: 768px) {
+  .sign-panel {
+    width: 100%;
+    margin: 0;
+  }
+  .sign-panel .alert {
+    margin: 0;
+    position: absolute;
+    z-index: 1001;
+    border-radius: 0 !important;
+    width: 100%;
+  }
+  .sign-panel .sign-panel-body {
+    padding: 0;
+    min-height: 0 !important;
+  }
+  .sign-panel .modal-content {
+    height: 100%;
+    border: none;
+  }
+  .sign-panel .modal-footer {
+    background-color: #f0f0f0;
+    padding: 10px 25px;
+  }
+  .sign-panel.initials .sign-panel-body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-device-width: 1136px) and (orientation: landscape) and (max-device-width: 768px) {
+  .sign-panel .modal-content {
+    padding: 60px 0 70px 0;
+  }
+  .sign-panel .modal-content .modal-header {
+    margin-top: -60px;
+  }
+  .sign-panel .modal-content .modal-footer {
+    margin-bottom: -60px;
+  }
+  .sign-panel .modal-content .draw-canvas,
+  .sign-panel .modal-content .type-canvas,
+  .sign-panel .modal-content .image-canvas {
+    min-height: 180px;
+    height: 100% !important;
+  }
+  .sign-panel.initials .modal-content {
+    padding: 75px 0;
+  }
+  .sign-panel.initials .modal-header {
+    margin-top: -75px;
+  }
+  .sign-panel.initials .alert {
+    top: -15px;
+  }
+}
+/************* ANDROID  DEVICES ************/
+/*portrait: HTC Desire, HTC Nexus One, HTC One SV, HTC Evo, HTC HD2, HTC Thunderbolt, LG Optimus 2X,
+LG LU1400, LG Optimus 3D, Lumia 710, Samsung Epic (D700), Samsung Nexus S SAMOLED, Samsung Nexus S LCD, Galaxy S Plus (I9001), Galaxy S II (I9100)*/
+/* iPad in portrait----------- */
+/*– LG G Pad tablet -*/
+/************ END - bootstrap responsive - supported viewport breakpoints -------------*****/
+.signature-panel-spinner {
+  display: none;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+/*** signature panel styles: default styles ***/
+.sign-panel.mobile .signature-name-wrapper,
+.sign-panel.type .signature-name-wrapper {
+  display: none;
+}
+.sign-panel.type .signature-pad-wrapper .scribble-top-guideline,
+.sign-panel.type .signature-pad-wrapper .scribble-middle-guideline {
+  display: none;
+}
+.sign-panel.image .signature-pad-wrapper .scribble-top-guideline,
+.sign-panel.image .signature-pad-wrapper .scribble-middle-guideline {
+  display: none;
+}
+.sign-panel.image .signature-pad-wrapper .signature-info {
+  border-top-color: transparent;
+}
+.sign-panel.image .signature-pad-wrapper .signature-pad-marketing-sticky.adobeBranded {
+  display: none;
+}
+.sign-panel.mobile .signature-pad-wrapper {
+  outline: 0;
+}
+.sign-panel.mobile .signature-pad-wrapper .clear-pad,
+.sign-panel.mobile .signature-pad-wrapper .scribble-top-guideline,
+.sign-panel.mobile .signature-pad-wrapper .scribble-middle-guideline,
+.sign-panel.mobile .signature-pad-wrapper .signature-info,
+.sign-panel.mobile .signature-pad-wrapper .signature-pad-marketing-sticky {
+  display: none;
+}
+.sign-panel.empty .clear-pad,
+.sign-panel.drawing .clear-pad,
+.sign-panel.type:not(.nameEditable) .clear-pad {
+  display: none;
+}
+.sign-panel.stamp .signature-pad-wrapper .scribble-top-guideline,
+.sign-panel.stamp .signature-pad-wrapper .scribble-middle-guideline,
+.sign-panel.stamp .signature-pad-wrapper .signature-info,
+.sign-panel.stamp .signature-pad-wrapper .signature-pad-marketing-sticky {
+  display: none;
+}
+.sign-panel.image:not(.empty) .signature-info,
+.sign-panel.image.loading .signature-info,
+.sign-panel.image:not(.empty) .signature-pad-marketing-sticky,
+.sign-panel.image.loading .signature-pad-marketing-sticky,
+.sign-panel.image:not(.empty) .select-image-btn,
+.sign-panel.image.loading .select-image-btn {
+  display: none;
+}
+.sign-panel.image.loading .signature-panel-spinner {
+  display: block;
+}
+.sign-panel:not(.type) .signature-pad .type-canvas {
+  display: none;
+}
+.sign-panel:not(.draw) .signature-pad .draw-canvas {
+  display: none;
+}
+.sign-panel:not(.image) .signature-pad .image-canvas {
+  display: none;
+}
+.sign-panel:not(.mobile) .signature-pad .mobile-canvas {
+  display: none;
+}
+.sign-panel:not(.mobile) .mobile-waiting-alert {
+  display: none;
+}
+.sign-panel.mobile .footer-buttons .apply {
+  display: none;
+}
+.signature-type-name::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #2d3030 !important;
+  opacity: 0.8 !important;
+}
+.signature-type-name::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #2d3030 !important;
+  opacity: 0.8 !important;
+}
+.signature-type-name:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #2d3030 !important;
+  opacity: 0.8 !important;
+}
+.signature-type-name:-moz-placeholder {
+  /* Firefox 18- */
+  color: #2d3030 !important;
+  opacity: 0.8 !important;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJkYy1zaWduYXR1cmUtcGFuZWwuY3NzIiwic291cmNlUm9vdCI6IiJ9*/

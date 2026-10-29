@@ -1,43 +1,2038 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Adobe Contributor License Agreement</title>
-    <link rel="stylesheet" href="stylesheets/clastyles.css">
-    <link href="stylesheets/app.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  </head>
-  <body>
-    <div class="menu" data-magellan-expedition="fixed">
-        <div class="row">
-            <div class="large-12 columns">
-                <dl class="sub-nav" ng-class="{mobile: mobile}">
-                    <a class="menu-icon" ng-click="expandMenu()">
-                        <span></span>
-  </a>
+<html lang="en-US" class="moz wf-adobeclean-n3-active wf-adobeclean-n7-active wf-adobehandb-n4-active wf-adobeclean-n4-active wf-active"><head>
+  
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+  
 
-                    <dd class="title">
-                        <strong>JDM7DV</strong> Open Source
-                    </dd>
-                    <div class="menuLinks" ng-class="{more: menuOpen}">
-                        <dd class="head-base"><a href="/#statistics" ng-click="menuOpen = false">Statistics</a></dd>
-                        <dd class="head-base"><a href="/#projects" ng-click="menuOpen = false">Repositories</a></dd>
-                        <dd class="head-base"><a href="/#organizations" ng-click="menuOpen = false">Organizations</a></dd>
-                        <dd class="head-base"><a href="cla.html">CLA</a></dd>
-                    </div>
-                </dl>
+	
+		
+	
+	
 
-                <div class="wrapLogoTop">
-                    <img class="logoTop" src="img/adobe-tag.png" title="Adobe Open Source"/>
-                </div>
-            </div>
-        </div>
+
+	
+	
+		
+		<title>Adobe Acrobat Sign</title>
+	
+
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+		
+			
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+		
+		
+  
+
+
+  
+  
+  
+    <meta name="robots" content="noindex">
+  
+
+
+	
+		
+	
+	
+
+<meta name="description" content="Free e-signature Site. The fastest way to get your documents signed. From Acrobat Sign, a free document process management service">
+
+
+	
+		
+	
+	
+
+<meta name="keywords" content="e-signature, signatures, email signatures, fax  signatures, document management">
+
+
+
+
+
+
+  
+  
+  
+    
+  
+
+
+
+
+<meta name="logging_uri" content="https://svs.na1.adobesign.com/api/gateway/loggingserver">
+<meta name="server_env" content="prod">
+    <script src="cla_files/fqg8osp_NVSF.js" async=""></script><script nonce="" type="text/javascript">
+      
+      var dwrConfig = {
+        cookieAttributes: "; SameSite=None; secure"
+      };
+    </script>
+
+    
+
+  
+  
+    <link rel="stylesheet" nonce="" href="cla_files/bootstrap-ie11.min_NVSF.css" media="all and (-ms-high-contrast: active), (-ms-high-contrast: none)">
+    <script nonce="" nomodule="">
+      window.MSInputMethodContext && document.documentMode &&
+      document.write(
+          '<script src="/static/es6-polyfills.js?v=1" nonce="3m863g4bxrcx4sw7l3j3gg3vm" ><\/script>' +
+          '<script src="/static/bootstrap5-ie11-polyfill.js?v=3" nonce="3m863g4bxrcx4sw7l3j3gg3vm" ><\/script>'
+      );
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+<script nonce="">
+  (function (d) {
+    var fireLoadedEvent = function(data) {
+          if (typeof App !== 'undefined' && typeof App.EventBus !== 'undefined') {
+            App.EventBus.trigger('typekit.loaded', data);
+          }
+        },
+        loadingError = false,
+        config = {
+          kitId: 'fqg8osp',
+          scriptTimeout: 3000,
+          async: true,
+          // Fix for DCES-4213971: While Typekit fonts are loading, html tag gets wf-loading class that sets
+          // it and all its children visibility:hidden. So when coachmark is initialized before this class
+          // is removed from html tag, there is no first tabbable field(they are all hidden) that coachmark should point to
+          // and it is not shown.
+          active: function () {
+            fireLoadedEvent({active: true});
+          },
+
+          inactive: function () {
+            fireLoadedEvent({active: false});
+          }
+        },
+        h = d.documentElement,
+        t = setTimeout(function () {
+          h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+
+          // DCES-4450825: fire typekit loaded event if there was a loading error
+          // to trigger listeners (e.g., coachmark). NOTE: this didn't work in the catch
+          // block.
+          if (loadingError) fireLoadedEvent({active: false});
+        }, config.scriptTimeout),
+        tk = d.createElement("script"),
+        f = false,
+        s = d.getElementsByTagName("script")[0], a;
+
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded") return;
+      f = true;
+      try {
+        Typekit.load(config)
+        clearTimeout(t);
+      } catch (e) {
+        loadingError = true;
+        console.error(e);
+      }
+    };
+    s.parentNode.insertBefore(tk, s);
+  })(document);
+</script>
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+
+
+
+
+
+
+<link nonce="" rel="Shortcut Icon" href="https://adobe.na1.documents.adobe.com/images/favicon.2.ico" type="image/x-icon">
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    <link rel="stylesheet" type="text/css" media="screen" href="cla_files/app-theme_NVSF.css" nonce="">
+
+
+    <link rel="stylesheet" type="text/css" media="screen" href="cla_files/esignJS_NVSF.css" nonce="">
+
+
+
+
+
+
+
+
+
+<!--[if IE]>
+<style type="text/css">
+.signature-pad-wrapper .draw-canvas {
+  cursor: url('/images/esignJS/pen_cursor_ie.cur'), default;
+}
+</style>
+<![endif]-->
+
+
+<style type="text/css">
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+  .signature-pad-wrapper .draw-canvas {
+    cursor: url('/images/esignJS/pen_cursor_ie.cur'), default;
+  }
+}  
+</style>
+<link rel="stylesheet" type="text/css" media="screen" href="" nonce="" lazyload_href="https://secure.na1.echocdn.com/resource/454994602/bundles/dcSignPanel.css">
+<style id="field-group-validation-toggle"></style>
+
+<script nonce="" type="text/javascript">if(!JAWR){var JAWR = {};};;JAWR.jawr_dwr_path='/ajax';JAWR.dwr_sessionId='18014cdf57aeb96bc8cfb300e388dd0cebdcfa387a22f81b';JAWR.dwr_scriptSessionId='!O8KbIA~XqmcOS~zYNoPJukvNunKtlHp77q';JAWR.app_context_path='';</script>
+<script type="text/javascript" src="cla_files/translations_NVSF.js" nonce="" defer="defer" ""=""></script>
+
+  
+    
+    
+    
+    
+    
+      <script type="text/javascript" src="cla_files/app-main_NVSF.js" nonce="" defer="defer" ""=""></script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script nonce="" type="text/javascript/defer">
+  
+  
+  App = window.App || {};
+  App.Env = App.Env || {};
+
+  
+  
+  
+    App.Env.nonce = "3m863g4bxrcx4sw7l3j3gg3vm";
+    App.Env.secureAccountId = "";
+
+    
+    App.Env.accountType = "GLOBAL";
+    App.Env.accountTransactionLevel = "NOT_APPLICABLE";
+
+    App.Env.dcWebOrigin = "https:\/\/documentcloud.adobe.com";
+
+    
+    App.Env.v4analytics = {
+      user  : {
+        user_account_type   : "noTi",
+        user_role           : "noAs",
+        user_app            : "A\-WEB",
+        user_visit          : "noUs",
+        user_channel        : "noCh",
+        user_locale         : "en_US",
+        managing_application: "noMa",
+        user_account_id     : "",
+        user_id             : "",
+        user_default_group_id: "",
+        user_account_type_full: "",
+      },
+      source: {
+        appVersion: "2026.10.21161934",
+        appBuilt  : "10\/21\/26 09:25:44 AM"
+      }
+    };
+
+    App.Main({
+      root                  	: "/",
+      user                  	: {"seriouslySecureId":null,"loggedIn":false,"name":"","initials":"","email":"","realEmail":"","fullNameOrEmail":"","company":"","jobTitle":"","isGroupEmail":null,"status":""},
+      sharer                	: 
+                                     
+                                     
+                                     null, 
+                                
+      supportURL            	: "https:\/\/www.adobe.com\/go\/learn_esign_route_en",
+      termsOfUseURL         	: "https:\/\/www.adobe.com\/legal\/terms\-linkfree.html",
+      privacyPolicyURL      	: "https:\/\/www.adobe.com\/privacy\/policy.html",
+      cookiesURL            	: "https:\/\/www.adobe.com\/privacy\/cookies.html",
+      consumerDisclosureURL 	: "https:\/\/www.adobe.com\/legal\/consumer\-disclosure\-linkfree.html",
+      marketingURL          	: "https:\/\/www.echosign.adobe.com\/en",
+      addLangSelect         	: true,
+      availableUserLocales  	: "[in_ID, ca_ES, cs_CZ, da_DK, de_DE, en_GB, en_US, es_ES, eu_ES, fr_FR, hr_HR, is_IS, it_IT, hu_HU, ms_MY, nl_NL, no_NO, nb_NO, nn_NO, pl_PL, pt_BR, pt_PT, ro_RO, sk_SK, sl_SI, fi_FI, sv_SE, vi_VN, tr_TR, ru_RU, uk_UA, th_TH, ja_JP, zh_CN, zh_TW, ko_KR]",
+      acrobatOrReader       	: false,
+      sessionTimeout        	: "60",
+      isMultiSignAvailable    : true,
+      multiSignMaxDigSigAllowed  : 10,
+      cloudSignaturesEnabled : true,
+      digitalSignatureExternalEnabled : true,
+      cloudSignaturesExternalEnabled : true,
+      sessionRefreshFrequency	: "5",
+      sessionRefreshWarningPeriod: "2",
+      resolvedLocale        	: "en_US",
+      locale        			: "en_US".replace(/_/,'-'),
+      isSiBv4Available                         : "true",
+      
+      webclient    				: null,
+      isDevelopmentServer   	: false,
+      logoType              	: "custom",
+	  defaultSecureDomainUrl	: "https:\/\/na1.documents.adobe.com",
+      isFast                 	: "true" === "true",
+      plugins                	: {},
+      oneDriveAppId				: "ae00f875\-2b54\-490f\-a4fb\-a106259b1f44",
+      oneDriveAppIdAdobeCom	 	: "f816435d\-1f29\-421a\-a525\-e631da406622",
+      dcApiEndpoint				: "",
+      isGovCloud   	        : false,
+      reportAbuseRootUrl     : "https:\/\/static.echocdn.com\/reportabuse",
+      noChrome               : false,
+      standaloneGatewayRollout: true,
+      standaloneGatewayServiceMigration: "biengine,bietllistener,signembed,signembedinternal,signgenai,migration,veevavaultintsvc,advancedworkflowsconnect,dcpdftools,v2\/dcpdftools,uiddigsig,vault,adobesignauthservice,signapplicationandtokenservice,fieldrecognition,pdfdigitalsigner,remotesign,multisigner,digsigvalidator,reportabuse,geoiplookup,transactionmanagement,soup,soupapi,sidcomm,sidcommapi,digitalidentityverification,sd,paymentintegration,signdflforms,sandboxorchestrator,abusepreventionservice,agreementretention,webhook,msftpowerautomate,msftgraphconnector,office365integration,adobesignbulkprocessor,bulktaskprocessor,mobilesigcapture,s,search,addressbook,loggingserver,bulksend,backgroundremoval",
+      svsBaseUri: "https:\/\/svs.na1.adobesign.com\/",
+      isUserOnboardingChecklistAvailable: false,
+      isUserInvitationFrameworkEnabled: false
+    });
+
+    App.Env.authRedirectURL = false ? "" : "";
+
+    App.Env.plugins.signcommon = {
+      pluginUrl:  true ? "https:\/\/static.echocdn.com\/signcommon\/signcommon\-launcher.js" : "",
+      domain:     "https:\/\/static.echocdn.com\/signcommon",
+      dcRootUrl:  "https:\/\/static.echocdn.com\/dc"
+      // DO NOT SPECIFY domRoot -- CDN will render the header in the body!
+    };
+</script>
+
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <meta property="og:title" content="Adobe Contributor License Agreement">
+<meta property="og:site_name" content="Acrobat Sign">
+<meta property="og:description" content="Share with your colleagues and friends the simplicity of using Adobe Sign to sign documents electronically. Learn more at &lt;a target='_blank' href='http://acrobat.adobe.com'&gt;http:\/\/acrobat.adobe.com&lt;/a&gt;">
+<meta property="og:type" content="document">
+<meta property="og:image" content="">
+  <meta name="twitter:title" content="Adobe Contributor License Agreement">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="Share with your colleagues and friends the simplicity of using Adobe Sign to sign documents electronically. Learn more at &lt;a target='_blank' href='http://acrobat.adobe.com'&gt;http:\/\/acrobat.adobe.com&lt;/a&gt;">
+<meta name="twitter:image" content="">
+
+  <script type="text/javascript" src="cla_files/app-esign_NVSF.js" nonce="" defer="defer" ""=""></script>
+<script type="text/javascript" src="" lazyload_href="https://secure.na1.echocdn.com/resource/N1563567126.en_US/bundles/component-viewfields.js"></script>
+<script type="text/javascript" src="" lazyload_href="https://secure.na1.echocdn.com/resource/N1318619363.en_US/bundles/dcsignpanel.js"></script>
+<script nonce="" type="text/javascript/defer">
+    (function(){
+      var participantDefinedSigner = {signature : null};
+      
+      // set up esign data
+	    var config = {
+        agreementId                                : 'CBJCHBCAABAAyap6W7qk_roc\-l0ipEbtaMXSPAWgyXZA',
+        widgetId                                   : 'CBJCHBCAABAA6gW1xBs6e8moTuZPyNZHj6YFk1SyoIpA',
+        agreementName                              : "Adobe Contributor License Agreement",
+        widget                                     : true,
+        token                                      : "",
+        experience                                 : "",
+        webIdentityId                              : "",
+        srcDocumentId                              : "CBJCHBCAABAAFip\-2q8vSZxltmUcel1ro4kVeniy_RFC",
+        kbaTransactionId                           : "",
+        role                                       : "SIGNER",
+        showWellFormattedSignature                 : true,
+        minimumScribbleLength                      : 35,
+        showRegButton                              : false,
+        showManagePageLink                         : false,
+        showRefusalNotificationMessage             : false,
+        showMessage                                : false,
+        showSendLink                               : false,
+        cursiveFontCSSClass                        : "adobehanda",
+        signerNameIsEditable                       : "",
+        nameFieldForDIGFirstSigner                 : "",
+        canSaveScribble                            : false,
+        canSaveImage                               : false,
+        signatureInputTypes                        : "[TYPED, SCRIBBLE, IMAGE]",
+        esignSaveEnabled                           : false,
+        esignSaveTime                              : 0,
+        showPdfLinks                               : true,
+        showReadAgreementOption                    : true,
+        showReportAbuseOption                      : false,
+        
+          reportAbuseV2Rollout                     : "true",
+        
+          reportAbuseV2FormRollout                 : "true",
+        
+        uploadUrl                                  : "https:\/\/adobe.na1.documents.adobe.com\/public\/attachmentUpload?aid=CBJCHBCAABAAyap6W7qk_roc\-l0ipEbtaMXSPAWgyXZA",
+        writtenSignatureUploadUrl                  : "https:\/\/adobe.na1.documents.adobe.com\/public\/writtenSignatureUpload?aid=CBJCHBCAABAAyap6W7qk_roc\-l0ipEbtaMXSPAWgyXZA",
+        participantRole                            : "SIGNER",
+        pid                                        : "CBJCHBCAABAAxm3UBWt\-itmcGlsHVx4acgvo_rv7eXw8",
+        webformSaveEnabled                         : false,
+        webformSaveOnOpenEnabled                   : false,
+        webformSaveCancelAttributesChange          : false,
+        webformEsignViewEnabled                    : false,
+        webformAgreementNameEditable               : false,
+        webformSaveCancelDisabled                  : false,
+        webformIsMandatorySaveEnabled              : false,
+        isPhoneAuthForWidgetSignerOnEnhanceSave    : false,
+        isEnhanceWebformSavePhase2                 : true,
+        isEnhanceWebformSavePhase2Flow             : false,
+        forceSaveDefaultPhoneCountryCode           : "US",
+        signerAuthMethod                           : "NONE",
+        directAcrobatDownloadEnabled               : false,
+        
+        isSMSDelivery                              : false,
+        isWhatsAppDelivery                         : false,
+        isEmailDelivery                            : false,
+        defaultCountryIsoCodeForDeliverySMS        : "US",
+        defaultCountryIsoCodeForWhatsApp           : "US",
+        defaultCountryIsoCodeForDeliveryWhatsApp   : "US",
+        inPersonSignerEmail                        : "",
+        
+        remoteHostUrl: false,
+        
+        delegateURL                                : "/public/resend?pid=CBJCHBCAABAAxm3UBWt\-itmcGlsHVx4acgvo_rv7eXw8",
+        auditTrailURL                              : "/=CBJCHBCAABAAyap6W7qk_roc\-l0ipEbtaMXSPAWgyXZA",
+        version                                    : "0.9.0.2026.10.21161934",
+        customerTermsURL                           : "",
+        customerConsumerDisclosureUrl              : "",
+        maxFileAttachmentUploadSize                : "5242880",
+        maxWrittenUploadSize                       : "26214399",
+        agreeToTermsEntity                         : "Adobe Systems Inc. (CCE \x26amp; DC)",
+        showPhishingWarningPayment                 : false,
+        showPhishingWarningWebForm                 : false,
+        bubblesEnabled                             : false,
+        socialEnabled                              : false,
+        
+        socialDescription                          : "Share with your colleagues and friends the simplicity of using Adobe Sign to sign documents electronically. Learn more at <a target='_blank' href='http://acrobat.adobe.com'>http:\/\/acrobat.adobe.com</a>",
+        facebookEnabled                            : false,
+        facebookUrlEncoded                         : "https%3A%2F%2Fwww.facebook.com%2FAdobeDocumentCloud",
+        googlePlusEnabled                          : false,
+        googlePlusUrl                              : "https:\/\/plus.google.com\/u\/0\/+AdobeAcrobat\/posts",
+        linkedInEnabled                            : false,
+        linkedInUrl                                : "https:\/\/www.linkedin.com\/company\/adobe\-document\-cloud",
+        twitterEnabled                             : false,
+        twitterUrl                                 : "https:\/\/adobe.ly\/AdobeSign",
+        twitterDefaultTweet                        : "So fast \x26 easy – I used Adobe Acrobat Sign to sign a document electronically.",
+        twitterUserName                            : "Acrobat",
+        esignMarketingBrand                        : "ADOBE",
+        hosted                                     : "false",
+        isDigitalSignPhase                         : false,
+        isWrittenSignPhase                         : false,
+        isReflowProcessingComplete                 : false,
+        isReflowButtonAvailable                    : false,
+        dvUrl                                      : "https:\/\/documentcloud.adobe.com\/dc\-sign\-preview\-wrapper\/index.html",
+        reflowPdfUrl                               : "https:\/\/adobe.na1.documents.adobe.com:443",
+        isReadyForDigitalSignature                 : false,
+        isAgreementPayable                         : false,
+        isSendLimitExceeded                        : false,
+        isAgreementPaid                            : false,
+        braintreeClientToken                       : "",
+        paymentsDomain                             : "",
+        localDigSigSigningOptionEnabled            : false,
+        cloudDigSigSigningOptionEnabled            : false,
+        isPaymentsTestMode                         : false,
+        digitalSignaturesRemoteCloudSigningEnabled : true,
+        isDigitalSignatureSigningRemotely          : false,
+        isDigitalSignatureSigningSkipped           : false,
+        allowDigitalSignatureReasonInput           : true,
+        enabledCloudSigningProviders               : [],
+        localSigningAvailable                      : true,
+        digSigDelegationFromSignPageAvailable      : false,
+        useUidDigSigLib                            : false,
+        postSignRedirectUrl                        : "",
+        postSignUpsellAWUrl                        : "",
+        postSignUpsellSenderIsAcrobat              : false,
+        liveFormFieldsDataEnabled                  : false,
+        postSignRedirectDelay                      : "",
+        selfSignCompletionUrl                      : "",
+        noChrome                                   : "",
+        apiAgreementCapabilityId                   : "",
+        signerAgreementCapabilityId                : "",
+        participantId                              : "",
+        participantSetId                           : "",
+        numSignedParticipants                      : "",
+        isEmbeddedAcrobatSend                      : false,
+        isModified                                 : false,
+        isMultisign                                : false,
+        useDefaultRasterSize                       : false,
+        enableStateParameterCheck                  : false,
+        senderEmail                                : "",
+        targetEmail                                : "",
+        allowAdaptiveDrawnSignatureScaling         : true,
+        lastModifiedBy                             : "",
+        signatureImageAvailable                    : true,
+        signatureDefaultDateFormat                 :'',
+        mobileSignatureCaptureAvailable            : true,
+        mandatoryMobileSignatureCapture            : false,
+        mobileSignatureCaptureWorkflowTimeout      : 5,
+        companyName                                : "Acrobat Sign",
+        writtenSignaturesEnabled                   : false,
+        vaultingWorkflow                           : false,
+        isAgreeToTermsChecked                      : true,
+        isParticipantForcedWritten                 : false,
+        termsOfUseFlavor                           : "AGREE_WHEN_SIGNING",
+        hasAlwaysVisibleFooter                     : false,
+        isRequiredHyperlinkAvailable               : true,
+        selectFilesLocalUploadEnabled              : true,
+        maxUploadableImageSize                     : 5242880,
+        digSigFields                               : 0,
+        firstFieldName                             : "",
+        privacyConsentPopupAvailable               : false,
+        uploadableCloudConnectorsEnabled           : ["GOOGLE","DROPBOX","BOXNET","ONEDRIVE"],
+        adobeAcrobatReaderMobileAppUrl             : "http:\/\/www.adobe.com\/go\/signscan",
+        viewAgreementUrl                           : "\/public\/agreements\/view\/CBJCHBCAABAA6gW1xBs6e8moTuZPyNZHj6YFk1SyoIpA?readerMode=true\x26type=widget",
+        personalizedEmail                          : "",
+        clearDocumentAlwaysHidden                  : false,
+        eSignRequiresDocumentReview                : false,
+        phoneNumber                                : "",
+        isSignatureReasonRequired                  : false,
+        isCustomSignatureReasonEnabled             : true,
+        isMultipleEsignAuthEnabled                 : false,
+        isEmailPrefilled                           : false,
+        skipSignLoginForMandatorySAML              : false,
+        isRedirectionEnabled                       : false,
+        isSUSIRedirectionEnabled                   : false,
+        isLastEsignReauthenticationEnabled         : false,
+        authenticateSignatureField                 : false,
+        shouldIndependentAuthChallengeBeEnforcedForSigner : false,
+        safariItpFallbackEnabled                       : false,
+        locale                                     : "en_US".replace("_", "-"),
+        allowESignatureReasonInput                 : false,
+        isQuickFillViewingEnabled                  : true,
+        isQuickFillViewingAvailable                : true,
+        isQuickFillAutoOpen                        : false,
+        isEsignMobilePanZoomAvailable              : false,
+        requireRecipientNameEnabled                : false,
+        requireRecipientNameMandatory              : false,
+        isDelegationV6Enabled                      : false,
+        restartAgreementAvailable                  : false,
+        restartAgreementEnabled                    : false,
+        restartAgreementVisible                    : false,
+        availablePhoneCountryCodes                 : "AF AL DZ AD AO AR AM AW AU AT AZ BH BD BB BY BE BZ BJ BM BT BO BA BW BR BN BG BF MM KH CM CA KY CL CN CX CC CO CD CG CR HR CW CY CZ DK DO EC EG SV GQ EE ET FK FO FJ FI FR GF PF GA GM GE DE GH GI GR GP GT GG GY HN HK HU IS IN ID IQ IE IM IL IT CI JP JE JO KZ KE KI KR XK KW LA LV LB LI LT LU MO MK MG MW MY MV MT MQ MU YT MX MD MC MN ME MA MZ NA NP NL AN NC NZ NI NG NO OM PK PS PA PG PY PE PH PL PT QA RO RU RW RE PM SA SN RS CS SC SL SG SK SI SB ZA ES LK SD SE CH TW TJ TZ TH TN TR UG UA AE GB US UY UZ VA VE VN WF YE ZM ZW",
+        defaultPhoneCountryCode                    : "",
+        isLastNameFirst                            : false,
+        participantDefinedSigner                   : participantDefinedSigner,
+        isDigIdAuth                                : false,
+        digIdVerifiedBy                            : "",
+        sessionId                                  : "536D113E4A936E4A3DCD21144C6776EF.webapp\-prod\-a\-11",
+        useNextInsteadOfFinish                     : false,
+        modernLoginEnabled                         : false,
+        esignNavigationIncludesOptionalFields      : false,
+        unknownSigners                             : [
+          
+        ],
+        signatureReasons                           : [
+          
+        ],
+        hideUserProfileInfo                        : false,
+        declineReasons                           : [
+          
+        ],
+        isUnregisteredUser: true, 
+        isNotIE11: !App.Env.feature.ie11,
+        clickableUrlInAgreementEmailEnabled:  false,
+        allowIMSOnPostEsign:  false,
+        appendAgreementStatusToRedirectUrl: false,
+        agreementRedirectOptions: [
+          
+        ]
+      };
+
+      
+      config.iframeUIDSigningEnabled = true;
+      
+        config.widgetPdfPreviewEnabled = true
+      
+      config.termsOfServiceUrl = "https://www.adobe.com/legal/terms-linkfree.html";
+      config.privacyPolicyUrl = "https:\/\/www.adobe.com\/privacy\/policy\-linkfree.html";
+      config.consumerDisclosureURL = "https://www.adobe.com/legal/consumer-disclosure-linkfree.html";
+
+      new App.Esign ( config );
+      App.EventBus.trigger('esign:showLoading', {text : i18n.js.esign_preparing_doc()});
+    }());
+  </script>
+
+  
+	
+
+  <link rel="stylesheet" type="text/css" media="screen" href="cla_files/toast-message_NVSF.css" nonce="">
+
+
+
+
+
+  
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script nonce="">
+    window.fedsConfig = window.fedsConfig || {};
+    window.fedsConfig.privacy = window.fedsConfig.privacy || {};
+    window.fedsConfig.privacy.otDomainId = "7a5eb705\-95ed\-4cc4\-a11d\-0cc5760e93db"
+    window.fedsConfig.privacy.footerLinkSelector = '#echo-nav-footer.footer-consent-link';
+  </script>
+
+  <script nonce="" type="text/javascript" defer="defer">
+    window.addEventListener("adobePrivacy:PrivacyConsent", function() {
+      window.privacyEvent = true;
+    });
+  </script>
+
+  <script nonce="" type="text/javascript" defer="defer">
+    window.addEventListener("adobePrivacy:PrivacyCustom", function() {
+      window.privacyEventCustom = true;
+    });
+  </script>
+
+  <script nonce="" type="text/javascript" defer="defer">
+    window.addEventListener("adobePrivacy:PrivacyReject", function() {
+      window.privacyEventReject = true;
+    });
+  </script>
+
+  <link nonce="" rel="stylesheet" type="text/css" href="cla_files/privacy.min_NVSF.css">
+  <!-- Load the polyfill only for IE broswer -->
+  
+  <script nonce="" src="cla_files/privacy-standalone_NVSF.js" defer="defer"></script>
+
+
+  
+
+  <script nonce="" type="text/javascript">
+    (function(win, doc, style, timeout) {
+      var STYLE_ID = 'at-body-style';
+
+      function getParent() {
+        return doc.getElementsByTagName('head')[0];
+      }
+
+      function addStyle(parent, id, def) {
+        if (!parent) {
+          return;
+        }
+
+        var style = doc.createElement('style');
+        style.id = id;
+        style.innerHTML = def;
+        parent.appendChild(style);
+      }
+
+      function removeStyle(parent, id) {
+        if (!parent) {
+          return;
+        }
+
+        var style = doc.getElementById(id);
+
+        if (!style) {
+          return;
+        }
+        parent.removeChild(style);
+
+      }
+
+      addStyle(getParent(), STYLE_ID, style);
+      setTimeout(function() {
+        removeStyle(getParent(), STYLE_ID);
+      }, timeout);
+    }(window, document, "#defaultPromoId, #upgradeTrialMarquee {opacity: 0}", 1200));
+  </script>
+
+
+
+  
+
+  
+  
+  
+<style type="text/css">.tk-adobe-clean{font-family:"adobe-clean",sans-serif;}.tk-adobe-hand-b{font-family:"adobe-hand-b",sans-serif;}</style><style type="text/css">@font-face{font-family:tk-adobe-clean-n4;src:url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-adobe-clean-n7;src:url(https://use.typekit.net/af/eaf09c/000000000000000000017703/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/eaf09c/000000000000000000017703/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/eaf09c/000000000000000000017703/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-adobe-clean-n3;src:url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:tk-adobe-hand-b-n4;src:url(https://use.typekit.net/af/e301c6/0000000000000000000149e7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/e301c6/0000000000000000000149e7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/e301c6/0000000000000000000149e7/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}</style><style id="csp-link-styles">.js-link-cursor {cursor: pointer}</style><link rel="stylesheet" href="cla_files/dcSignPanel_NVSF.css"><script src="cla_files/component-viewfields_NVSF.js"></script><script src="cla_files/dcsignpanel_NVSF.js"></script><style id="gvf-hud-theme">
+.gvf-hud {
+  --gvf-accent: #38bdf8; --gvf-accent-2: #7dd3fc; --gvf-accent-glow: rgba(56,189,248,0.45);
+  box-sizing: border-box !important;
+  color-scheme: dark;
+  background: linear-gradient(180deg, rgba(30,31,40,0.95), rgba(15,16,22,0.95)) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 16px !important;
+  padding: 10px !important;
+  gap: 2px !important;
+  opacity: 1 !important;
+  color: #e9e9f1;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.18) transparent;
+}
+.gvf-hud::-webkit-scrollbar { width: 8px; }
+.gvf-hud::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.16); border-radius: 8px; }
+.gvf-hud.gvf-video-overlay-grade { --gvf-accent: #8b5cf6; --gvf-accent-2: #a78bfa; --gvf-accent-glow: rgba(139,92,246,0.45); }
+.gvf-hud.gvf-video-overlay-io { --gvf-accent: #3b82f6; --gvf-accent-2: #60a5fa; --gvf-accent-glow: rgba(59,130,246,0.45); }
+
+.gvf-hud .gvf-head {
+  background: transparent !important; box-shadow: none !important; border-radius: 0 !important;
+  padding: 2px 4px 9px !important; margin-bottom: 4px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.gvf-hud .gvf-title {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.02em; color: #f5f5fa !important;
+}
+.gvf-hud .gvf-title::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--gvf-accent); box-shadow: 0 0 8px var(--gvf-accent-glow);
+}
+.gvf-hud .gvf-tag {
+  font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.06em;
+  color: rgba(235,235,245,0.6) !important; opacity: 1 !important;
+  padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,0.06);
+}
+.gvf-hud .gvf-sep { background: rgba(255,255,255,0.07) !important; margin: 6px 4px !important; }
+
+.gvf-hud .gvf-row {
+  background: transparent !important; box-shadow: none !important;
+  padding: 4px 6px !important; border-radius: 10px !important; gap: 10px !important; margin-top: 0 !important;
+  transition: background 0.15s ease;
+}
+.gvf-hud .gvf-row:hover { background: rgba(255,255,255,0.045) !important; }
+.gvf-hud .gvf-lbl {
+  font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.02em;
+  color: var(--gvf-lbl-color, rgba(235,235,245,0.72)) !important; text-align: left !important;
+}
+.gvf-hud .gvf-val {
+  box-sizing: border-box; width: auto !important; min-width: 46px;
+  padding: 4px 6px; border-radius: 6px; background: rgba(255,255,255,0.06);
+  font: 600 11px/1 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-variant-numeric: tabular-nums; text-align: right !important;
+  color: var(--gvf-val-color, #f5f5fa) !important;
+}
+
+.gvf-hud input.gvf-range {
+  -webkit-appearance: none; appearance: none;
+  height: 18px !important; margin: 0; padding: 0; background: transparent !important; cursor: pointer;
+}
+.gvf-hud input.gvf-range:focus { outline: none; }
+.gvf-hud input.gvf-range::-webkit-slider-runnable-track {
+  height: 4px; border-radius: 4px;
+  background: linear-gradient(to right,
+    rgba(255,255,255,0.12) 0 var(--gvf-a, 0%),
+    var(--gvf-accent) var(--gvf-a, 0%) var(--gvf-b, 0%),
+    rgba(255,255,255,0.12) var(--gvf-b, 0%) 100%);
+}
+.gvf-hud input.gvf-range::-moz-range-track {
+  height: 4px; border-radius: 4px;
+  background: linear-gradient(to right,
+    rgba(255,255,255,0.12) 0 var(--gvf-a, 0%),
+    var(--gvf-accent) var(--gvf-a, 0%) var(--gvf-b, 0%),
+    rgba(255,255,255,0.12) var(--gvf-b, 0%) 100%);
+}
+.gvf-hud input.gvf-range::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 14px; height: 14px; margin-top: -5px; border: none; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 2px var(--gvf-accent), 0 2px 6px rgba(0,0,0,0.5);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.gvf-hud input.gvf-range::-moz-range-thumb {
+  width: 14px; height: 14px; border: none; border-radius: 50%; background: #fff;
+  box-shadow: 0 0 0 2px var(--gvf-accent), 0 2px 6px rgba(0,0,0,0.5);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.gvf-hud input.gvf-range:hover::-webkit-slider-thumb { transform: scale(1.15); box-shadow: 0 0 0 2px var(--gvf-accent), 0 0 10px var(--gvf-accent-glow); }
+.gvf-hud input.gvf-range:hover::-moz-range-thumb { transform: scale(1.15); box-shadow: 0 0 0 2px var(--gvf-accent), 0 0 10px var(--gvf-accent-glow); }
+.gvf-hud input.gvf-range:active::-webkit-slider-thumb { transform: scale(1.25); }
+.gvf-hud input.gvf-range:active::-moz-range-thumb { transform: scale(1.25); }
+
+.gvf-hud .gvf-top { padding: 0 2px 8px !important; margin-bottom: 4px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.gvf-hud .gvf-chip {
+  width: 26px !important; height: 26px !important; border-radius: 8px !important;
+  font-size: 11px !important; font-weight: 700 !important; text-shadow: none !important;
+  background: rgba(255,255,255,0.05) !important; color: rgba(255,255,255,0.38) !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08) !important;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+.gvf-hud .gvf-chip.is-on {
+  background: linear-gradient(180deg, var(--gvf-accent-2), var(--gvf-accent)) !important;
+  color: #04121c !important;
+  box-shadow: 0 0 12px var(--gvf-accent-glow), inset 0 1px 0 rgba(255,255,255,0.35) !important;
+}
+.gvf-hud .gvf-pill {
+  border-radius: 999px !important; padding: 4px 10px !important;
+  font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.05em;
+  background: rgba(255,255,255,0.06) !important;
+}
+
+.gvf-hud .gvf-select {
+  color-scheme: dark; /* native dropdown popup (Windows/Chrome) in dark instead of white */
+  background: #24252e !important; color: #ececf3 !important;
+  border: 1px solid rgba(255,255,255,0.1) !important; border-radius: 8px !important;
+  padding: 5px 8px !important; font-size: 11px !important; font-weight: 600 !important;
+  outline: none; transition: border-color 0.15s ease;
+}
+.gvf-hud .gvf-select:hover, .gvf-hud .gvf-select:focus { border-color: var(--gvf-accent) !important; }
+.gvf-hud .gvf-select option, .gvf-hud .gvf-select optgroup {
+  background: #1b1c24 !important; background-color: #1b1c24 !important; color: #ececf3 !important;
+}
+.gvf-hud .gvf-select optgroup { color: #9a9aab !important; font-weight: 700; }
+.gvf-hud .gvf-select option:checked { background: #3a3550 !important; color: #fff !important; }
+/* Scopes HUD (Ctrl+Alt+S) */
+.gvf-hud.gvf-video-overlay-scopes {
+  --gvf-accent: #10b981; --gvf-accent-2: #34d399; --gvf-accent-glow: rgba(16,185,129,0.45);
+  padding: 10px !important;
+}
+.gvf-hud.gvf-video-overlay-scopes .gvf-head { backdrop-filter: none !important; padding-bottom: 8px !important; }
+.gvf-hud .gvf-live { display: inline-flex; align-items: center; gap: 5px; color: #6ee7b7 !important; }
+.gvf-hud .gvf-live::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%; background: #34d399;
+  box-shadow: 0 0 6px rgba(52,211,153,0.8); animation: gvf-live-pulse 1.6s ease-in-out infinite;
+}
+@keyframes gvf-live-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.gvf-hud .gvf-scope-content {
+  background: transparent !important; box-shadow: none !important; backdrop-filter: none !important;
+  padding: 2px !important; gap: 10px !important;
+}
+.gvf-hud .gvf-scope-title {
+  font-size: 10px !important; font-weight: 700 !important; letter-spacing: 0.08em !important;
+  color: rgba(235,235,245,0.55) !important; margin-bottom: 3px;
+}
+.gvf-hud .gvf-scope-box {
+  background: rgba(0,0,0,0.35) !important; border-radius: 8px !important;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06);
+}
+.gvf-hud .gvf-scope-luma { padding: 2px 4px !important; gap: 2px !important; } /* bars grow up to 36px in a 40px box */
+.gvf-hud .gvf-scope-luma > div { background: linear-gradient(180deg, #6ee7b7, #059669) !important; border-radius: 2px 2px 1px 1px !important; }
+.gvf-hud .gvf-scope-rgb { padding: 6px !important; gap: 6px !important; }
+.gvf-hud .gvf-scope-red, .gvf-hud .gvf-scope-green, .gvf-hud .gvf-scope-blue { gap: 2px !important; }
+.gvf-hud .gvf-scope-red > div { background: linear-gradient(180deg, #fca5a5, #ef4444) !important; border-radius: 2px 2px 1px 1px !important; }
+.gvf-hud .gvf-scope-green > div { background: linear-gradient(180deg, #86efac, #22c55e) !important; border-radius: 2px 2px 1px 1px !important; }
+.gvf-hud .gvf-scope-blue > div { background: linear-gradient(180deg, #93c5fd, #3b82f6) !important; border-radius: 2px 2px 1px 1px !important; }
+.gvf-hud .gvf-scope-ch { font-size: 9px !important; font-weight: 700 !important; margin-bottom: 2px; }
+.gvf-hud .gvf-scope-sat-track { height: 6px !important; background: rgba(255,255,255,0.08) !important; border-radius: 6px !important; }
+.gvf-hud .gvf-scope-sat-fill { background: linear-gradient(90deg, #fde047, #f59e0b, #f97316) !important; border-radius: 6px !important; }
+.gvf-hud .gvf-scope-box .gvf-val { min-width: 40px; }
+.gvf-hud .gvf-scope-stats { gap: 6px !important; margin-top: 0 !important; }
+.gvf-hud .gvf-scope-stat {
+  background: rgba(255,255,255,0.06) !important; border-radius: 6px !important; padding: 4px 2px !important;
+  font: 600 10px/1.2 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace !important;
+  font-variant-numeric: tabular-nums; color: rgba(235,235,245,0.8) !important;
+}
+/* ---------- Windows / modals (Config, LUT manager, Custom SVG, Expert, Profile edit) ---------- */
+#gvf-config-menu, #gvf-userProf-edit-window { --gvf-accent: #3b82f6; --gvf-accent-glow: rgba(59,130,246,0.35); }
+#gvf-lut-config-menu { --gvf-accent: #f59e0b; --gvf-accent-glow: rgba(245,158,11,0.35); }
+#gvf-custom-svg-modal { --gvf-accent: #38bdf8; --gvf-accent-glow: rgba(56,189,248,0.35); }
+#gvf-expert-modal { --gvf-accent: #8b5cf6; --gvf-accent-glow: rgba(139,92,246,0.35); }
+#gvf-config-menu,
+#gvf-lut-config-menu,
+#gvf-custom-svg-modal,
+#gvf-expert-modal,
+#gvf-userProf-edit-window {
+  color-scheme: dark;
+  background: linear-gradient(180deg, rgba(30,31,40,0.985), rgba(16,17,23,0.985)) !important;
+  border: 1px solid rgba(255,255,255,0.09) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 28px 70px rgba(0,0,0,0.6), inset 0 3px 0 var(--gvf-accent), inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  backdrop-filter: none !important;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif !important;
+  color: #e9e9f1 !important;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.18) transparent;
+}
+#gvf-config-menu *,
+#gvf-lut-config-menu *,
+#gvf-custom-svg-modal *,
+#gvf-expert-modal *,
+#gvf-userProf-edit-window * {
+  text-shadow: none !important;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.18) transparent;
+}
+#gvf-config-menu ::-webkit-scrollbar,
+#gvf-lut-config-menu ::-webkit-scrollbar,
+#gvf-custom-svg-modal ::-webkit-scrollbar,
+#gvf-expert-modal ::-webkit-scrollbar,
+#gvf-userProf-edit-window ::-webkit-scrollbar,
+#gvf-config-menu::-webkit-scrollbar,
+#gvf-lut-config-menu::-webkit-scrollbar,
+#gvf-custom-svg-modal::-webkit-scrollbar,
+#gvf-expert-modal::-webkit-scrollbar,
+#gvf-userProf-edit-window::-webkit-scrollbar { width: 8px; height: 8px; }
+#gvf-config-menu ::-webkit-scrollbar-thumb,
+#gvf-lut-config-menu ::-webkit-scrollbar-thumb,
+#gvf-custom-svg-modal ::-webkit-scrollbar-thumb,
+#gvf-expert-modal ::-webkit-scrollbar-thumb,
+#gvf-userProf-edit-window ::-webkit-scrollbar-thumb,
+#gvf-config-menu::-webkit-scrollbar-thumb,
+#gvf-lut-config-menu::-webkit-scrollbar-thumb,
+#gvf-custom-svg-modal::-webkit-scrollbar-thumb,
+#gvf-expert-modal::-webkit-scrollbar-thumb,
+#gvf-userProf-edit-window::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.16); border-radius: 8px; }
+#gvf-config-menu ::-webkit-scrollbar-track,
+#gvf-lut-config-menu ::-webkit-scrollbar-track,
+#gvf-custom-svg-modal ::-webkit-scrollbar-track,
+#gvf-expert-modal ::-webkit-scrollbar-track,
+#gvf-userProf-edit-window ::-webkit-scrollbar-track { background: transparent; }
+
+/* header line: thin and neutral instead of the thick colored line */
+#gvf-config-menu > div:first-child,
+#gvf-lut-config-menu > div:first-child,
+#gvf-custom-svg-modal > div:first-child,
+#gvf-expert-modal > div:first-child,
+#gvf-userProf-edit-window > div:first-child {
+  border-bottom-width: 1px !important; border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+
+/* calmer typography: the very heavy 900 weight becomes semi-bold */
+#gvf-config-menu [style*="font-weight:900"],
+#gvf-lut-config-menu [style*="font-weight:900"],
+#gvf-custom-svg-modal [style*="font-weight:900"],
+#gvf-expert-modal [style*="font-weight:900"],
+#gvf-userProf-edit-window [style*="font-weight:900"],
+#gvf-config-menu [style*="font-weight: 900"],
+#gvf-lut-config-menu [style*="font-weight: 900"],
+#gvf-custom-svg-modal [style*="font-weight: 900"],
+#gvf-expert-modal [style*="font-weight: 900"],
+#gvf-userProf-edit-window [style*="font-weight: 900"] { font-weight: 650 !important; }
+#gvf-config-menu [style*="font-weight:800"],
+#gvf-lut-config-menu [style*="font-weight:800"],
+#gvf-custom-svg-modal [style*="font-weight:800"],
+#gvf-expert-modal [style*="font-weight:800"],
+#gvf-userProf-edit-window [style*="font-weight:800"],
+#gvf-config-menu [style*="font-weight: 800"],
+#gvf-lut-config-menu [style*="font-weight: 800"],
+#gvf-custom-svg-modal [style*="font-weight: 800"],
+#gvf-expert-modal [style*="font-weight: 800"],
+#gvf-userProf-edit-window [style*="font-weight: 800"] { font-weight: 600 !important; }
+
+/* buttons: same colors as before, modern shape + motion */
+#gvf-config-menu button,
+#gvf-lut-config-menu button,
+#gvf-custom-svg-modal button,
+#gvf-expert-modal button,
+#gvf-userProf-edit-window button {
+  border-radius: 9px !important; border-width: 1px !important; font-family: inherit !important;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease !important;
+}
+#gvf-config-menu button:not(:disabled):hover,
+#gvf-lut-config-menu button:not(:disabled):hover,
+#gvf-custom-svg-modal button:not(:disabled):hover,
+#gvf-expert-modal button:not(:disabled):hover,
+#gvf-userProf-edit-window button:not(:disabled):hover { transform: translateY(-1px); }
+#gvf-config-menu button:not(:disabled):active,
+#gvf-lut-config-menu button:not(:disabled):active,
+#gvf-custom-svg-modal button:not(:disabled):active,
+#gvf-expert-modal button:not(:disabled):active,
+#gvf-userProf-edit-window button:not(:disabled):active { transform: translateY(0) scale(0.97); }
+#gvf-config-menu button:focus-visible,
+#gvf-lut-config-menu button:focus-visible,
+#gvf-custom-svg-modal button:focus-visible,
+#gvf-expert-modal button:focus-visible,
+#gvf-userProf-edit-window button:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--gvf-accent-glow) !important; }
+
+/* text fields, number fields, search, textareas, dropdowns */
+#gvf-config-menu input:not([type]),
+#gvf-lut-config-menu input:not([type]),
+#gvf-custom-svg-modal input:not([type]),
+#gvf-expert-modal input:not([type]),
+#gvf-userProf-edit-window input:not([type]),
+#gvf-config-menu input[type="text"],
+#gvf-lut-config-menu input[type="text"],
+#gvf-custom-svg-modal input[type="text"],
+#gvf-expert-modal input[type="text"],
+#gvf-userProf-edit-window input[type="text"],
+#gvf-config-menu input[type="search"],
+#gvf-lut-config-menu input[type="search"],
+#gvf-custom-svg-modal input[type="search"],
+#gvf-expert-modal input[type="search"],
+#gvf-userProf-edit-window input[type="search"],
+#gvf-config-menu input[type="number"],
+#gvf-lut-config-menu input[type="number"],
+#gvf-custom-svg-modal input[type="number"],
+#gvf-expert-modal input[type="number"],
+#gvf-userProf-edit-window input[type="number"],
+#gvf-config-menu input[type="url"],
+#gvf-lut-config-menu input[type="url"],
+#gvf-custom-svg-modal input[type="url"],
+#gvf-expert-modal input[type="url"],
+#gvf-userProf-edit-window input[type="url"],
+#gvf-config-menu textarea,
+#gvf-lut-config-menu textarea,
+#gvf-custom-svg-modal textarea,
+#gvf-expert-modal textarea,
+#gvf-userProf-edit-window textarea,
+#gvf-config-menu select,
+#gvf-lut-config-menu select,
+#gvf-custom-svg-modal select,
+#gvf-expert-modal select,
+#gvf-userProf-edit-window select {
+  background-color: rgba(0,0,0,0.3) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 9px !important;
+  color: #ececf3 !important;
+  outline: none !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+#gvf-config-menu input:focus,
+#gvf-lut-config-menu input:focus,
+#gvf-custom-svg-modal input:focus,
+#gvf-expert-modal input:focus,
+#gvf-userProf-edit-window input:focus,
+#gvf-config-menu textarea:focus,
+#gvf-lut-config-menu textarea:focus,
+#gvf-custom-svg-modal textarea:focus,
+#gvf-expert-modal textarea:focus,
+#gvf-userProf-edit-window textarea:focus,
+#gvf-config-menu select:focus,
+#gvf-lut-config-menu select:focus,
+#gvf-custom-svg-modal select:focus,
+#gvf-expert-modal select:focus,
+#gvf-userProf-edit-window select:focus {
+  border-color: var(--gvf-accent) !important;
+  box-shadow: 0 0 0 3px var(--gvf-accent-glow) !important;
+}
+#gvf-config-menu input::placeholder,
+#gvf-lut-config-menu input::placeholder,
+#gvf-custom-svg-modal input::placeholder,
+#gvf-expert-modal input::placeholder,
+#gvf-userProf-edit-window input::placeholder,
+#gvf-config-menu textarea::placeholder,
+#gvf-lut-config-menu textarea::placeholder,
+#gvf-custom-svg-modal textarea::placeholder,
+#gvf-expert-modal textarea::placeholder,
+#gvf-userProf-edit-window textarea::placeholder { color: rgba(235,235,245,0.38) !important; }
+#gvf-config-menu input[type="range"],
+#gvf-lut-config-menu input[type="range"],
+#gvf-custom-svg-modal input[type="range"],
+#gvf-expert-modal input[type="range"],
+#gvf-userProf-edit-window input[type="range"],
+#gvf-config-menu input[type="checkbox"],
+#gvf-lut-config-menu input[type="checkbox"],
+#gvf-custom-svg-modal input[type="checkbox"],
+#gvf-expert-modal input[type="checkbox"],
+#gvf-userProf-edit-window input[type="checkbox"],
+#gvf-config-menu input[type="radio"],
+#gvf-lut-config-menu input[type="radio"],
+#gvf-custom-svg-modal input[type="radio"],
+#gvf-expert-modal input[type="radio"],
+#gvf-userProf-edit-window input[type="radio"] { accent-color: var(--gvf-accent) !important; }
+
+/* ---------- Notifications (toast) ---------- */
+#gvf-profile-notification.gvf-toast {
+  position: fixed; top: 20px; left: 20px; z-index: 2147483647;
+  display: none; align-items: center; gap: 12px;
+  min-width: 220px; max-width: min(420px, calc(100vw - 40px));
+  padding: 10px 16px 12px 10px; box-sizing: border-box; overflow: hidden;
+  background: linear-gradient(180deg, rgba(30,31,40,0.96), rgba(16,17,23,0.96));
+  border: 1px solid rgba(255,255,255,0.09); border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+  color: #f5f5fa; pointer-events: none;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  opacity: 0; transform: translateY(-8px) scale(0.98);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+#gvf-profile-notification.gvf-toast.is-in { opacity: 1; transform: translateY(0) scale(1); }
+#gvf-profile-notification .gvf-toast-icon {
+  flex: 0 0 auto; width: 32px; height: 32px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 15px; font-weight: 800; line-height: 1;
+  color: var(--gvf-toast-accent, #3b82f6);
+  background: color-mix(in srgb, var(--gvf-toast-accent, #3b82f6) 18%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--gvf-toast-accent, #3b82f6) 35%, transparent);
+}
+#gvf-profile-notification[data-kind="info"] .gvf-toast-icon { font-size: 16px; }
+#gvf-profile-notification .gvf-toast-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+#gvf-profile-notification .gvf-toast-title {
+  font-size: 13px; font-weight: 650; letter-spacing: 0.01em; color: #f5f5fa;
+  line-height: 1.3; overflow-wrap: anywhere;
+}
+#gvf-profile-notification .gvf-toast-detail {
+  font-size: 12px; font-weight: 500; color: var(--gvf-toast-accent, rgba(235,235,245,0.7));
+  line-height: 1.35; overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; overflow: hidden;
+}
+#gvf-profile-notification[data-kind="info"] .gvf-toast-detail { color: rgba(235,235,245,0.72); }
+#gvf-profile-notification .gvf-toast-bar {
+  position: absolute; left: 0; bottom: 0; height: 2px; width: 100%;
+  background: var(--gvf-toast-accent, #3b82f6); opacity: 0.85; transform-origin: left center;
+}
+@keyframes gvf-toast-time { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+
+/* own dropdown list for HUD selects (replaces the native popup) */
+.gvf-hud-popup {
+  position: fixed; z-index: 2147483647; box-sizing: border-box;
+  display: flex; flex-direction: column; gap: 6px; padding: 6px;
+  background: #1b1c24; border: 1px solid rgba(255,255,255,0.1); border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.6);
+  color: #e9e9f1; color-scheme: dark; user-select: none;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+.gvf-hud-popup .gvf-pop-search {
+  box-sizing: border-box; width: 100%; padding: 7px 10px; border-radius: 8px; outline: none;
+  border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.06);
+  color: #ececf3; font-family: inherit; font-size: 12px; font-weight: 500;
+}
+.gvf-hud-popup .gvf-pop-search:focus { border-color: var(--gvf-accent, #8b5cf6); }
+.gvf-hud-popup .gvf-pop-list {
+  overflow-y: auto; min-height: 0; flex: 1 1 auto;
+  scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.18) transparent;
+}
+.gvf-hud-popup .gvf-pop-list::-webkit-scrollbar { width: 8px; }
+.gvf-hud-popup .gvf-pop-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.16); border-radius: 8px; }
+.gvf-hud-popup .gvf-pop-group {
+  padding: 8px 10px 4px; font-size: 10px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(235,235,245,0.45);
+}
+.gvf-hud-popup .gvf-pop-item {
+  padding: 6px 10px; border-radius: 7px; cursor: pointer;
+  font-size: 12px; font-weight: 500; color: #e9e9f1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: background 0.12s ease;
+}
+.gvf-hud-popup .gvf-pop-item.in-group { padding-left: 18px; }
+.gvf-hud-popup .gvf-pop-item:hover { background: rgba(255,255,255,0.07); }
+.gvf-hud-popup .gvf-pop-item.is-sel {
+  background: rgba(255,255,255,0.1); color: #fff;
+  box-shadow: inset 3px 0 0 var(--gvf-accent, #8b5cf6);
+}
+.gvf-hud-popup .gvf-pop-item.is-disabled { opacity: 0.4; cursor: default; }
+/* every dropdown of the script (HUDs + Config / LUT / Custom SVG / Expert windows): dark native popup */
+.gvf-hud select, [id^="gvf-"] select { color-scheme: dark; }
+.gvf-hud select option, .gvf-hud select optgroup,
+[id^="gvf-"] select option, [id^="gvf-"] select optgroup {
+  background-color: #1b1c24 !important; color: #ececf3 !important;
+}
+.gvf-hud .gvf-row .gvf-select { flex: 1 1 auto; min-width: 0; width: auto !important; }
+.gvf-hud .gvf-row input.gvf-range { flex: 1 1 auto; min-width: 80px; }
+.gvf-hud .gvf-row .gvf-lbl, .gvf-hud .gvf-row .gvf-val, .gvf-hud .gvf-row .gvf-icon-btn { flex: 0 0 auto; }
+.gvf-hud .gvf-icon-btn { width: 28px !important; height: 26px !important; border-radius: 8px !important; }
+
+.gvf-hud .gvf-box { background: transparent !important; box-shadow: none !important; padding: 2px !important; }
+.gvf-hud .gvf-io-text {
+  box-sizing: border-box !important;
+  background: rgba(0,0,0,0.35) !important; color: #dfe7f1 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important; border-radius: 12px !important;
+  padding: 10px !important; transition: border-color 0.15s ease;
+}
+.gvf-hud .gvf-io-text:focus { border-color: var(--gvf-accent) !important; }
+.gvf-hud .gvf-btn {
+  border-radius: 9px !important; padding: 6px 11px !important; border-width: 1px !important;
+  font-size: 11px !important; font-weight: 600 !important; letter-spacing: 0.01em;
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.1s ease !important;
+}
+.gvf-hud .gvf-btn:not(:disabled):hover { transform: translateY(-1px); }
+.gvf-hud .gvf-btn:not(:disabled):active { transform: translateY(0) scale(0.97); }
+.gvf-hud .gvf-status { font-size: 11px !important; font-weight: 500 !important; color: rgba(235,235,245,0.62) !important; padding: 0 2px; }
+</style><style id="global-video-filter-style">
+      video {
+        will-change: filter;
+        transform: translateZ(0);
+        filter: url("#gvf_sm") brightness(1.02) contrast(1.05) saturate(1.15) !important;
+        outline: none !important;
+      }
+    </style><style type="text/css">@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/l?subset_id=2&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/d?subset_id=2&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/cb695f/000000000000000000017701/27/a?subset_id=2&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/eaf09c/000000000000000000017703/27/l?subset_id=2&fvd=n7&v=3) format("woff2"),url(https://use.typekit.net/af/eaf09c/000000000000000000017703/27/d?subset_id=2&fvd=n7&v=3) format("woff"),url(https://use.typekit.net/af/eaf09c/000000000000000000017703/27/a?subset_id=2&fvd=n7&v=3) format("opentype");font-weight:700;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:adobe-clean;src:url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/l?subset_id=2&fvd=n3&v=3) format("woff2"),url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/d?subset_id=2&fvd=n3&v=3) format("woff"),url(https://use.typekit.net/af/40207f/0000000000000000000176ff/27/a?subset_id=2&fvd=n3&v=3) format("opentype");font-weight:300;font-style:normal;font-stretch:normal;font-display:auto;}@font-face{font-family:adobe-hand-b;src:url(https://use.typekit.net/af/e301c6/0000000000000000000149e7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff2"),url(https://use.typekit.net/af/e301c6/0000000000000000000149e7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("woff"),url(https://use.typekit.net/af/e301c6/0000000000000000000149e7/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3) format("opentype");font-weight:400;font-style:normal;font-stretch:normal;font-display:auto;}</style><style type="text/css">@-webkit-keyframes rotate {
+  from  { -webkit-transform: rotate(0deg); }
+  to   { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes rotate {
+  from  { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.dropbox-dropin-btn, .dropbox-dropin-btn:link, .dropbox-dropin-btn:hover {
+  display: inline-block;
+  height: 14px;
+  font-family: "Lucida Grande", "Segoe UI", "Tahoma", "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #636363;
+  text-decoration: none;
+  padding: 1px 7px 5px 3px;
+  border: 1px solid #ebebeb;
+  border-radius: 2px;
+  border-bottom-color: #d4d4d4;
+  background: #fcfcfc;
+background: -moz-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+background: -webkit-linear-gradient(top, #fcfcfc 0%, #f5f5f5 100%);
+background: linear-gradient(to bottom, #fcfcfc 0%, #f5f5f5 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f5f5f5',GradientType=0);
+}
+
+.dropbox-dropin-default:hover, .dropbox-dropin-error:hover {
+  border-color: #dedede;
+  border-bottom-color: #cacaca;
+  background: #fdfdfd;
+background: -moz-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+background: -webkit-linear-gradient(top, #fdfdfd 0%, #f5f5f5 100%);
+background: linear-gradient(to bottom, #fdfdfd 0%, #f5f5f5 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#f5f5f5',GradientType=0);
+}
+
+.dropbox-dropin-default:active, .dropbox-dropin-error:active {
+  border-color: #d1d1d1;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.dropbox-dropin-btn .dropin-btn-status {
+  display: inline-block;
+  width: 15px;
+  height: 14px;
+  vertical-align: bottom;
+  margin: 0 5px 0 2px;
+  background: transparent url('https://www.dropbox.com/static/images/widgets/dbx-saver-status.png') no-repeat;
+  position: relative;
+  top: 2px;
+}
+
+.dropbox-dropin-default .dropin-btn-status {
+  background-position: 0px 0px;
+}
+
+.dropbox-dropin-progress .dropin-btn-status {
+  width: 18px;
+  margin: 0 4px 0 0;
+  background: url('https://www.dropbox.com/static/images/widgets/dbx-progress.png') no-repeat center center;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1.7s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-name: rotate;
+  animation-duration: 1.7s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.dropbox-dropin-success .dropin-btn-status {
+  background-position: -15px 0px;
+}
+
+.dropbox-dropin-disabled {
+  background: #e0e0e0;
+  border: 1px #dadada solid;
+  border-bottom: 1px solid #ccc;
+  box-shadow: none;
+}
+
+.dropbox-dropin-disabled .dropin-btn-status {
+  background-position: -30px 0px;
+}
+
+.dropbox-dropin-error .dropin-btn-status {
+  background-position: -45px 0px;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.4) {
+  .dropbox-dropin-btn .dropin-btn-status {
+    background-image: url('https://www.dropbox.com/static/images/widgets/dbx-saver-status-2x.png');
+    background-size: 60px 14px;
+    -webkit-background-size: 60px 14px;
+  }
+
+  .dropbox-dropin-progress .dropin-btn-status {
+    background: url('https://www.dropbox.com/static/images/widgets/dbx-progress-2x.png') no-repeat center center;
+    background-size: 20px 20px;
+    -webkit-background-size: 20px 20px;
+  }
+}
+
+.dropbox-saver:hover, .dropbox-chooser:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.dropbox-chooser, .dropbox-dropin-btn {
+  line-height: 11px !important;
+  text-decoration: none !important;
+  box-sizing: content-box !important;
+  -webkit-box-sizing: content-box !important;
+  -moz-box-sizing: content-box !important;
+}
+</style><script type="text/javascript" src="cla_files/site-analytics_NVSF.js" async=""></script></head>
+
+
+
+
+<body class="mlw">
+  	
+  	
+
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+
+<div id="header" class="navbar fixed-top" data-maxpagewidth="1020">
+  
+    
+    
+    
+    
+    
+      
+         
+        
+          <script nonce="" type="text/javascript/defer">
+            jQuery(document).ready(function () {
+              var $header = jQuery('#header');
+              $header.addClass('navbar fixed-top');
+                
+            });
+          </script>
+          
+        
+        
+      
+    
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<script nonce="" type="text/javascript">
+  var switchAccount;
+  switchAccount = document.querySelector('.switch_account');
+  switchAccount && switchAccount.addEventListener('click', function() {
+    window.AccountSwitchingUtil.handleAccountSwitchMenuItemClick("\/public\/accountSwitchingJS");
+  });
+  switchAccount && switchAccount.addEventListener('keydown', function() {
+    if (event.key === 'Enter') {
+      window.AccountSwitchingUtil.handleAccountSwitchMenuItemClick("\/public\/accountSwitchingJS");
+    }
+  });
+</script>
+
+
+  
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  <!-- content-sub-header (for main-layout-wide.tag pages only! -->
+  
+    
+      
+      
+        
+        
+          
+        
+      
+
+      <div id="contentSubHeader" class="custom-logo-present"><div class="agreement-header"><div class="container-fluid agreement-band navbar navbar-default light-ui">     <div class="agreement-band-inner">      <div class="row">        <div class="col-xl-1 col-lg-2 col-md-2 col-sm-1 col-1 agreement-container"><div class="d-md-none navbar navbar-default  light-ui es-sidebar">      <a class="readAgreementLink hidden-accessible" tabindex="-1" href="#" data-analytics-click="readAgreement">Read agreement: Select to read full document with a screen reader. This will open the document in the same browser window. After reading, use the browser back button to return to the previous Adobe Acrobat Sign page to complete the process.</a>      <div class="navbar-header es-sidebar-header">        <button type="button" class="navbar-toggle es-sidebar-toggle" data-toggle="offcanvas" data-analytics-click="altAction" aria-label="Hamburger Options" title="Hamburger Options" role="button" aria-expanded="false">          <span class="icon-bar"></span>          <span class="icon-bar"></span>          <span class="icon-bar"></span>        </button>      </div>    </div><div class="nav-collapse float-start">      <a class="readAgreementLink hidden-accessible" tabindex="-1" href="#" data-analytics-click="readAgreement">Read agreement: Select to read full document with a screen reader. This will open the document in the same browser window. After reading, use the browser back button to return to the previous Adobe Acrobat Sign page to complete the process.</a>      <ul role="presentation" class="nav">        <li role="presentation" class="nav-item dropdown es-dropdown">          <a role="button" aria-haspopup="true" href="#" class="nav-link dropdown-toggle esign-options d-none d-md-block" data-bs-toggle="dropdown" data-analytics-click="altAction">Options          </a>          <ul role="menu" id="no-sign-menu" class="dropdown-menu">            <li role="presentation"><a role="menuitem" id="readAgreementLink" class="dropdown-item readAgreementLink" href="#" data-analytics-click="readAgreement">Read agreement<span class="hidden-accessible">: Select to read full document with a screen reader. This will open the document in the same browser window. After reading, use the browser back button to return to the previous Adobe Acrobat Sign page to complete the process.</span></a></li>                                                                        <li role="presentation"><a role="menuitem" id="headerClearDocumentBtn" class="dropdown-item clearDocument" href="#" data-analytics-click="clear">Clear document data</a></li>                                                                        <li role="presentation"><a role="menuitem" class="dropdown-item es-download" href="#" target="_blank" data-analytics-click="preSignPdf">Download PDF<span class="hidden-accessible">: Select to read document with a screen reader prior to completing the process in Acrobat Sign.</span></a></li>                         <li role="presentation"><a role="menuitem" class="dropdown-item" id="legalNoticesLink" href="#" data-analytics-click="legalNotices">Legal Notices</a></li>                      </ul>        </li>      </ul>    </div></div>        <div class="col-xl-8 col-lg-7 col-md-6 col-sm-8 col-8 agreement-name-container">        <p class="agreement-name float-start" role="heading" aria-level="1"><span class="title">Please sign: Adobe Contributor License Agreement</span></p>        </div>        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3 col-3 agreement-req-info"><div class="has-navigation"><div class="subnav float-end">      <ul role="presentation" class="nav nav-pills">                <li role="presentation" class="nav-item required-info" data-analytics-click="reqField" style="">          <a href="#" class="nav-link requiredFields d-none d-xl-block"> Next required field </a>          <a href="#" class="nav-link requiredFields d-none d-md-block d-lg-block d-xl-none"> Next Required </a>          <button class="requiredFieldsIcon badge" aria-label="4 required field(s)">4</button>        <div class="required-popup align"></div></li>        <li class="nav-item completed-info" role="status">                     <span class="completed-icon" title="Required fields completed" style="display: none !important;"></span>                  </li>                <li role="presentation" class="nav-item coachmark-mobile-container"></li>      </ul>    </div></div></div>      </div>    </div>    </div></div></div>
+    
+  
+  <div id="upsell-banner-root"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script nonce="" type="text/javascript/defer">
+    function logInToAlternateLocation(shardPrefix, url, failureCallback) {
+      var self = this;
+      if (url === undefined) {
+        url = window.location.pathname
+      }
+      loginPageAjaxService.getFederatedURLForLoggedInUser(shardPrefix, window.location.hostname.toLowerCase(), url, {
+        callback: function(options) {
+          if (options && options.url) {
+            _doLoginRedirect.call(self, options.url);
+          } else {
+            if (failureCallback) {
+              failureCallback();
+            }
+            alert('Unable to retrieve login information for ' + shardPrefix);
+          }
+        },
+        errorHandler: function() {
+          if (failureCallback) {
+            failureCallback();
+          }
+          alert('Unable to log in to ' + shardPrefix + '.  Please check the server logs for more information.');
+        }
+      });
+    }
+    function _doLoginRedirect(url) {
+      // redirect the page to the new URL
+      window.location.href = url;
+    }
+
+    
+    window.addEventListener("hashchange",  function(e) {
+      var hash = decodeURIComponent(window.location.hash);
+      if (!/^#shardRedirect/.test(hash)) {
+        return true;
+      }
+      e.preventDefault();
+      
+      logInToAlternateLocation("", hash);
+      return false;
+    });
+  </script>
+
+
+
+	  
+
+    <!-- content goes here -->
+    <div id="mainContent" class="custom-logo-present no-header-or-footer no-header-tabs esign" role="main">
+    
+      
+
+
+
+
+<div id="toast-container" class="toast-container">
+  <div id="toast-main-view" class="toast">
+    <svg id="toast-variant-icon" focusable="false" aria-hidden="true">
+      </svg>
+    <div class="toast-body">
+      <div class="toast-content"></div>
+      <button id="toast-action-click" class="toast-button toast-button--overBackground toast-button--quiet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span hidden="" id="cspEventAttribute-13bd8a20-0d04-4725-a200-90fc882a37f4-1" data-csp-event="onclick" data-csp-target="parent"></span>
+<script nonce="">
+  (function () {
+    var styleSheetId = "csp-link-styles";
+    var styleSheet = document.getElementById(styleSheetId);
+    if (styleSheet == null) {
+      var style = document.createElement('style');
+      style.id = styleSheetId;
+      document.getElementsByTagName('head')[0].appendChild(style);
+      style.innerHTML = '.js-link-cursor {cursor: pointer}';
+    }
+
+    
+    
+    var marker = document.getElementById("cspEventAttribute\-13bd8a20\-0d04\-4725\-a200\-90fc882a37f4\-1");
+    
+    var eventElement = marker.parentElement;
+    if (marker.getAttribute('data-csp-target') === "sibling") {
+      eventElement = marker.previousElementSibling;
+    }
+    
+    eventElement[marker.getAttribute('data-csp-event')] = function (event) {
+      Utils.ToastMessage.handleViewClick()
+    };
+  })();
+</script>
+
+        <span id="toast-action-label" class="toast-button-label"></span>
+      </button>
     </div>
-    <iframe src="https://adobe.na1.documents.adobe.com/public/esignWidget?wid=CBFCIBAA3AAABLblqZhDVT20kzFEWVcSxq_OTMGcrEoE3G0TDFfMi7ViqOtTuyjcY7Us4Uk2S3YMeoDKbkBE*&hosted=false" width="100%" height="100%" frameborder="0" style="border: 0; overflow: hidden; min-height: 500px; min-width: 600px;"></iframe>
-  </body>
-</html>
+    <div class="toast-buttons">
+      <button aria-label="close" class="toast-clearButton toast-clearButton--medium toast-clearButton--overBackground">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span hidden="" id="cspEventAttribute-24d25e5d-b102-40df-8c2d-4c036330ff68-2" data-csp-event="onclick" data-csp-target="parent"></span>
+<script nonce="">
+  (function () {
+    var styleSheetId = "csp-link-styles";
+    var styleSheet = document.getElementById(styleSheetId);
+    if (styleSheet == null) {
+      var style = document.createElement('style');
+      style.id = styleSheetId;
+      document.getElementsByTagName('head')[0].appendChild(style);
+      style.innerHTML = '.js-link-cursor {cursor: pointer}';
+    }
+
+    
+    
+    var marker = document.getElementById("cspEventAttribute\-24d25e5d\-b102\-40df\-8c2d\-4c036330ff68\-2");
+    
+    var eventElement = marker.parentElement;
+    if (marker.getAttribute('data-csp-target') === "sibling") {
+      eventElement = marker.previousElementSibling;
+    }
+    
+    eventElement[marker.getAttribute('data-csp-event')] = function (event) {
+      Utils.ToastMessage.hideToast()
+    };
+  })();
+</script>
+
+        <svg class="toast-icon uiIcon-CrossMedium" focusable="false" aria-hidden="true">
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<script nonce="" type="application/javascript">
+  try {
+    if(localStorage && localStorage.toastMessage) {
+      
+      localStorage.removeItem("toastMessage");
+      
+    }
+  } catch (e) {
+    //  access to local storage is denied.
+  }
+</script>
+
+    
+      
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+      <link rel="stylesheet" type="text/css" media="screen" href="cla_files/esignResponsive_NVSF.css" nonce="">
+
+    <div class="agreementCnt"><div class="container-fluid pdf" unselectable="on">         <div id="aria-actions" class="visually-hidden" role="log" aria-live="polite"></div>        <div id="banner-container" aria-live="polite"></div>        <div id="document" class="clearfix prcnt-100" style="margin-top: 48px; margin-bottom: 60px; margin-left: auto; width: 3031.2px;" aria-describedby="popover480947"><ul role="presentation" class="pages"><li role="presentation" class="page pdf-page-1" style="width: 1020px; height: 1321px; margin-left: 1005.6px;"><img data-src="https://adobe.na1.documents.adobe.com/document/ci/CBSCTBABDUAAABACAABAAIf9Ebfho54uz01LoiLFZ8lqgyPWOwv6qwuZccXGsWQHaPmKW5HvLsPJmsTjv5tlpBfVqZkbYJ9PMZ0brcmCRknR23zh5M37ZGb3FGA3FrVE*/z125.png&amp;sns=z125&amp;snp=3" src="cla_files/z125_NVSF.png" alt="Page 1 of 3. To read the document content using a screen reader, click on 'Read agreement' from 'Alternative Actions/Options' menu." class="page-image" style="width: 1020px;" draggable="false"></li><li role="presentation" class="page pdf-page-2" style="width: 1020px; height: 1321px; margin-left: 1005.6px;"><img data-src="https://adobe.na1.documents.adobe.com/document/ci/CBSCTBABDUAAABACAABAAHeoD7dJ-Pnu0wKerHTFV47Htm4PHZh7sEWi-lI97spPlEIMfVp7cDbr3yseA7VjcDchDwxcxAdi86Ujm2DBz1Tqz2z2LLiuT315r1nx2m64*/z125.png&amp;sns=z125&amp;snp=3" src="cla_files/z125_003_NVSF.png" alt="Page 1 of 3. To read the document content using a screen reader, click on 'Read agreement' from 'Alternative Actions/Options' menu." class="page-image" style="width: 1020px;" draggable="false"><div class="pdfFormField radio required todo-required" data-fieldname="CLA TYPE" style="top: 923.8px; left: 90px; height: 18.3px; width: 18.3px;"><input type="radio" name="CLA TYPE" value="0" aria-required="true" tabindex="0" data-tabindex="1" style="border-style: solid; border-width: 1.7px; margin: 0px; text-align: left; transform: translate3d(0px, 0.7px, 0px) scale3d(1.3, 1.3, 1);" title=""></div><div class="pdfFormField radio required todo-required" data-fieldname="CLA TYPE" style="top: 1052.5px; left: 90px; height: 18.3px; width: 18.3px;"><input type="radio" name="CLA TYPE" value="1" aria-required="true" tabindex="0" data-tabindex="1" style="border-style: solid; border-width: 1.7px; margin: 0px; text-align: left; transform: translate3d(0px, 0.7px, 0px) scale3d(1.3, 1.3, 1);" title=""></div><div class="pdfFormField text_field required condition-hide todo-done" data-fieldname="Custom Field 1" style="top: 978.8px; left: 281.3px; font-size: 15.8px; height: 26.3px; width: 338.8px; display: none;"><input class="text_field_input" type="text" name="Custom Field 1" aria-required="true" tabindex="0" data-tabindex="2" style="border-style: solid; font-size: 15.8px; text-align: left;" title=""></div><div class="pdfFormField text_field required condition-hide todo-done" data-fieldname="Custom Field 2" style="top: 1015px; left: 282.5px; font-size: 15.8px; height: 26.3px; width: 338.8px; display: none;"><input class="text_field_input" type="text" name="Custom Field 2" aria-required="true" tabindex="0" data-tabindex="3" style="border-style: solid; font-size: 15.8px; text-align: left;" title=""></div><div class="pdfFormField text_field required condition-hide todo-done" data-fieldname="Company 1" style="top: 1128.8px; left: 282.5px; font-size: 15.8px; height: 26.3px; width: 345px; display: none;"><input class="text_field_input" type="text" name="Company 1" aria-label="Enter your company name" placeholder="Enter your company name" aria-required="true" maxlength="255" tabindex="0" data-tabindex="4" style="border-style: solid; font-size: 15.8px; text-align: left;" title=""></div><div class="pdfFormField text_field required condition-hide todo-done" data-fieldname="Custom Field 3" style="top: 1165px; left: 285px; font-size: 15.8px; height: 26.3px; width: 341.3px; display: none;"><input class="text_field_input" type="text" name="Custom Field 3" aria-required="true" tabindex="0" data-tabindex="5" style="border-style: solid; font-size: 15.8px; text-align: left;" title=""></div></li><li role="presentation" class="page pdf-page-3" style="width: 1020px; height: 1321px; margin-left: 1005.6px;"><img data-src="https://adobe.na1.documents.adobe.com/document/ci/CBSCTBABDUAAABACAABAAylCmeYCsP3nIPflOCunT8OptLRG7id0On3IZ3URvZEea8ouGmxAoY9Ah53fE4hdExO0LPaKvxyHHtsg6fPLoMgzDDbXQYqKJDcO_zNISHAs*/z125.png&amp;sns=z125&amp;snp=3" src="cla_files/z125_002_NVSF.png" alt="Page 1 of 3. To read the document content using a screen reader, click on 'Read agreement' from 'Alternative Actions/Options' menu." class="page-image" style="width: 1020px;" draggable="false"><div class="pdfFormField text_field required condition-hide todo-done" data-fieldname="Title 1" style="top: 76.3px; left: 281.3px; font-size: 15.8px; height: 26.3px; width: 343.8px; display: none;"><input class="text_field_input" type="text" name="Title 1" aria-label="Enter your job title" placeholder="Enter your job title" aria-required="true" maxlength="255" tabindex="0" data-tabindex="6" style="border-style: solid; font-size: 15.8px; text-align: left;" title=""></div><div class="pdfFormField multiline required condition-hide todo-done" data-fieldname="Custom Field 4" style="top: 115px; left: 281.3px; font-size: 16.7px; height: 57.5px; width: 340px; display: none;"><textarea name="Custom Field 4" aria-required="true" tabindex="0" data-tabindex="7" style="border-style: solid; font-size: 16.7px; text-align: left;"></textarea></div><div class="pdfFormField text_field required condition-hide todo-done" data-fieldname="Custom Field 5" style="top: 183.8px; left: 281.3px; font-size: 15.8px; height: 26.3px; width: 341.3px; display: none;"><input class="text_field_input" type="text" name="Custom Field 5" aria-required="true" tabindex="0" data-tabindex="8" style="border-style: solid; font-size: 15.8px; text-align: left;" title=""></div><div class="pdfFormField multiline required condition-hide todo-done" data-fieldname="Custom Field 6" style="top: 233.8px; left: 385px; font-size: 16.7px; height: 78.8px; width: 337.5px; display: none;"><textarea name="Custom Field 6" aria-required="true" tabindex="0" data-tabindex="9" style="border-style: solid; font-size: 16.7px; text-align: left;"></textarea></div><div class="pdfFormField text_field required todo-required" data-fieldname="Custom Field 7" style="top: 451.3px; left: 282.5px; font-size: 15.8px; height: 26.3px; width: 338.8px;"><input class="text_field_input" type="text" name="Custom Field 7" aria-required="true" tabindex="0" data-tabindex="10" style="border-style: solid; font-size: 15.8px; text-align: left;" title=""></div><div class="pdfFormField text_field required todo-required" data-fieldname="echosign_email" style="top: 488.8px; left: 282.5px; font-size: 15.3px; height: 25px; width: 341.3px;"><input class="text_field_input" type="text" name="echosign_email" aria-label="Enter your email address" placeholder="Enter your email address" aria-required="true" tabindex="0" data-tabindex="11" style="border-style: solid; font-size: 15.3px; text-align: left;" title=""></div><div class="pdfFormField signature required todo-signature" data-fieldname="echosign_signature" style="top: 516.3px; left: 282.5px; font-size: 21.065px; height: 38.3px; width: 353.6px;"><input type="text" name="echosign_signature" placeholder="Click here to sign" aria-label="Click here to sign" class="signature-field adobehanda" readonly="readonly" unselectable="on" aria-hidden="true" disabled="disabled" aria-required="true" style="border-style: solid; font-size: 21.065px; text-align: left;" title=""><div class="draw-canvas pad"></div><div class="faux_field" role="button" title="" aria-label="Click to sign required" tabindex="0" data-tabindex="12"></div><div id="click_to_change-view64" hidden="">Click to change</div><div class="signature-reason-info d-none"><div class="left-col"></div><div class="signature-reason-content"></div></div><div class="signature-info"><span class="signer-name" id="signer_name-view64"></span><span class="signature-date" id="signer_date-view64"></span><span class="visually-hidden">Click to change</span></div><div class="signature-image"><img class="saved-signature-image" alt=""></div><button class="close" title="Click to clear this signature" aria-label="Click to clear this signature">×</button></div><div class="pdfFormField text_field" data-fieldname="echosign_dateDate 1" style="top: 557.5px; left: 282.5px; font-size: 16px; height: 26.7px; width: 150px;"><input class="text_field_input" type="text" name="echosign_dateDate 1" value="Oct 29, 2026" readonly="readonly" tabindex="-1" data-tabindex="13" style="border-style: solid; font-size: 16px; text-align: left;" title=""></div></li></ul><div class="coachmark-gutter"></div><button class="popover bs-popover-auto show coachmark left down sticky" role="link" tabindex="0" id="popover480947" style="top: 1396px; left: 953.6px;" data-popper-placement="left">      <div class="arrow"></div>      <div class="popover-body" unselectable="on">Start</div>    </button></div>    <div></div></div></div></div>
+
+    
+    <div id="tou-frame">
+    <button role="button" class="btn btn-primary cancel" title="Close" aria-label="Close">Close</button>
+    <section></section> </div>
+
+  <div id="es-underlay" class="open">
+    <div class="terms-of-use">
+      <div class="row tou-container bottom clearfix">
+        <div class="terms col-xl-9 col-lg-9 col-md-9 col-sm-8">
+          <span class="tou-content">By clicking continue, I acknowledge that I have read and agree to the Adobe <a tabindex="98" href="https://www.adobe.com/legal/terms-linkfree.html" target="_blank" class="adobe-terms-of-use">Terms of Use</a>. See our <a tabindex="99" href="https://www.adobe.com/privacy/policy-linkfree.html" target="_blank" class="adobe-privacy-policy">Privacy Policy</a> for details on our privacy practices.</span>
+        </div>
+        <div class="tou-btn col-xl-3 col-lg-3 col-md-3 col-sm-4">
+          <div class="tou-btn-inner">
+            <button tabindex="100" class="btn btn-primary click-to-accept-tou">Continue</button>
+          </div>
+        </div>
+      </div>
+      <div class="row embedded-container bottom clearfix">
+      </div>
+    </div>
+  </div>
+
+  <script nonce="" type="text/javascript/defer">
+    var filterSheet;
+    const container = document.querySelector('body');
+    const classPrefix = 'group-cid-';
+
+    jQuery(document).ready(function() {
+      // Skip animation on first load
+      setTimeout(function() {
+        filterSheet = document.getElementById('field-group-validation-toggle').sheet;
+      }, 1000)
+    });
+
+    function groupShakeOff() {
+      if (!filterSheet) return;
+      // remove all rules
+      const len = filterSheet.cssRules.length;
+      for (let i = 0; i < len; i++) {
+        filterSheet.deleteRule(0);
+      }
+      container.classList.forEach(c => {
+        if (c.startsWith(classPrefix)) {
+          container.classList.remove(c);
+        }
+      });
+    }
+
+    function groupShakeOn(groupId) {
+      if (!filterSheet) return;
+      var groupClass = classPrefix + groupId;
+      filterSheet.insertRule(`body.${groupClass} .pdfFormField.${groupClass} { animation: checkbox-group-shake 1s cubic-bezier(.36,.07,.19,.97) both }`, 0);
+      container.classList.add(groupClass);
+    }
+  </script>
+
+    <!--  navigation bar bottom -->
+    
+      
+        
+	      
+          
+          <div id="footer" class="es-footer navbar fixed-bottom">
+            <div class="agreement-footer"><div class="hud-container"><div class="hud-toolbar" role="toolbar"><button data-analytics-click="up" class="hud-pageup-btn disable" aria-disabled="true"><span class="visually-hidden">Page up</span></button><button data-analytics-click="down" class="hud-pagedown-btn"><span class="visually-hidden">Page down</span></button><div class="hud-pagenum"><input type="text" class="hud-current-num" value="1" aria-label="Page " title=""><span class="hud-separator"> / </span><span class="hud-totalpage-count"> 3 </span></div><div class="hud-divider" role="separator"></div><button data-analytics-click="zoomout" class="hud-zoomdown-btn"><span class="visually-hidden">Zoom out</span></button><button data-analytics-click="zoomIn" class="hud-zoomup-btn"><span class="visually-hidden">Zoom in</span></button><button data-analytics-click="preSignPdf" class="hud-download-btn"><span class="visually-hidden">Download PDF</span></button><button class="hud-close-btn" data-analytics-click="closeHud"><span class="visually-hidden">Hide tools</span></button></div></div><div class="terms-of-use container-fluid"><div class="tou-container bottom clearfix">                  <div class="terms col-xl-9 col-lg-9 col-md-9 col-sm-8 col-8">              <section forcedreviewdocbeforeterms=""></section>                                           <span class="tou-content hide-on-forced-review">By signing, I agree to this document, the <a href="https://www.adobe.com/legal/consumer-disclosure-linkfree.html" target="_blank" class="consumer-disclosure">Consumer Disclosure</a> and to utilize electronic signatures.</span>                                          </div>            <div class="tou-btn col-xl-3 col-lg-3 col-md-3 col-sm-4 col-4">                          <div class="tou-btn-inner">                                        <div class="esign-marketing-sticky">            <img src="cla_files/AdobeSign_Tag_NVSF.png" srcset="cla_files/AdobeSign_Tag_2x_NVSF.png 2x" alt="">          </div>                    <button class="btn btn-primary click-to-esign " data-analytics-click="esign">Click to Sign</button>        </div>      </div>    </div></div></div>
+            
+              
+                
+                  <div class="powered-by-document-cloud"></div>
+                
+              
+              
+		        
+	        </div>
+	      
+	    
+	  
+
+	<!-- interstitial -->
+	<div class="interstitial" style="display: none;">
+	 <div class="innerCnt">
+		<h3 class="text">Preparing Document...</h3>
+		<div class="spinner large" role="progressbar"></div>
+	 </div>
+	</div>
+	<div class="modal-backdrop interstitial-backdrop white fade in" style="display: none;"></div>
+
+	
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    <script nonce="" type="text/javascript/defer">
+        var sCodeSrc = '/static/site-analytics.js';
+
+        function loadAnalytic() {
+            window.scAnalytics = new ScAnalytics("noTi", "noAs", "A\-WEB", "noUs","noCh","en_US","3", "noMa");
+            window.scAnalytics.onPageLoad();
+           if (typeof(Event) === 'function') {
+                var event = new Event('adobeSignAnalytics:ready');
+            } else {
+                var event = document.createEvent('Event');
+                event.initEvent('adobeSignAnalytics:ready', true, true);
+            }
+            window.dispatchEvent(event);
+        }
+
+        function loadAnalyticsWithError() {
+          console.log('Error while loading resource ' + sCodeSrc);
+          loadAnalytic();
+        }
+
+        function enableSiteCatalyst() {
+            if(window.scAnalytics) {
+                window.scAnalytics.enable();
+            }
+            else {
+              if(window.adobePrivacy) {
+                window.adobePrivacy.loadResource({path: sCodeSrc, type: 'script', async: true, successCallback: loadAnalytic, errorCallback: loadAnalyticsWithError});
+              }
+            }
+        }
+
+        function disableSiteCatalyst() {
+            if(window.scAnalytics) {
+                window.scAnalytics.disable();
+            }
+        }
+
+        if(window.privacyEvent) {
+          if(window.adobePrivacy) {
+            window.adobePrivacy.loadResource({path: sCodeSrc, type: 'script', async: true, successCallback: loadAnalytic, errorCallback: loadAnalyticsWithError});
+          }
+        } else {
+          window.addEventListener("adobePrivacy:PrivacyConsent", function () {
+            enableSiteCatalyst();
+          });
+        }
+
+        if(window.privacyEventReject) {
+         disableSiteCatalyst();
+        } else {
+          window.addEventListener("adobePrivacy:PrivacyReject", function () {
+            disableSiteCatalyst();
+          });
+        }
+
+        if(window.privacyEventCustom) {
+          if(window.adobePrivacy && window.adobePrivacy.activeCookieGroups().includes('C0002')) {
+            window.adobePrivacy.loadResource({path: sCodeSrc, type: 'script', async: true, successCallback: loadAnalytic, errorCallback: loadAnalyticsWithError});
+          }
+        } else {
+          window.addEventListener("adobePrivacy:PrivacyCustom", function(e) {
+            if(window.adobePrivacy && window.adobePrivacy.activeCookieGroups().includes('C0002')) { //C0002 is the performance category
+              enableSiteCatalyst();
+            }
+            else {
+              disableSiteCatalyst();
+            }
+          });
+        }
+
+
+
+    </script>
+  
+  
+
+
+<!-- END NEW SITECATALYST CODE LOADING -->
+
+
+
+  
+
+  
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+  
+
+
+	  <script nonce="" type="text/javascript">
+		(function () {
+
+		  function processLazyLoad () {
+			// lazyload styles and scripts
+			var hrefs = jQuery('script,link').filter('[lazyload_href]').map(function () {
+			  var href = this.getAttribute('lazyload_href');
+			  return href;
+			});
+
+			if (hrefs.length === 0) {
+			  App.Lazyload.resolve();
+			} else {
+			  loadjs(hrefs, 'lazyload-done', {
+				success: function () {
+				  App.Lazyload.resolve();
+				},
+                error: function(notfound) {
+				  console.error('Lazyload failed to load:', notfound, 'continuing...');
+                  App.Lazyload.resolve();
+                },
+				async  : false
+			  });
+			}
+		}
+
+		
+			document.addEventListener('DOMContentLoaded', function() {
+			  var loadingTimer = setInterval(function () {
+				if (window.i18n && window.App) {
+				  clearInterval(loadingTimer);
+				  runDeferreds();
+				  processLazyLoad();
+				}
+			  }, 25);
+
+			  function runDeferreds() {
+				// deferred inline scripts
+				jQuery('script[type="text/javascript/defer"]').each(function () {
+				  jQuery.globalEval(this.textContent, {
+            nonce: "3m863g4bxrcx4sw7l3j3gg3vm"
+          });
+        });
+			  }
+			}, false);
+		
+		
+		})();
+	  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        
+    
+
+
+
+
+
+
+		
+		<script nonce="">try{_satellite.pageBottom();}catch(e){}</script>
+
+
+<svg id="global-video-filter-svg" data-params="1.3|-1.1|1.1|1.3|0|0.3|0.2|0|0|0|off|U:0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,128.0,128.0,128.0|CB:none|LUT:none|CSVG:|TONE:none" width="0" height="0" style="position: absolute; left: -9999px; top: -9999px;"><filter id="gvf_s" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feColorMatrix type="matrix" in="r_wl" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter><filter id="gvf_sm" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feComponentTransfer in="r_wl" result="r1"><feFuncR type="gamma" amplitude="0.96" exponent="1.14" offset="-0.015"></feFuncR><feFuncG type="gamma" amplitude="0.96" exponent="1.13" offset="-0.015"></feFuncG><feFuncB type="gamma" amplitude="0.97" exponent="1.11" offset="-0.015"></feFuncB></feComponentTransfer><feColorMatrix type="saturate" values="0.9" in="r1" result="r2"></feColorMatrix><feColorMatrix type="matrix" in="r2" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter><filter id="gvf_st" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feColorMatrix type="matrix" values="1.120669 -0.013505 -0.006214 0 0 0.022093 1.042735 0.014954 0 0 -0.020243 -0.020417 1.023674 0 0 0 0 0 1.000000 0" in="r_wl" result="r4b"></feColorMatrix><feColorMatrix type="matrix" in="r4b" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter><filter id="gvf_sv" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feColorMatrix type="saturate" values="1.35" in="r_wl" result="r5"></feColorMatrix><feColorMatrix type="matrix" in="r5" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter><filter id="gvf_smt" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feComponentTransfer in="r_wl" result="r1"><feFuncR type="gamma" amplitude="0.96" exponent="1.14" offset="-0.015"></feFuncR><feFuncG type="gamma" amplitude="0.96" exponent="1.13" offset="-0.015"></feFuncG><feFuncB type="gamma" amplitude="0.97" exponent="1.11" offset="-0.015"></feFuncB></feComponentTransfer><feColorMatrix type="matrix" values="1.032052 0.066564 0.002334 0 0 0.042882 1.015666 0.021233 0 0 0.002719 0.051910 0.928384 0 0 0 0 0 1.000000 0" in="r1" result="r4b"></feColorMatrix><feColorMatrix type="matrix" in="r4b" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter><filter id="gvf_smv" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feComponentTransfer in="r_wl" result="r1"><feFuncR type="gamma" amplitude="0.96" exponent="1.14" offset="-0.015"></feFuncR><feFuncG type="gamma" amplitude="0.96" exponent="1.13" offset="-0.015"></feFuncG><feFuncB type="gamma" amplitude="0.97" exponent="1.11" offset="-0.015"></feFuncB></feComponentTransfer><feColorMatrix type="matrix" values="1.169205 -0.153725 -0.015480 0 0 -0.045795 1.061275 -0.015480 0 0 -0.045795 -0.153725 1.199520 0 0 0 0 0 1.000000 0" in="r1" result="r5"></feColorMatrix><feColorMatrix type="matrix" in="r5" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter><filter id="gvf_stv" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feColorMatrix type="matrix" values="1.424339 -0.277655 -0.037464 0 0 -0.058739 1.148269 -0.008888 0 0 -0.115893 -0.286986 1.352884 0 0 0 0 0 1.000000 0" in="r_wl" result="r5"></feColorMatrix><feColorMatrix type="matrix" in="r5" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter><filter id="gvf_smtv" color-interpolation-filters="sRGB"><feGaussianBlur in="SourceGraphic" stdDeviation="1.1" result="blur"></feGaussianBlur><feComposite in="SourceGraphic" in2="blur" operator="arithmetic" k1="0" k2="2.3" k3="-1.3" k4="0" result="r0"></feComposite><feComponentTransfer in="r0" result="r_bl"><feFuncR type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncR><feFuncG type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncG><feFuncB type="gamma" amplitude="1" exponent="1" offset="-0.012"></feFuncB></feComponentTransfer><feComponentTransfer in="r_bl" result="r_wl"><feFuncR type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncR><feFuncG type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncG><feFuncB type="table" tableValues="0.0000 0.0625 0.1250 0.1875 0.2500 0.3125 0.3750 0.4375 0.5000 0.5625 0.6250 0.6875 0.7500 0.8143 0.8802 0.9461 1.0000"></feFuncB></feComponentTransfer><feComponentTransfer in="r_wl" result="r1"><feFuncR type="gamma" amplitude="0.96" exponent="1.14" offset="-0.015"></feFuncR><feFuncG type="gamma" amplitude="0.96" exponent="1.13" offset="-0.015"></feFuncG><feFuncB type="gamma" amplitude="0.97" exponent="1.11" offset="-0.015"></feFuncB></feComponentTransfer><feColorMatrix type="matrix" values="1.305531 -0.170579 -0.025732 0 0 -0.029849 1.110708 -0.000218 0 0 -0.084069 -0.190362 1.224436 0 0 0 0 0 1.000000 0" in="r1" result="r5"></feColorMatrix><feColorMatrix type="matrix" in="r5" result="r_auto" data-gvf-auto="1" values="1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0 0 0 0 0 1.000000 0"></feColorMatrix></filter></svg><div id="gvf-config-menu" style="position: fixed; top: 783.5px; left: 1515.5px; transform: none; width: 820px; max-width: 98vw; max-height: 88vh; background: rgba(20, 20, 20, 0.98); backdrop-filter: blur(10px); border: 2px solid rgb(42, 111, 219); border-radius: 16px; box-shadow: rgba(0, 0, 0, 0.8) 0px 20px 60px, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset; color: rgb(234, 234, 234); font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; z-index: 2147483647; display: none; flex-direction: column; padding: 20px; user-select: none; pointer-events: auto;"><div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid rgb(42, 111, 219); cursor: move; touch-action: none;"><div style="font-size: 20px; font-weight: 900; color: rgb(255, 255, 255); text-shadow: rgb(42, 111, 219) 0px 0px 10px;">👤 User Profile Manager</div><button style="background: rgba(255, 255, 255, 0.1); color: rgb(255, 255, 255); font-size: 20px; cursor: pointer; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; transition: 0.2s; border: 1px solid rgba(255, 255, 255, 0.2);">✕</button></div><div id="gvf-active-profile-info" style="background: rgba(42, 111, 219, 0.2); border: 1px solid rgb(42, 111, 219); border-radius: 8px; padding: 10px; margin-bottom: 15px; font-size: 13px; display: flex; align-items: center; gap: 8px;">🔵 Active profile: <strong>Default</strong></div><div style="flex: 1 1 0%; overflow-y: auto; margin-bottom: 20px; max-height: 300px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 5px;"><div id="gvf-profile-list" style="display: flex; flex-direction: column; gap: 8px;"></div></div><div style="display: flex; gap: 8px; margin-bottom: 16px;"><input type="text" placeholder="New profile name..." id="gvf-new-profile-name" style="flex: 1 1 0%; background: rgba(0, 0, 0, 0.5); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; padding: 10px 12px; color: rgb(255, 255, 255); font-size: 14px; outline: none; transition: border 0.2s;" title=""><button style="background: rgb(42, 111, 219); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 8px; font-size: 14px; font-weight: 900; cursor: pointer; transition: 0.2s; border: 1px solid transparent;">+ Add</button></div><div style="display: flex; gap: 8px; justify-content: space-between; margin-top: 8px;"><button style="background: rgba(42, 111, 219, 0.25); border: 1px solid rgba(42, 111, 219, 0.6); color: rgb(255, 255, 255); padding: 10px 12px; border-radius: 8px; font-size: 13px; font-weight: 900; cursor: pointer; transition: 0.2s; flex: 1 1 0%;">📦 Export profiles (ZIP)</button><button style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); color: rgb(255, 255, 255); padding: 10px 12px; border-radius: 8px; font-size: 13px; font-weight: 900; cursor: pointer; transition: 0.2s; flex: 1 1 0%;">📥 Import profiles (ZIP/JSON)</button></div><input type="file" accept=".zip,application/zip,.json,application/json" style="display: none;" title=""><div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 10px;"><button style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: rgb(255, 255, 255); padding: 10px 16px; border-radius: 8px; font-size: 13px; font-weight: 900; cursor: pointer; transition: 0.2s; flex: 1 1 0%;">💾 Save current profile</button></div></div><div id="es-sidebar-offcanvas" class="row-offcanvas row-offcanvas-left es-sidebar-offcanvas">       <div id="es-sidebar-container" class="sidebar-offcanvas" role="dialog" style="margin-top: 48px; margin-bottom: 60px;"><nav>      <ul class="nav nav-stacked es-sidebar-nav">        <li class="nav-item hidden-accessible"><a href="#" id="closeMenu">Close options menu</a></li>         <li role="presentation" id="liquidModeSwitchView" class="nav-item es-sidebar-mobile-toggle d-none"><div role="menuitem" id="sidebarMobilePreviewToggle"></div><div class="liquidModeHintLabel">A mobile-friendly view</div></li>                                                 <li class="nav-item"><a href="#" id="sidebarClearDocumentBtn" class="nav-link clearDocument" data-analytics-click="clear">Clear document data</a></li>                                                         <li class="nav-item"><a href="#" id="es-sidebar-download" class="nav-link " data-analytics-click="preSignPdf">Download PDF</a></li>        <span class="es-sidebar-divider"></span>        <li><a href="https://www.adobe.com/go/learn_esign_route_en" id="helpBtn" class="nav-link" target="_blank">Help</a></li>        <li class="nav-item"><a href="#" id="legalNoticesLink" class="nav-link" data-analytics-click="legalNotices">Legal Notices</a></li>        <li class="nav-item es-sidebar-dropdown"></li>              </ul>    </nav></div>     </div></body></html>
