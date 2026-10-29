@@ -15,6 +15,8 @@ github_username: jonathanromaovmoore
 github:
   repository: xerox-os/xerox-os.github.io
 remote_theme: jonromanovmoore/particle
+remote_theme: xerox-os/documentation-theme-jekyll
+
 google-analytics:
   id: ""
 exclude: ['package.json', 'src' , 'node_modules']
